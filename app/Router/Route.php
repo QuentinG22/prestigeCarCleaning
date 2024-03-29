@@ -3,6 +3,7 @@
 namespace PrestigeCarCleaning\Router;
 
 use PrestigeCarCleaning\Controllers\FrontOffice\Home;
+use PrestigeCarCleaning\Controllers\FrontOffice\Contact;
 
 class Route
 {
@@ -66,48 +67,48 @@ class Route
                 $controller = new Home();
                 $controller->index();
                 break;
-            // case 'prestations':
-            //     $controller = new Services();
-            //     $controller->index();
-            //     break;
-            // case 'avis':
-            //     $controller = new Comments();
-            //     $controller->index();
-            //     break;
-            // case 'contact':
-            //     $controller = new Contact();
-            //     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            //         $controller->send();
-            //     } else {
-            //         $controller->index();
-            //     }
-            //     break;
-            // case 'connexion':
-            //     $controller = new Login();
-            //     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            //         $controller->login();
-            //     } else {
-            //         $controller->index();
-            //     }
-            //     break;
-            // case 'inscription':
-            //     $controller = new Register();
-            //     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            //         $controller->register();
-            //     } else {
-            //         $controller->index();
-            //     }
-            //     break;
-            // case 'déconnexion':
-            //     $controller = new Logout();
-            //     $controller->index();
-            //     break;
-            // default:
-            //     // Rediriger vers une page d'erreur 404
-            //     http_response_code(404);
-            //     $controller = new Error();
-            //     $controller->index404();
-            //     break;
+                // case 'prestations':
+                //     $controller = new Services();
+                //     $controller->index();
+                //     break;
+                // case 'avis':
+                //     $controller = new Comments();
+                //     $controller->index();
+                //     break;
+                case 'contact':
+                    $controller = new Contact();
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        $controller->send();
+                    } else {
+                        $controller->index();
+                    }
+                    break;
+                // case 'connexion':
+                //     $controller = new Login();
+                //     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                //         $controller->login();
+                //     } else {
+                //         $controller->index();
+                //     }
+                //     break;
+                // case 'inscription':
+                //     $controller = new Register();
+                //     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                //         $controller->register();
+                //     } else {
+                //         $controller->index();
+                //     }
+                //     break;
+                // case 'déconnexion':
+                //     $controller = new Logout();
+                //     $controller->index();
+                //     break;
+                // default:
+                //     // Rediriger vers une page d'erreur 404
+                //     http_response_code(404);
+                //     $controller = new Error();
+                //     $controller->index404();
+                //     break;
         }
     }
 }
