@@ -1,0 +1,22 @@
+{
+  "name": "prestigecarcleaning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuentinG22/prestigeCarCleaning.git"
+  },
+  "author": "Quentin Guillemin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QuentinG22/prestigeCarCleaning/issues"
+  },
+  "homepage": "https://github.com/QuentinG22/prestigeCarCleaning#readme",
+  "dependencies": {
+    "sass": "^1.72.0"
+  }
+}

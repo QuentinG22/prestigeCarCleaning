@@ -1,0 +1,17 @@
+{
+    "name": "kercode23/prestige-car-cleaning",
+    "autoload": {
+        "psr-4": {
+            "PrestigeCarCleaning\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "QuentinG22",
+            "email": "quentin-guillemin@orange.fr"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
