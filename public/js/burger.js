@@ -1,9 +1,6 @@
 let burger = document.querySelector('#burger i');
 let nav = document.querySelector('.mainMenu ul');
 
-console.log(burger);
-console.log(nav);
-
 burger.addEventListener('click', function(){
     if (nav.classList.contains('on')) {
         nav.classList.remove('on');
