@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-    <base href="http://localhost/prestigeCarCleaning/">
+    <base href="<?=  $_SERVER['REQUEST_URI']; ?>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="public/img/favicon.png" type="image/x-icon">
@@ -13,19 +13,19 @@
     <link rel="stylesheet" href="public/css/style.min.css">
     <script src="public/js/burger.js" defer></script>
     <script src="public/js/activeLink.js" defer></script>
-    <?php if ($_SERVER['REQUEST_URI'] == "/prestigeCarCleaning/contact") : ?>
+    <?php if ($_GET['url'] == "contact") : ?>
         <script type="module" src="public/js/tools.js" defer></script>
     <?php endif; ?>
-    <?php if ($_SERVER['REQUEST_URI'] == "/prestigeCarCleaning/inscription") : ?>
+    <?php if ($_GET['url'] == "inscription") : ?>
         <script type="module" src="public/js/register.js" defer></script>
     <?php endif; ?>
-    <?php if ($_SERVER['REQUEST_URI'] == "/prestigeCarCleaning/" || $_SERVER['REQUEST_URI'] == "/prestigeCarCleaning/accueil") : ?>
+    <?php if (!isset($_GET['url']) || $_GET['url'] == "accueil") : ?>
         <script src="public/js/slider.js" defer></script>
     <?php endif; ?>
-    <?php if ($_SERVER['REQUEST_URI'] == "/prestigeCarCleaning/contact") : ?>
+    <?php if ($_GET['url'] == "contact") : ?>
         <script type="module" src="public/js/contact.js" defer></script>
     <?php endif; ?>
-    <?php if ($_SERVER['REQUEST_URI'] == "/prestigeCarCleaning/admin/tableau-de-bord") : ?>
+    <?php if ($_GET['url'] == "admin/tableau-de-bord") : ?>
         <script type="module" src="public/js/dashboard.js" defer></script>
     <?php endif; ?>
 </head>
