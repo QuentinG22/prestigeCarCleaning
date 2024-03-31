@@ -79,6 +79,7 @@ class Route
                     $controller = new Contact();
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $controller->send();
+                        $controller->index();
                     } else {
                         $controller->index();
                     }
