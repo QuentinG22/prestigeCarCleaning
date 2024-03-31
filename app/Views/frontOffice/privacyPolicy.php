@@ -47,7 +47,7 @@ require "app/Views/common/header.php";
                 pour vous alerter lorsque des cookies sont envoyés. Veuillez noter que certaines parties de
                 notre site web peuvent ne pas fonctionner correctement si les cookies sont désactivés.
             </p>
-            <h3>Partage des Informationsé</h3>
+            <h3>Partage des Informations</h3>
             <p>
                 Prestige Car Cleaning ne partage pas vos informations personnelles avec des tiers sans
                 votre consentement préalable, sauf dans les cas suivants :
