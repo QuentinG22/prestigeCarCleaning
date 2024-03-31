@@ -30,8 +30,8 @@
                     <?php if (isset($_SESSION['userIsAdmin']) && $_SESSION['userIsAdmin'] === 1) : ?>
                         <li><a href="admin">Espace admin</a></li>
                     <?php endif; ?>
-                    <li><a href="">Mentions légales</a></li>
-                    <li><a href="">Politique de confidentialité</a></li>
+                    <li><a href="mentions-légales">Mentions légales</a></li>
+                    <li><a href="politique-de-confidentialité">Politique de confidentialité</a></li>
                 </ul>
             </article>
         </section>

@@ -428,6 +428,22 @@ footer > figure a {
     margin-top: 0;
   }
 }
+.legalNotice > div,
+.privacyPolice > div {
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+}
+.legalNotice > div > h3,
+.privacyPolice > div > h3 {
+  margin: 10px 0;
+  color: rgb(43, 205, 219);
+}
+.legalNotice > div > ul,
+.privacyPolice > div > ul {
+  margin: 5px;
+}
+
 .homeAdmin {
   display: flex;
   flex-direction: column;

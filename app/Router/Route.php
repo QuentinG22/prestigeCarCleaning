@@ -9,6 +9,8 @@ use PrestigeCarCleaning\Controllers\FrontOffice\Register;
 use PrestigeCarCleaning\Controllers\FrontOffice\Logout;
 
 use PrestigeCarCleaning\Controllers\Error;
+use PrestigeCarCleaning\Controllers\FrontOffice\LegalNotice;
+use PrestigeCarCleaning\Controllers\FrontOffice\PrivacyPolicy;
 
 class Route
 {
@@ -107,6 +109,14 @@ class Route
                     break;
                 case 'déconnexion':
                     $controller = new Logout();
+                    $controller->index();
+                    break;
+                case 'mentions-légales':
+                    $controller = new LegalNotice();
+                    $controller->index();
+                    break;
+                case 'politique-de-confidentialité':
+                    $controller = new PrivacyPolicy();
                     $controller->index();
                     break;
                 default:

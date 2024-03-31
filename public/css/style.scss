@@ -491,6 +491,22 @@ footer {
     }
 }
 
+// ======== Page mentions légale et politique de confidentialité ========
+
+.legalNotice,
+.privacyPolice{
+    > div {
+        @include box();
+        >h3{
+            margin: 10px 0;
+            color: $colorfooter;
+        }
+        >ul{
+            margin: 5px;
+        }
+    }
+}
+
 // **************************************** Style des différentes pages du Back Office ****************************************
 
 // ======== Page accueil admin ========
