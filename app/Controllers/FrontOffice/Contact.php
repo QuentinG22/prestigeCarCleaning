@@ -38,19 +38,20 @@ class Contact
             // Créer une instance utilisateur avec les données
             $contact = new Contacts();
 
-        // Appeler la méthode pour enregistrer l'utilisateur
-        $isContact = $contact->addContact($name, $firstname, $email, $object, $text, $date, $userId);
+            // Appeler la méthode pour enregistrer l'utilisateur
+            $isContact = $contact->addContact($name, $firstname, $email, $object, $text, $date, $userId);
 
-        if ($isContact === true) {
-            $success = 'Votre demande de contact a bien été envoyée.';
-            $error = '';
-        } else {
-            $error = 'La demande de contact a échoué.';
-            $success = '';
-        }
+            if ($isContact === true) {
+                $success = 'Votre demande de contact a bien été envoyée.';
+                $error = '';
+            } else {
+                $error = 'La demande de contact a échoué.';
+                $success = '';
+            }
 
             // Passer les messages d'erreur et de succès à la vue en utilisant la méthode statique de ViewManager
-            return ViewManager::render('frontOffice/contact', ['error' => $error, 'success' => $success]);
+            $title = "Contactez-nous - Prestige Car Cleaning";
+            return ViewManager::render('frontOffice/contact', ['title' => $title, 'error' => $error, 'success' => $success]);
         }
     }
 }
