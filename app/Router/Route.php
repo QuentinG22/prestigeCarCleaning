@@ -4,6 +4,9 @@ namespace PrestigeCarCleaning\Router;
 
 use PrestigeCarCleaning\Controllers\FrontOffice\Home;
 use PrestigeCarCleaning\Controllers\FrontOffice\Contact;
+use PrestigeCarCleaning\Controllers\FrontOffice\Login;
+use PrestigeCarCleaning\Controllers\FrontOffice\Register;
+use PrestigeCarCleaning\Controllers\FrontOffice\Logout;
 
 class Route
 {
@@ -84,26 +87,26 @@ class Route
                         $controller->index();
                     }
                     break;
-                // case 'connexion':
-                //     $controller = new Login();
-                //     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                //         $controller->login();
-                //     } else {
-                //         $controller->index();
-                //     }
-                //     break;
-                // case 'inscription':
-                //     $controller = new Register();
-                //     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                //         $controller->register();
-                //     } else {
-                //         $controller->index();
-                //     }
-                //     break;
-                // case 'déconnexion':
-                //     $controller = new Logout();
-                //     $controller->index();
-                //     break;
+                case 'connexion':
+                    $controller = new Login();
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        $controller->login();
+                    } else {
+                        $controller->index();
+                    }
+                    break;
+                case 'inscription':
+                    $controller = new Register();
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        $controller->register();
+                    } else {
+                        $controller->index();
+                    }
+                    break;
+                case 'déconnexion':
+                    $controller = new Logout();
+                    $controller->index();
+                    break;
                 // default:
                 //     // Rediriger vers une page d'erreur 404
                 //     http_response_code(404);

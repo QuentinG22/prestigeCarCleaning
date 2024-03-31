@@ -35,24 +35,6 @@ class Sql extends DbConnect
         return $sql->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function getBy($params)
-    {
-        $key = [];
-        $value = [];
-
-        // Boucle pour séparer le tableau
-        foreach ($params as $paramKey => $paramValue) {
-            $keyL[] = "$paramKey = ?";
-            $value[] = $paramValue;
-        }
-
-        // On transforme le tableau en chaîne de caractères séparée par des AND
-        // exemple: $keyList = "nom = ? AND prenom = ? AND age = ?";
-        $keyList = implode(' AND ', $key);
-
-        return $this->requete("SELECT * FROM $this->table WHERE $keyList, $value")->fetchAll(PDO::FETCH_OBJ);
-    }
-
     public function getById($id)
     {
         return $this->requete("SELECT * FROM $this->table WHERE id = $id")->fetch(PDO::FETCH_OBJ);

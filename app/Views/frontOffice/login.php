@@ -4,13 +4,13 @@ require "app/Views/common/header.php";
 ?>
 <main class="container">
     <h1 class="title">Connectez<span>-vous</span></h1>
-    <?php if ($error !== '') : ?>
+    <?php if (isset($error) && $error !== '') : ?>
         <div class="alert error">
             <?= $error ?>
         </div>
     <?php endif; ?>
     <article id="connection">
-        <form action="connection" method="post">
+        <form action="" method="post">
             <div>
                 <input type="email" name="email" placeholder="Email utilisateur">
             </div>
