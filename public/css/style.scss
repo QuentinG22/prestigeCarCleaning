@@ -450,6 +450,47 @@ footer {
     }
 }
 
+// ======== Page 404 ========
+
+.error404{
+    >div {
+        @include box();
+        >h3{
+            margin: 10px 0;
+        }
+        >ul li a{
+            color: $colorfooter;
+        }
+        >p:last-child{
+            margin-top: 10px;
+        }
+    }
+    >figure {
+        @include box();
+        padding: 0;
+        margin-top: 10px;
+        >img{
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width:992px) {
+    .error404 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        >div {
+            width: 60%;
+        }
+
+        >figure {
+            width: 34%;
+            margin-top: 0;
+        }
+    }
+}
+
 // **************************************** Style des différentes pages du Back Office ****************************************
 
 // ======== Page accueil admin ========

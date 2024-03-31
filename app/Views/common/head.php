@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-    <base href="<?=  $_SERVER['REQUEST_URI']; ?>">
+    <base href="<?= $_SERVER['REQUEST_URI']; ?>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="public/img/favicon.png" type="image/x-icon">
@@ -13,21 +13,22 @@
     <link rel="stylesheet" href="public/css/style.min.css">
     <script src="public/js/burger.js" defer></script>
     <script src="public/js/activeLink.js" defer></script>
-    <?php if (isset($_GET['url']) == "contact") : ?>
+    <?php if (isset($_GET['url']) && $_GET['url'] == "contact") : ?>
         <script type="module" src="public/js/tools.js" defer></script>
     <?php endif; ?>
-    <?php if (isset($_GET['url']) == "inscription") : ?>
+    <?php if (isset($_GET['url']) && $_GET['url'] == "inscription") : ?>
         <script type="module" src="public/js/register.js" defer></script>
     <?php endif; ?>
     <?php if (!isset($_GET['url']) || $_GET['url'] == "accueil") : ?>
         <script src="public/js/slider.js" defer></script>
     <?php endif; ?>
-    <?php if (isset($_GET['url']) == "contact") : ?>
+    <?php if (isset($_GET['url']) && $_GET['url'] == "contact") : ?>
         <script type="module" src="public/js/contact.js" defer></script>
     <?php endif; ?>
-    <?php if (isset($_GET['url']) == "admin/tableau-de-bord") : ?>
+    <?php if (isset($_GET['url']) && $_GET['url'] == "admin/tableau-de-bord") : ?>
         <script type="module" src="public/js/dashboard.js" defer></script>
     <?php endif; ?>
+
 </head>
 
 <body>

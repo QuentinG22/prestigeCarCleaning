@@ -8,6 +8,8 @@ use PrestigeCarCleaning\Controllers\FrontOffice\Login;
 use PrestigeCarCleaning\Controllers\FrontOffice\Register;
 use PrestigeCarCleaning\Controllers\FrontOffice\Logout;
 
+use PrestigeCarCleaning\Controllers\Error;
+
 class Route
 {
     public function route($url)
@@ -107,12 +109,12 @@ class Route
                     $controller = new Logout();
                     $controller->index();
                     break;
-                // default:
-                //     // Rediriger vers une page d'erreur 404
-                //     http_response_code(404);
-                //     $controller = new Error();
-                //     $controller->index404();
-                //     break;
+                default:
+                    // Rediriger vers une page d'erreur 404
+                    http_response_code(404);
+                    $controller = new Error();
+                    $controller->index();
+                    break;
         }
     }
 }

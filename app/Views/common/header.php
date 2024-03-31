@@ -16,8 +16,8 @@
                     <li><a href="">Modération avis</a></li>
                 <?php else : ?>
                     <li><a href="accueil">Accueil</a></li>
-                    <li><a href="prestations">Prestations</a></li>
-                    <li><a href="avis">Avis</a></li>
+                    <li><a href="nos-prestations">Prestations</a></li>
+                    <li><a href="nos-avis">Avis</a></li>
                     <li><a href="contact">Contact</a></li>
                     <?php if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') : ?>
                         <li><a href="déconnexion">Déconnexion</a></li>
