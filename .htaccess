@@ -1,0 +1,13 @@
+# Active le moteur de réécriture d'URL
+RewriteEngine On
+# Condition : La demande ne doit pas correspondre à un fichier existant
+RewriteCond %{REQUEST_FILENAME} !-f
+# Condition : La demande ne doit pas correspondre à un répertoire existant
+RewriteCond %{REQUEST_FILENAME} !-d
+# Règle de réécriture d'URL : redirige toutes les demandes vers index.php tout en passant l'URL demandée comme paramètre GET "url"
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+<Files "*.log">
+    Order allow,deny
+    Deny from all
+</Files>
