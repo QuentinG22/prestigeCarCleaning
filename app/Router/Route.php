@@ -2,6 +2,8 @@
 
 namespace PrestigeCarCleaning\Router;
 
+use PrestigeCarCleaning\Controllers\BackOffice\Admin;
+
 use PrestigeCarCleaning\Controllers\FrontOffice\Home;
 use PrestigeCarCleaning\Controllers\FrontOffice\Comments;
 use PrestigeCarCleaning\Controllers\FrontOffice\Contact;
@@ -23,49 +25,49 @@ class Route
         $urlParts = explode('/', $url);
 
         // Vérifier le statut d'administration avant le switch
-        // if (isset($_SESSION['userIsAdmin']) && $_SESSION['userIsAdmin'] === 1) {
-        //     switch ($urlParts[0]) {
-        //         case 'admin':
-        //             if (isset($urlParts[1])) {
-        //                 if ($urlParts[1] === 'tableau-de-bord') {
-        //                     $controller = new Dashboard();
-        //                     if (isset($urlParts[2]) && strpos($urlParts[2], "contact-") === 0) {
-        //                         // Extraire l'ID de la demande de contact de l'URL
-        //                         $id = substr($urlParts[2], strlen("contact-"));
-        //                         if (isset($urlParts[3]) && $urlParts[3] === 'delete') {
-        //                             $controller->deleteContact($id);
-        //                         } else {
-        //                             $controller->getContact($id);
-        //                         }
-        //                     } else {
-        //                         $controller->getContactsAll();
-        //                         $controller->index();
-        //                     }
-        //                 }
-        //                 if ($urlParts[1] === 'gestion-des-prestations') {
-        //                     $controller = new Service();
-        //                     if (isset($urlParts[2]) && strpos($urlParts[2], "prestation-") === 0) {
-        //                         // Extraire l'ID de la demande de contact de l'URL
-        //                         $id = substr($urlParts[2], strlen("prestation-"));
-        //                         if (isset($urlParts[3]) && $urlParts[3] === 'update') {
-        //                             $controller->updateService($id);
-        //                         } else if (isset($urlParts[3]) && $urlParts[3] === 'delete') {
-        //                             $controller->deleteService($id);
-        //                         } else {
-        //                             $controller->getService($id);
-        //                         }
-        //                     } else {
-        //                         // $controller->getServicesAll();
-        //                         $controller->index();
-        //                     }
-        //                 }
-        //             } else {
-        //                 $controller = new Admin();
-        //                 $controller->index();
-        //             }
-        //             return;
-        //     }
-        // }
+        if (isset($_SESSION['userIsAdmin']) && $_SESSION['userIsAdmin'] === 1) {
+            switch ($urlParts[0]) {
+                case 'admin':
+                    if (isset($urlParts[1])) {
+                        if ($urlParts[1] === 'tableau-de-bord') {
+                            $controller = new Dashboard();
+                            if (isset($urlParts[2]) && strpos($urlParts[2], "contact-") === 0) {
+                                // Extraire l'ID de la demande de contact de l'URL
+                                $id = substr($urlParts[2], strlen("contact-"));
+                                if (isset($urlParts[3]) && $urlParts[3] === 'delete') {
+                                    $controller->deleteContact($id);
+                                } else {
+                                    $controller->getContact($id);
+                                }
+                            } else {
+                                $controller->getContactsAll();
+                                $controller->index();
+                            }
+                        }
+                        if ($urlParts[1] === 'gestion-des-prestations') {
+                            $controller = new Service();
+                            if (isset($urlParts[2]) && strpos($urlParts[2], "prestation-") === 0) {
+                                // Extraire l'ID de la demande de contact de l'URL
+                                $id = substr($urlParts[2], strlen("prestation-"));
+                                if (isset($urlParts[3]) && $urlParts[3] === 'update') {
+                                    $controller->updateService($id);
+                                } else if (isset($urlParts[3]) && $urlParts[3] === 'delete') {
+                                    $controller->deleteService($id);
+                                } else {
+                                    $controller->getService($id);
+                                }
+                            } else {
+                                // $controller->getServicesAll();
+                                $controller->index();
+                            }
+                        }
+                    } else {
+                        $controller = new Admin();
+                        $controller->index();
+                    }
+                    return;
+            }
+        }
 
         // Déterminer quelle action/contrôleur appeler en fonction de l'URL
         switch ($urlParts[0]) {
