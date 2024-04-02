@@ -3,6 +3,7 @@
 namespace PrestigeCarCleaning\Router;
 
 use PrestigeCarCleaning\Controllers\BackOffice\Admin;
+use PrestigeCarCleaning\Controllers\BackOffice\Dashboard;
 
 use PrestigeCarCleaning\Controllers\FrontOffice\Home;
 use PrestigeCarCleaning\Controllers\FrontOffice\Comments;

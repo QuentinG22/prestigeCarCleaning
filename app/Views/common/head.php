@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-    <base href="<?= $_SERVER['REQUEST_URI']; ?>">
+    <base href="http://localhost/prestigeCarCleaning/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="public/img/favicon.png" type="image/x-icon">

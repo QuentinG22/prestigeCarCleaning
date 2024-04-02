@@ -35,9 +35,9 @@ class Sql extends DbConnect
         return $sql->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function getById($id)
+    public function getById($nameId, $id)
     {
-        return $this->requete("SELECT * FROM $this->table WHERE id = $id")->fetch(PDO::FETCH_OBJ);
+        return $this->requete("SELECT * FROM $this->table WHERE $nameId = $id")->fetch(PDO::FETCH_OBJ);
     }
 
     public function add($model)
@@ -84,8 +84,8 @@ class Sql extends DbConnect
         return $this->requete("UPDATE $this->table SET $keyList WHERE id = ?", $value);
     }
 
-    public  function delete($id)
+    public  function delete($nameId, $id)
     {
-        return $this->requete("DELETE FROM $this->table WHERE id = ?", [$id]);
+        return $this->requete("DELETE FROM $this->table WHERE $nameId = ?", [$id]);
     }
 }

@@ -13,7 +13,7 @@ class Contacts extends Sql
 
     public function getContactById($id)
     {
-        $result = $this->getById($id);
+        $result = $this->getById('idContact', $id);
 
         try {
             if (!$result) {
@@ -79,7 +79,7 @@ class Contacts extends Sql
     public function deleteContact($id)
     {
         try {
-            $result = $this->delete($id);
+            $result = $this->delete('idContact', $id);
 
             if (!$result) {
                 throw new Exception("Échec lors de la suppresion.");

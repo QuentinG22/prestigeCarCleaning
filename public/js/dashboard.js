@@ -17,7 +17,7 @@ rows.forEach(function (row) {
 
                 let contactDetails = data; // Les détails du contact
 
-                // // Créez les éléments DOM
+                // Créez les éléments DOM
                 let heading = document.createElement('h2');
                 heading.textContent = 'Détail de la demande de contact';
 
@@ -65,13 +65,14 @@ rows.forEach(function (row) {
                             }
                         })
                         .catch(error => {
-                            // Gérer les erreurs
+                            // Gérer les erreurs de la suppression du contact
                             alert(error.message);
                         });
-                })
-                    .catch(error => {
-                        alert(error.message);
-                    });
+                });
+            })
+            .catch(error => {
+                // Gérer les erreurs de chargement des détails de la demande de contact
+                alert(error.message);
             });
     });
-})
+});
