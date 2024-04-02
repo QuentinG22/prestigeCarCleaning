@@ -19,6 +19,7 @@ $colorfooter: rgb(43, 205, 219);
     border: 2px solid $colorfooter;
     border-radius: 15px;
     padding: 15px;
+    box-sizing: border-box;
 }
 
 @mixin input {
@@ -96,17 +97,19 @@ input[type="submit"]:hover {
     max-width: 1200px;
 }
 
-.alert{
+.alert {
     margin: 0 auto;
     text-align: center;
     width: 75%;
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 15px;
-    &.error{
+
+    &.error {
         background-color: red;
     }
-    &.success{
+
+    &.success {
         background-color: green;
     }
 }
@@ -372,6 +375,7 @@ footer {
     max-height: 350px;
     width: 100%;
     overflow: hidden;
+
     >img {
         width: 100%;
     }
@@ -390,6 +394,7 @@ footer {
         max-width: 100%;
         @include box();
         padding: 0;
+
         >img {
             width: 100%;
         }
@@ -403,36 +408,78 @@ footer {
     }
 }
 
+// ======== Page avis ========
+
+/* Styles de base pour le carrousel */
+.center {
+    display: flex;
+    overflow-x: hidden;
+}
+
+.item {
+    flex: 0 0 auto;
+    width: 100%;
+    @include box();
+    >p{
+        @include box();
+    }
+}
+
+.serviceComments{
+    margin-top: 10px;
+}
+
+.star {
+    font-size: 30px;
+    color: #ccc; 
+    cursor: pointer; 
+}
+
+.rating {
+    display: inline-block;
+    @include box();
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.addComments {
+    h2{
+        @include box();
+        text-align: center;
+        width: 50%;
+        margin: 15px auto;
+        >span{
+            color: $colorfooter;
+        }
+    }
+}
+
+/* Media queries pour ajuster le nombre d'avis affichés en fonction de la largeur de l'écran */
+@media screen and (min-width: 768px) {
+    .item {
+        margin: 0 10px;
+        /* Afficher jusqu'à 2 avis par ligne pour les écrans moyens */
+        width: calc(50% - 20px); 
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .item {
+        /* Afficher jusqu'à 3 avis par ligne pour les écrans larges */
+        width: calc(33.33% - 20px); 
+    }
+}
+
 // ======== Page contact ========
 
-// .carousel {
-//   overflow: hidden;
-//   white-space: nowrap;
-//   position: relative;
-//   width: 100%;
-// }
-
-// .slide {
-//   display: inline-block;
-//   width: 100%;
-//   height: 200px;
-//   background-color: red;
-// }
-
-// @media (min-width: 768px) {
-//   .slide {
-//     width: calc(100% / 3); /* Sur desktop, diviser l'espace en trois */
-//   }
-// }
-// ======== Page contact ========
-
-.contactInfo{
+.contactInfo {
     @include box();
     margin-bottom: 15px;
 }
 
-#contact{
-    >iframe{
+#contact {
+    >iframe {
         width: 100%;
         height: 300px;
         @include box();
@@ -441,9 +488,10 @@ footer {
 }
 
 @media screen and (min-width:768px) {
-    #contact{
+    #contact {
         display: flex;
         justify-content: space-between;
+
         >form,
         >iframe {
             width: 48%;
@@ -454,24 +502,29 @@ footer {
 
 // ======== Page 404 ========
 
-.error404{
+.error404 {
     >div {
         @include box();
-        >h3{
+
+        >h3 {
             margin: 10px 0;
         }
-        >ul li a{
+
+        >ul li a {
             color: $colorfooter;
         }
-        >p:last-child{
+
+        >p:last-child {
             margin-top: 10px;
         }
     }
+
     >figure {
         @include box();
         padding: 0;
         margin-top: 10px;
-        >img{
+
+        >img {
             width: 100%;
         }
     }
@@ -482,6 +535,7 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         >div {
             width: 60%;
         }
@@ -496,14 +550,16 @@ footer {
 // ======== Page mentions légale et politique de confidentialité ========
 
 .legalNotice,
-.privacyPolice{
-    > div {
+.privacyPolice {
+    >div {
         @include box();
-        >h3{
+
+        >h3 {
             margin: 10px 0;
             color: $colorfooter;
         }
-        >ul{
+
+        >ul {
             margin: 5px;
         }
     }
@@ -572,13 +628,16 @@ footer {
     >article {
         @include box();
         height: auto;
-        >#contactTable{
+
+        >#contactTable {
             text-align: center;
         }
-        >h2{
+
+        >h2 {
             text-align: center;
         }
-        >p span{
+
+        >p span {
             color: $colorfooter;
         }
     }

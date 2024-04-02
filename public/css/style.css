@@ -50,6 +50,7 @@ h1:not(.exclude) {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
   width: 50%;
 }
 
@@ -58,6 +59,7 @@ textarea {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
   width: 100%;
   box-sizing: border-box;
   margin: 5px 0;
@@ -140,6 +142,7 @@ input[type=submit]:hover {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
 }
 
 .mainMenu ul.on {
@@ -305,6 +308,7 @@ footer > figure a {
     border: 2px solid rgb(43, 205, 219);
     border-radius: 15px;
     padding: 15px;
+    box-sizing: border-box;
     padding: 0;
     width: 50%;
   }
@@ -325,6 +329,7 @@ footer > figure a {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
   padding: 0;
 }
 
@@ -346,12 +351,14 @@ footer > figure a {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
 }
 .about > figure {
   max-width: 100%;
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
   padding: 0;
 }
 .about > figure > img {
@@ -364,10 +371,80 @@ footer > figure a {
     align-items: center;
   }
 }
+/* Styles de base pour le carrousel */
+.center {
+  display: flex;
+  overflow-x: hidden;
+}
+
+.item {
+  flex: 0 0 auto;
+  width: 100%;
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.item > p {
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.serviceComments {
+  margin-top: 10px;
+}
+
+.star {
+  font-size: 30px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.rating {
+  display: inline-block;
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.addComments h2 {
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 50%;
+  margin: 15px auto;
+}
+.addComments h2 > span {
+  color: rgb(43, 205, 219);
+}
+
+/* Media queries pour ajuster le nombre d'avis affichés en fonction de la largeur de l'écran */
+@media screen and (min-width: 768px) {
+  .item {
+    margin: 0 10px;
+    /* Afficher jusqu'à 2 avis par ligne pour les écrans moyens */
+    width: calc(50% - 20px);
+  }
+}
+@media screen and (min-width: 992px) {
+  .item {
+    /* Afficher jusqu'à 3 avis par ligne pour les écrans larges */
+    width: calc(33.33% - 20px);
+  }
+}
 .contactInfo {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
   margin-bottom: 15px;
 }
 
@@ -377,6 +454,7 @@ footer > figure a {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
   padding: 0;
 }
 
@@ -395,6 +473,7 @@ footer > figure a {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
 }
 .error404 > div > h3 {
   margin: 10px 0;
@@ -409,6 +488,7 @@ footer > figure a {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
   padding: 0;
   margin-top: 10px;
 }
@@ -435,6 +515,7 @@ footer > figure a {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
 }
 .legalNotice > div > h3,
 .privacyPolice > div > h3 {
@@ -454,6 +535,7 @@ footer > figure a {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
 }
 .homeAdmin > div > h2 {
   font-size: 1.3rem;
@@ -463,6 +545,7 @@ footer > figure a {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
   padding: 0;
   margin-top: 10px;
 }
@@ -498,6 +581,7 @@ footer > figure a {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
   height: auto;
 }
 .dashboard > article > #contactTable {

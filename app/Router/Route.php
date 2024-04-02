@@ -3,6 +3,7 @@
 namespace PrestigeCarCleaning\Router;
 
 use PrestigeCarCleaning\Controllers\FrontOffice\Home;
+use PrestigeCarCleaning\Controllers\FrontOffice\Comments;
 use PrestigeCarCleaning\Controllers\FrontOffice\Contact;
 use PrestigeCarCleaning\Controllers\FrontOffice\Login;
 use PrestigeCarCleaning\Controllers\FrontOffice\Register;
@@ -78,10 +79,10 @@ class Route
                 //     $controller = new Services();
                 //     $controller->index();
                 //     break;
-                // case 'avis':
-                //     $controller = new Comments();
-                //     $controller->index();
-                //     break;
+                case 'nos-avis':
+                    $controller = new Comments();
+                    $controller->index();
+                    break;
                 case 'contact':
                     $controller = new Contact();
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
