@@ -18,14 +18,21 @@ document.querySelector('#register form').addEventListener('submit', function (ev
 
     // Validation des champs
     let errors = {};
+    let nameRegex = /^[a-zA-Z]+$/;
 
     if (name === '') {
         displayError('name', 'Veuillez renseigner votre nom.');
+        errors['name'] = true;
+    } else if (!nameRegex.test(name)) {
+        displayError('name', 'Le nom ne doit pas contenir de caractères spéciaux.');
         errors['name'] = true;
     }
 
     if (firstname === '') {
         displayError('firstname', 'Veuillez renseigner votre prénom.');
+        errors['firstname'] = true;
+    } else if (!nameRegex.test(firstname)) {
+        displayError('firstname', 'Le prénom ne doit pas contenir de caractères spéciaux.');
         errors['firstname'] = true;
     }
 
