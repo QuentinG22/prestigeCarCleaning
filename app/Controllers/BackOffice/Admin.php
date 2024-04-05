@@ -1,6 +1,7 @@
 <?php
 
 namespace PrestigeCarCleaning\Controllers\BackOffice;
+use PrestigeCarCleaning\Controllers\ViewManager;
 
 class Admin
 {
@@ -8,6 +9,6 @@ class Admin
     public function index()
     {
         $title = "Administration - Prestige Car Cleaning";
-        require "app/Views/backOffice/home.php";
+        return ViewManager::render('backOffice/home', ['title' => $title]);
     }
 }

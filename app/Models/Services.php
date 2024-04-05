@@ -22,9 +22,8 @@ class Services extends Sql
         INNER JOIN toUse tu ON p.idProduct = tu.idProduct
         WHERE tu.idService = ?";
         $params = [$id];
-        $products = $this->requete($sql, $params)->fetchAll(\PDO::FETCH_OBJ);
-
-        return $products;
+        
+        return $this->requete($sql, $params)->fetchAll(\PDO::FETCH_OBJ);
     }
 
     public function getServiceAll()
@@ -71,6 +70,11 @@ class Services extends Sql
         return $this->requete("DELETE FROM toUse WHERE idService = ?", [$serviceId]);
     }
 
+    public function deleteComment($serviceId)
+    {
+        return $this->requete("DELETE FROM comments WHERE idService = ?", [$serviceId]);
+    }
+
     public function transactionService($id, $model, $product, $update = false, $delete = false)
     {
         try {
@@ -97,6 +101,7 @@ class Services extends Sql
             } else if ($delete === true) {
 
                 $this->deleteAsso($id);
+                $this->deleteComment($id);
                 $this->delete('idService', $id);
             } else {
 

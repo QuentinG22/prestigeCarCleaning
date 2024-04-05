@@ -21,42 +21,42 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
     <?php endif; ?>
 
     <div class="center">
-        <div class="item">
-            <p>
-                Dupond Pierre
-            </p>
-            <p class="serviceComments">
-                Prestation xxxxx
-            </p>
-            <div class="rating" id="rating1">
-                <span class="star" data-value="1">&#9733;</span>
-                <span class="star" data-value="2">&#9733;</span>
-                <span class="star" data-value="3">&#9733;</span>
-                <span class="star" data-value="4">&#9733;</span>
-                <span class="star" data-value="5">&#9733;</span>
-            </div>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, molestias.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, molestias.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, molestias.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, molestias.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, molestias.
-            </p>
-        </div>
-        <div class="item">Avis 2</div>
-        <div class="item">Avis 3</div>
-        <div class="item">Avis 4</div>
-        <div class="item">Avis 5</div>
-        <div class="item">Avis 6</div>
-        <!-- Ajoutez plus d'avis au besoin -->
+        <?php if (!empty($commentsAll)) : ?>
+            <?php foreach ($commentsAll as $key) : ?>
+                <?php if ($key->active === 1) : ?>
+                    <div class="item">
+                        <p>
+                            <?= $key->name . ' ' . $key->firstname ?>
+                        </p>
+                        <p class="serviceComments">
+                            <?= $key->nameService ?>
+                        </p>
+                        <div class="rating" id="rating1">
+                            <?php
+                            $note = $key->note; // Récupère la note du commentaire
+                            // Parcours chaque étoile et vérifie si elle doit être coloriée en fonction de la note
+                            for ($i = 1; $i <= 5; $i++) {
+                                if ($i <= $note) {
+                                    echo '<span class="star filled" data-value="' . $i . '">&#9733;</span>';
+                                } else {
+                                    echo '<span class="star" data-value="' . $i . '">&#9733;</span>';
+                                }
+                            }
+                            ?>
+                        </div>
+                        <p>
+                            <?= $key->text ?>
+                        </p>
+                    </div>
+                <?php endif ?>
+            <?php endforeach  ?>
+        <?php endif ?>
     </div>
 
     <?php if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') : ?>
         <article class="addComments">
             <h2>Laissez votre <span>avis</span></h2>
             <form action="" method="post">
-                <input type="text" id="name" name="name" value="<?= $_SESSION['userName'] ?>">
-                <input type="text" id="firstname" name="name" value="<?= $_SESSION['userFirstname'] ?>">
                 <select name="service">
                     <?php foreach ($servicesAll as $service) : ?>
                         <option value="<?= $service->idService; ?>"><?= $service->nameService; ?></option>
@@ -68,15 +68,15 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
                     <span class="star" data-value="3">&#9733;</span>
                     <span class="star" data-value="4">&#9733;</span>
                     <span class="star" data-value="5">&#9733;</span>
+                    <input type="hidden" name="note" id="note" value="1">
                 </div>
                 <textarea name="text" id="" cols="30" rows="10"></textarea>
-                <input type="submit" id="inputValid" name="avis" value="Envoyer">
+                <input type="submit" id="inputValid" name="addComment" value="Envoyer">
             </form>
         </article>
     <?php endif; ?>
 
     <script>
-        const stars1 = document.querySelectorAll('#rating1 .star');
         const stars2 = document.querySelectorAll('#rating2 .star');
 
         stars2.forEach(star => {
@@ -96,10 +96,6 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
                 }
             });
         }
-
-        // Exemple : Vous pouvez appeler cette fonction avec la valeur reçue de votre base de données
-        const ratingValue = 3; // Exemple de valeur reçue de la base de données
-        colorStars(stars1, ratingValue);
 
         // Sélectionner l'élément avec la classe "center"
         const centerElement = document.querySelector('.center');

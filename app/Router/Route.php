@@ -6,9 +6,10 @@ use PrestigeCarCleaning\Controllers\BackOffice\Admin;
 use PrestigeCarCleaning\Controllers\BackOffice\Dashboard;
 use PrestigeCarCleaning\Controllers\BackOffice\Service;
 use PrestigeCarCleaning\Controllers\BackOffice\Product;
+use PrestigeCarCleaning\Controllers\BackOffice\CommentBack;
 
 use PrestigeCarCleaning\Controllers\FrontOffice\Home;
-use PrestigeCarCleaning\Controllers\FrontOffice\Comments;
+use PrestigeCarCleaning\Controllers\FrontOffice\Comment;
 use PrestigeCarCleaning\Controllers\FrontOffice\Contact;
 use PrestigeCarCleaning\Controllers\FrontOffice\Login;
 use PrestigeCarCleaning\Controllers\FrontOffice\Register;
@@ -73,6 +74,15 @@ class Route
                             } else {
                                 $controller->index();
                             }
+                        } else if ($urlParts[1] === 'modération-avis') {
+                            $controller = new CommentBack();
+                            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['actifComment'])) {
+                                $controller->actifComment();
+                            } else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteComment'])) {
+                                $controller->deleteComment();
+                            } else {
+                                $controller->index();
+                            }
                         }
                     } else {
                         $controller = new Admin();
@@ -95,8 +105,12 @@ class Route
                 //     $controller->index();
                 //     break;
             case 'nos-avis':
-                $controller = new Comments();
-                $controller->index();
+                $controller = new Comment();
+                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['addComment'])){
+                    $controller->addComments();
+                } else {
+                    $controller->index();
+                }
                 break;
             case 'contact':
                 $controller = new Contact();

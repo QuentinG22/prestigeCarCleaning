@@ -422,6 +422,7 @@ footer {
     @include box();
     >p{
         @include box();
+        max-height: 360px;
     }
 }
 
@@ -692,4 +693,10 @@ footer {
         align-items: center;
         grid-template-columns: 1fr 1fr;
     }
+}
+
+// ======== Page modération des avis ========
+
+.filled{
+    color: gold;
 }

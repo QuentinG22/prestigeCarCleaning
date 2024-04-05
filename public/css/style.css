@@ -390,6 +390,7 @@ footer > figure a {
   border-radius: 15px;
   padding: 15px;
   box-sizing: border-box;
+  max-height: 360px;
 }
 
 .serviceComments {
@@ -640,4 +641,7 @@ footer > figure a {
     align-items: center;
     grid-template-columns: 1fr 1fr;
   }
+}
+.filled {
+  color: gold;
 }/*# sourceMappingURL=style.css.map */
