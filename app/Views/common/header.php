@@ -10,7 +10,7 @@
         </div>
         <nav class="mainMenu">
             <ul>
-            <?php if (strpos($_SERVER['REQUEST_URI'], "/admin") !== false) : ?>
+            <?php if (strpos($_SERVER['REQUEST_URI'], "/admin") !== false && $_SESSION['userIsAdmin'] == 1) : ?>
                     <li><a href="admin/tableau-de-bord">Tableau de bord</a></li>
                     <li><a href="admin/gestion-des-prestations">Gestion des prestations</a></li>
                     <li><a href="admin/gestion-des-produits">Gestion des produits</a></li>

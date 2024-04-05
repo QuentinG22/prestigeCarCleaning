@@ -15,8 +15,6 @@ class DbConnect
     {
         // Vérifie si la connexion PDO a déjà été établie
         if (!isset(self::$pdo)) {
-            $dotenv = Dotenv::createImmutable(__DIR__ . '/../../');
-            $dotenv->load();
             try {
                 $dsn = 'mysql:host=' . $_ENV['DB_HOST'] . ';dbname=' . $_ENV['DB_NAME'];
                 $pdo = new PDO($dsn, $_ENV['DB_USER'], $_ENV['DB_PASSWORD']);

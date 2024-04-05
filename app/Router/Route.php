@@ -29,7 +29,7 @@ class Route
         $urlParts = explode('/', $url);
 
         // Vérifier le statut d'administration avant le switch
-        if (isset($_SESSION['userIsAdmin']) && $_SESSION['userIsAdmin'] === 1) {
+        if (isset($_SESSION['userIsAdmin']) && $_SESSION['userIsAdmin'] == 1) {
             switch ($urlParts[0]) {
                 case 'admin':
                     if (isset($urlParts[1])) {

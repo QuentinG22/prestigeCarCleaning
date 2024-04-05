@@ -9,7 +9,7 @@ class Users extends Sql
 {
     public function __construct()
     {
-        $this->table = 'users';
+        $this->table = 'USERS';
     }
 
     public function login($email, $password)
@@ -40,13 +40,7 @@ class Users extends Sql
                 'isAdmin' => $isAdmin,
             ];
 
-            $result = $this->add($model);
-
-            if ($result === false) {
-                throw new Exception("Échec lors de l'ajout du compte utilisateur.");
-            } else {
-                return true;
-            }
+            return $this->add($model);
         } catch (Exception $e) {
             // Enregistrement dans le fichier de journal
             $logMessage = "Date : " . date('d-m-Y H:i:s') . " - Erreur : " . $e->getMessage() . "\n";

@@ -39,14 +39,14 @@ class Contact
             $contact = new Contacts();
 
             // Appeler la méthode pour enregistrer l'utilisateur
-            $isContact = $contact->addContact($name, $firstname, $email, $object, $text, $date, $userId);
+            $result = $contact->addContact($name, $firstname, $email, $object, $text, $date, $userId);
 
-            if ($isContact === true) {
-                $success = 'Votre demande de contact a bien été envoyée.';
-                $error = '';
-            } else {
+            if ($result === false) {
                 $error = 'La demande de contact a échoué.';
                 $success = '';
+            } else {
+                $success = 'Votre demande de contact a bien été envoyée.';
+                $error = '';
             }
 
             // Passer les messages d'erreur et de succès à la vue en utilisant la méthode statique de ViewManager

@@ -27,7 +27,7 @@
             <article class="links">
                 <h3>Liens utiles</h3>
                 <ul>
-                    <?php if (isset($_SESSION['userIsAdmin']) && $_SESSION['userIsAdmin'] === 1) : ?>
+                    <?php if (isset($_SESSION['userIsAdmin']) && $_SESSION['userIsAdmin'] == 1) : ?>
                         <li><a href="admin">Espace admin</a></li>
                     <?php endif; ?>
                     <li><a href="mentions-légales">Mentions légales</a></li>

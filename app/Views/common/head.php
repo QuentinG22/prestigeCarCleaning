@@ -2,7 +2,20 @@
 <html lang="fr">
 
 <head>
-    <base href="http://localhost/prestigeCarCleaning/">
+    <?php
+    $baseUrl = "";
+    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+        $baseUrl = "https://";
+    } else {
+        $baseUrl = "http://";
+    }
+    // Ajouter le nom d'hôte (domaine) à l'URL
+    $baseUrl .= $_SERVER['HTTP_HOST'];
+    // Ajouter le chemin relatif de l'URL
+    $baseUrl .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
+    ?>
+
+    <base href="<?= $baseUrl ?>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="public/img/favicon.png" type="image/x-icon">

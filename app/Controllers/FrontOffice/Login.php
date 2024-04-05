@@ -32,24 +32,26 @@ class Login
                     $_SESSION['userEmail'] = $isLogged->email;
                     $_SESSION['userIsAdmin'] = $isLogged->isAdmin;
                     // Redirection en fonction du statut d'administrateur
-                    if ($_SESSION['userIsAdmin'] === 1) {
+                    if ($_SESSION['userIsAdmin'] == 1) {
                         // Redirection vers la page d'administration
-                        header("Location: /prestigeCarCleaning/admin");
+                        $title = "Administration - Prestige Car Cleaning";
+                        ViewManager::render('backOffice/home', ['title' => $title]);
                         exit();
                     } else {
                         // Redirection vers la page d'accueil si l'utilisateur n'est pas administrateur
-                        header("Location: /prestigeCarCleaning/");
-                        exit();
+                        $title = "Accueil - Prestige Car Cleaning";
+                        ViewManager::render('frontOffice/home', ['title' => $title]);
                     }
                 } else {
-                    $error = $isLogged; // Stocke le message d'erreur
+                    $title = "Connectez-vous - Prestige Car Cleaning";
+                    $error = $isLogged;
+                    ViewManager::render('frontOffice/login', ['title' => $title, 'error' => $error]);
                 }
             } else {
+                $title = "Connectez-vous - Prestige Car Cleaning";
                 $error = "Tous les champs n'ont pas été saisis !";
+                ViewManager::render('frontOffice/login', ['title' => $title, 'error' => $error]);
             }
         }
-        // Si la méthode de requête n'est pas POST ou si le formulaire de connexion n'a pas été soumis, afficher simplement la page de connexion
-        $title = "Connectez-vous - Prestige Car Cleaning";
-        ViewManager::render('frontOffice/login', ['title' => $title, 'error' => $error]);
     }
 }

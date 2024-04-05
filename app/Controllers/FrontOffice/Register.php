@@ -27,16 +27,18 @@ class Register
             $user = new Users();
 
             // Appeler la méthode pour enregistrer l'utilisateur
-            $isRegister = $user->addUser($name, $firstname, $email, $phone, $password, 0);
+            $result = $user->addUser($name, $firstname, $email, $phone, $password, 0);
 
-            if ($isRegister !== true) {
+            if ($result === false) {
                 // Si une erreur s'est produite lors de l'enregistrement, afficher le message d'erreur
-                $title = "Connectez-vous - Prestige Car Cleaning";
-                ViewManager::render('frontOffice/register', ['title' => $title, 'error' => $isRegister]);
+                $title = "Inscrivez-vous - Prestige Car Cleaning";
+                $error = "L'inscription à échoué.";
+                ViewManager::render('frontOffice/register', ['title' => $title, 'error' => $error]);
             } else {
                 // Rediriger vers la page de connexion si l'enregistrement est réussi
-                header("Location: /prestigeCarCleaning/connexion");
-                exit();
+                $title = "Inscrivez-vous - Prestige Car Cleaning";
+                $success = "Inscription réussi, connectez-vous.";
+                ViewManager::render('frontOffice/login', ['title' => $title, 'success' => $success]);
             }
         }
     }
