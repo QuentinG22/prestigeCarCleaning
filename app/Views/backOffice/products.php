@@ -40,10 +40,8 @@ require "app/Views/common/header.php";
                 </div>
             </form>
         </article>
-
         <script>
-            var productsAll = <?= json_encode($productsAll); ?>;
-            console.log(productsAll); // Vérifier que les données sont correctement récupérées
+            let productsAll = <?= json_encode($productsAll); ?>;
 
             document.getElementById('product').addEventListener('change', function() {
                 console.log(this.value); // Vérifier la valeur sélectionnée
@@ -61,8 +59,6 @@ require "app/Views/common/header.php";
                 }
             });
         </script>
-
-        </article>
     </section>
 </main>
 <?php

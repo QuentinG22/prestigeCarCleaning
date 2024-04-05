@@ -13,12 +13,27 @@ class Contacts extends Sql
 
     public function getContactById($id)
     {
-        return $this->getById('idContact', $id);
+        $contact = $this->getById('idContact', $id);
+
+        // Vérifier si le contact a été trouvé
+        if ($contact) {
+            // Formater la date au format français
+            $contact->_date = date('d/m/Y', strtotime($contact->_date));
+        }
+    
+        return $contact;
     }
 
     public function getContactAll()
     {
-        return $this->getAll();
+        $contacts = $this->getAll();
+
+        foreach ($contacts as $contact) {
+            // Formater la date au format français
+            $contact->_date = date('d/m/Y', strtotime($contact->_date));
+        }
+    
+        return $contacts;
     }
 
     public function addContact($name, $firstname,  $email, $object, $text, $userId)

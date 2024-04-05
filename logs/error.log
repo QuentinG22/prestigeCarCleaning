@@ -1,9 +1,0 @@
-
-Date : 2024-04-05 15:49:17 - Erreur PDO : SQLSTATE[HY000] [1045] Access denied for user 'gretaxao_guilleminqu'@'localhost' (using password: YES)
-Date : 2024-04-05 15:50:35 - Erreur PDO : SQLSTATE[HY000] [1045] Access denied for user 'gretaxao_guilleminqu'@'localhost' (using password: YES)
-Date : 2024-04-05 15:54:17 - Erreur PDO : SQLSTATE[HY000] [1045] Access denied for user 'gretaxao_guilleminqu'@'localhost' (using password: YES)
-Date : 2024-04-05 15:55:33 - Erreur PDO : SQLSTATE[HY000] [1045] Access denied for user 'gretaxao_guilleminqu'@'localhost' (using password: YES)
-Date : 05-04-2024 15:57:20 - Erreur : Unable to read any of the environment file(s) at [C:\Users\kercode23\Documents\contenuWeb\prestigeCarCleaning\app\Models\.env].
-Date : 05-04-2024 15:58:09 - Erreur : Unable to read any of the environment file(s) at [C:\Users\kercode23\Documents\contenuWeb\prestigeCarCleaning\app\Models\.env].
-Date : 2024-04-05 16:04:39 - Erreur PDO : SQLSTATE[HY000] [1045] Access denied for user 'gretaxao_guilleminqu'@'localhost' (using password: YES)
-Date : 2024-04-05 16:07:39 - Erreur PDO : SQLSTATE[HY000] [1045] Access denied for user 'gretaxao_guilleminqu'@'localhost' (using password: YES)

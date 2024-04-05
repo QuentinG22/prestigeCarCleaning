@@ -34,13 +34,11 @@ class Login
                     // Redirection en fonction du statut d'administrateur
                     if ($_SESSION['userIsAdmin'] == 1) {
                         // Redirection vers la page d'administration
-                        $title = "Administration - Prestige Car Cleaning";
-                        ViewManager::render('backOffice/home', ['title' => $title]);
+                        header("Location: admin");
                         exit();
                     } else {
                         // Redirection vers la page d'accueil si l'utilisateur n'est pas administrateur
-                        $title = "Accueil - Prestige Car Cleaning";
-                        ViewManager::render('frontOffice/home', ['title' => $title]);
+                        header("Location: accueil");
                     }
                 } else {
                     $title = "Connectez-vous - Prestige Car Cleaning";

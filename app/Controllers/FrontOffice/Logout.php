@@ -7,6 +7,6 @@ class Logout
     public function index()
     {
         session_destroy();
-        header("Location: /prestigeCarCleaning/");
+        header("Location: accueil");
     }
 }

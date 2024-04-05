@@ -104,14 +104,14 @@ class Route
                 //     $controller = new Services();
                 //     $controller->index();
                 //     break;
-            case 'nos-avis':
-                $controller = new Comment();
-                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['addComment'])){
-                    $controller->addComments();
-                } else {
-                    $controller->index();
-                }
-                break;
+            // case 'nos-avis':
+            //     $controller = new Comment();
+            //     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['addComment'])){
+            //         $controller->addComments();
+            //     } else {
+            //         $controller->index();
+            //     }
+            //     break;
             case 'contact':
                 $controller = new Contact();
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
