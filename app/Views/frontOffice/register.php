@@ -42,7 +42,7 @@ require "app/Views/common/header.php";
                 <p>
                     <input type="checkbox" id="rgpd">
                     * J'accepte les termes et conditions et la politique de confidentialité
-                    <a href="politique-de-confidentialite"><span>Lisez les termes et conditions d'utilisation</span></a>.
+                    <a href="politique-de-confidentialité"><span>Lisez les termes et conditions d'utilisation</span></a>.
                 </p>
                 <input type="submit" id="inputValid" name="register" value="Valider" disabled>
             </div>
