@@ -16,26 +16,33 @@ document.querySelector('#contact form').addEventListener('submit', function (eve
 
     // Validation des champs
     let errors = {};
+    let nameRegex = /^[a-zA-Z]+$/;
 
     if (name === '') {
         displayError('name', 'Veuillez renseigner votre nom.');
+        errors['name'] = true;
+    } else if (!nameRegex.test(name)) {
+        displayError('name', 'Le nom ne doit pas contenir de caractères spéciaux.');
         errors['name'] = true;
     }
 
     if (firstname === '') {
         displayError('firstname', 'Veuillez renseigner votre prénom.');
         errors['firstname'] = true;
+    } else if (!nameRegex.test(firstname)) {
+        displayError('firstname', 'Le prénom ne doit pas contenir de caractères spéciaux.');
+        errors['firstname'] = true;
     }
 
     if (!validateEmail(email)) {
         displayError('email', 'Veuillez saisir une adresse email valide.');
         errors['email'] = true;
-    }
+    } 
 
     if (object === '') {
         displayError('object', 'Veuillez renseigner l\'objet de votre message.');
         errors['object'] = true;
-    }
+    } 
 
     if (message === '') {
         displayError('text', 'Veuillez saisir votre message.');
