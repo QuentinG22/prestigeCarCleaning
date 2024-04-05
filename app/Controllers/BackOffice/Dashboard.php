@@ -34,7 +34,7 @@ class Dashboard
     {
         $error = '';
         $sucess = '';
-        $contactModel = new Contacts('', '', '', '', '', '');
+        $contactModel = new Contacts();
         $this->contactAll = $contactModel->getAll();
     }
 
@@ -42,7 +42,7 @@ class Dashboard
     {
         $error = '';
         $success = '';
-        $contactModel = new Contacts('', '', '', '', '', '');
+        $contactModel = new Contacts();
         return $contactModel->deleteContact($id);
     }
 }

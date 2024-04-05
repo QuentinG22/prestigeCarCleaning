@@ -94,7 +94,7 @@ input[type="submit"]:hover {
 .container {
     padding: 15px;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 .alert {
@@ -645,6 +645,51 @@ footer {
 
 @media screen and (min-width:768px) {
     .dashboard {
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+// ======== Page gestion des produits ========
+
+.managerForm {
+    display: grid;
+    gap: 20px;
+    >article{
+        @include box();
+        >h2{
+            text-align: center;
+            margin-bottom: 10px;;
+        }
+    }
+}
+
+#addproduct{
+    input[type='submit']{
+        width: 50%;
+    }
+}
+
+#selectProduct{
+    >form{
+        >select {
+            @include box();
+            width: 100%;
+            background-color: $colorBody;
+            color: $colorText;
+            margin-bottom: 5px;
+        }
+        >div{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+    .managerForm {
+        align-items: center;
         grid-template-columns: 1fr 1fr;
     }
 }

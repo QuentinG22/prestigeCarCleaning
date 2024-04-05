@@ -3,7 +3,7 @@
 namespace PrestigeCarCleaning\Controllers\FrontOffice;
 
 use PrestigeCarCleaning\Models\Users;
-use PrestigeCarCleaning\Views\ViewManager;
+use PrestigeCarCleaning\Controllers\ViewManager;
 
 class Register
 {

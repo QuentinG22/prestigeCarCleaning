@@ -79,7 +79,7 @@ input[type=submit]:hover {
 .container {
   padding: 15px;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1400px;
 }
 
 .alert {
@@ -596,6 +596,48 @@ footer > figure a {
 
 @media screen and (min-width: 768px) {
   .dashboard {
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.managerForm {
+  display: grid;
+  gap: 20px;
+}
+.managerForm > article {
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.managerForm > article > h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#addproduct input[type=submit] {
+  width: 50%;
+}
+
+#selectProduct > form > select {
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: rgb(1, 17, 24);
+  color: rgb(255, 255, 255);
+  margin-bottom: 5px;
+}
+#selectProduct > form > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .managerForm {
+    align-items: center;
     grid-template-columns: 1fr 1fr;
   }
 }/*# sourceMappingURL=style.css.map */

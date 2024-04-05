@@ -1,6 +1,6 @@
 <?php
 
-namespace PrestigeCarCleaning\Views;
+namespace PrestigeCarCleaning\Controllers;
 
 class ViewManager
 {

@@ -4,6 +4,8 @@ namespace PrestigeCarCleaning\Router;
 
 use PrestigeCarCleaning\Controllers\BackOffice\Admin;
 use PrestigeCarCleaning\Controllers\BackOffice\Dashboard;
+use PrestigeCarCleaning\Controllers\BackOffice\Service;
+use PrestigeCarCleaning\Controllers\BackOffice\Product;
 
 use PrestigeCarCleaning\Controllers\FrontOffice\Home;
 use PrestigeCarCleaning\Controllers\FrontOffice\Comments;
@@ -44,21 +46,31 @@ class Route
                                 $controller->getContactsAll();
                                 $controller->index();
                             }
-                        }
-                        if ($urlParts[1] === 'gestion-des-prestations') {
+                        } else if ($urlParts[1] === 'gestion-des-prestations') {
                             $controller = new Service();
-                            if (isset($urlParts[2]) && strpos($urlParts[2], "prestation-") === 0) {
-                                // Extraire l'ID de la demande de contact de l'URL
-                                $id = substr($urlParts[2], strlen("prestation-"));
-                                if (isset($urlParts[3]) && $urlParts[3] === 'update') {
-                                    $controller->updateService($id);
-                                } else if (isset($urlParts[3]) && $urlParts[3] === 'delete') {
-                                    $controller->deleteService($id);
-                                } else {
-                                    $controller->getService($id);
-                                }
+                            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['addService'])) {
+                                $controller->addService();
+                            } else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['updateService'])) {
+                                $controller->updateService();
+                            } else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteService'])) {
+                                $controller->deleteService();
                             } else {
-                                // $controller->getServicesAll();
+                                $controller->index();
+                            }
+                        } else if ($urlParts[1] === 'service') {
+                            $controller = new Service();
+                            if (is_numeric($urlParts[2])){
+                                $controller->fetchServiceDetails($urlParts[2]);
+                            }
+                        } else if ($urlParts[1] === 'gestion-des-produits') {
+                            $controller = new Product();
+                            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['addProduct'])) {
+                                $controller->addProduct();
+                            } else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['updateProduct'])) {
+                                $controller->updateProduct();
+                            } else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteProduct'])) {
+                                $controller->deleteProduct();
+                            } else {
                                 $controller->index();
                             }
                         }
@@ -82,53 +94,53 @@ class Route
                 //     $controller = new Services();
                 //     $controller->index();
                 //     break;
-                case 'nos-avis':
-                    $controller = new Comments();
+            case 'nos-avis':
+                $controller = new Comments();
+                $controller->index();
+                break;
+            case 'contact':
+                $controller = new Contact();
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $controller->send();
                     $controller->index();
-                    break;
-                case 'contact':
-                    $controller = new Contact();
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                        $controller->send();
-                        $controller->index();
-                    } else {
-                        $controller->index();
-                    }
-                    break;
-                case 'connexion':
-                    $controller = new Login();
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                        $controller->login();
-                    } else {
-                        $controller->index();
-                    }
-                    break;
-                case 'inscription':
-                    $controller = new Register();
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                        $controller->register();
-                    } else {
-                        $controller->index();
-                    }
-                    break;
-                case 'déconnexion':
-                    $controller = new Logout();
+                } else {
                     $controller->index();
-                    break;
-                case 'mentions-légales':
-                    $controller = new LegalNotice();
+                }
+                break;
+            case 'connexion':
+                $controller = new Login();
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $controller->login();
+                } else {
                     $controller->index();
-                    break;
-                case 'politique-de-confidentialité':
-                    $controller = new PrivacyPolicy();
+                }
+                break;
+            case 'inscription':
+                $controller = new Register();
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $controller->register();
+                } else {
                     $controller->index();
-                    break;
-                default:
-                    // Rediriger vers une page d'erreur 404
-                    http_response_code(404);
-                    $controller = new Error();
-                    $controller->index();
-                    break;
+                }
+                break;
+            case 'déconnexion':
+                $controller = new Logout();
+                $controller->index();
+                break;
+            case 'mentions-légales':
+                $controller = new LegalNotice();
+                $controller->index();
+                break;
+            case 'politique-de-confidentialité':
+                $controller = new PrivacyPolicy();
+                $controller->index();
+                break;
+            default:
+                // Rediriger vers une page d'erreur 404
+                http_response_code(404);
+                $controller = new Error();
+                $controller->index();
+                break;
         }
     }
 }

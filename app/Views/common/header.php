@@ -13,6 +13,7 @@
             <?php if (strpos($_SERVER['REQUEST_URI'], "/admin") !== false) : ?>
                     <li><a href="admin/tableau-de-bord">Tableau de bord</a></li>
                     <li><a href="admin/gestion-des-prestations">Gestion des prestations</a></li>
+                    <li><a href="admin/gestion-des-produits">Gestion des produits</a></li>
                     <li><a href="">Modération avis</a></li>
                 <?php else : ?>
                     <li><a href="accueil">Accueil</a></li>

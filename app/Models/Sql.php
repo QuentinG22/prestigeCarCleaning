@@ -12,19 +12,25 @@ class Sql extends DbConnect
     protected $table;
 
     // Instance de connexion a la base de données.
-    private $dbConnection;
+    protected $dbConnection;
 
     public function requete($sql, $attributs = [])
     {
-        $this->dbConnection = parent::connection();
+        // Vérifie si la connexion PDO est déjà initialisée
+        if ($this->dbConnection === null) {
+            // Si ce n'est pas le cas, initialise la connexion PDO
+            $this->dbConnection = $this->connection();
+        }
         try {
             $result = $this->dbConnection->prepare($sql);
             $result->execute($attributs);
             return $result;
         } catch (PDOException $e) {
             // Enregistrement dans le fichier de journal
-            $logMessage = "Date : " . date('d-m-Y H:i:s') . " - Erreur PDO : " . $e->getMessage() . "\n";
+            $logMessage = "Date : " . date('d-m-Y H:i:s') . " - Erreur requete : " . $e->getMessage() . "\n";
             error_log($logMessage, 3, "logs/error.log");
+            // Vous pouvez relancer l'exception ici si nécessaire
+            throw $e;
             return false;
         }
     }
@@ -63,7 +69,7 @@ class Sql extends DbConnect
         return $this->requete("INSERT INTO $this->table ($keyList) VALUES ($interList)", $value);
     }
 
-    public function update($id, $model)
+    public function update($nameId, $id, $model)
     {
         $key = [];
         $value = [];
@@ -81,7 +87,7 @@ class Sql extends DbConnect
         // Transforme le tableau "key et inter" en chaine de caractères
         $keyList = implode(', ', $key);
 
-        return $this->requete("UPDATE $this->table SET $keyList WHERE id = ?", $value);
+        return $this->requete("UPDATE $this->table SET $keyList WHERE $nameId = ?", $value);
     }
 
     public  function delete($nameId, $id)

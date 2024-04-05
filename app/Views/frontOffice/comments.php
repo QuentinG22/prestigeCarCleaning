@@ -57,6 +57,11 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
             <form action="" method="post">
                 <input type="text" id="name" name="name" value="<?= $_SESSION['userName'] ?>">
                 <input type="text" id="firstname" name="name" value="<?= $_SESSION['userFirstname'] ?>">
+                <select name="service">
+                    <?php foreach ($servicesAll as $service) : ?>
+                        <option value="<?= $service->idService; ?>"><?= $service->nameService; ?></option>
+                    <?php endforeach; ?>
+                </select>
                 <div class="rating" id="rating2">
                     <span class="star" data-value="1">&#9733;</span>
                     <span class="star" data-value="2">&#9733;</span>
@@ -71,44 +76,44 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
     <?php endif; ?>
 
     <script>
-    const stars1 = document.querySelectorAll('#rating1 .star');
-    const stars2 = document.querySelectorAll('#rating2 .star');
+        const stars1 = document.querySelectorAll('#rating1 .star');
+        const stars2 = document.querySelectorAll('#rating2 .star');
 
-    stars2.forEach(star => {
-        star.addEventListener('click', function() {
-            const value = parseInt(this.getAttribute('data-value'));
-            colorStars(stars2, value);
-            // Envoyer la valeur à votre script PHP pour traitement
+        stars2.forEach(star => {
+            star.addEventListener('click', function() {
+                const value = parseInt(this.getAttribute('data-value'));
+                colorStars(stars2, value);
+                // Envoyer la valeur à votre script PHP pour traitement
+            });
         });
-    });
 
-    function colorStars(stars, value) {
-        stars.forEach((star, index) => {
-            if (index < value) {
-                star.style.color = 'gold';
-            } else {
-                star.style.color = '#ccc';
-            }
-        });
-    }
+        function colorStars(stars, value) {
+            stars.forEach((star, index) => {
+                if (index < value) {
+                    star.style.color = 'gold';
+                } else {
+                    star.style.color = '#ccc';
+                }
+            });
+        }
 
-    // Exemple : Vous pouvez appeler cette fonction avec la valeur reçue de votre base de données
-    const ratingValue = 3; // Exemple de valeur reçue de la base de données
-    colorStars(stars1, ratingValue);
+        // Exemple : Vous pouvez appeler cette fonction avec la valeur reçue de votre base de données
+        const ratingValue = 3; // Exemple de valeur reçue de la base de données
+        colorStars(stars1, ratingValue);
 
-    // Sélectionner l'élément avec la classe "center"
-    const centerElement = document.querySelector('.center');
+        // Sélectionner l'élément avec la classe "center"
+        const centerElement = document.querySelector('.center');
 
-    // Fonction pour déplacer les éléments du carrousel
-    function moveCarousel() {
-        const firstItem = centerElement.querySelector('.item');
-        // Déplacer le premier élément à la fin
-        centerElement.appendChild(firstItem);
-    }
+        // Fonction pour déplacer les éléments du carrousel
+        function moveCarousel() {
+            const firstItem = centerElement.querySelector('.item');
+            // Déplacer le premier élément à la fin
+            centerElement.appendChild(firstItem);
+        }
 
-    // Déplacer le carrousel toutes les 3 secondes
-    setInterval(moveCarousel, 3000);
-</script>
+        // Déplacer le carrousel toutes les 3 secondes
+        setInterval(moveCarousel, 3000);
+    </script>
 </main>
 <?php
 require "app/Views/common/footer.php";
