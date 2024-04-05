@@ -13,22 +13,15 @@ class Contact
         ViewManager::render('frontOffice/contact', ['title' => $title]);
     }
 
-    public function view($data = [])
-    {
-        extract($data);
-        require "app/Views/frontOffice/contact.php";
-    }
-
     public function send()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["contact"])) {
 
-            $name = htmlspecialchars($_POST["name"]);
-            $firstname = htmlspecialchars($_POST["firstname"]);
-            $email = htmlspecialchars($_POST["email"]);
-            $object = htmlspecialchars($_POST["object"]);
-            $text = htmlspecialchars($_POST["text"]);
-            $date = htmlspecialchars($_POST["date"]);
+            $name = $_POST["name"];
+            $firstname = $_POST["firstname"];
+            $email = $_POST["email"];
+            $object = $_POST["object"];
+            $text = $_POST["text"];
             if (isset($_SESSION['actif']) && isset($_SESSION['userId'])) {
                 $userId = $_SESSION['userId'];
             } else {
@@ -37,9 +30,7 @@ class Contact
 
             // Créer une instance utilisateur avec les données
             $contact = new Contacts();
-
-            // Appeler la méthode pour enregistrer l'utilisateur
-            $result = $contact->addContact($name, $firstname, $email, $object, $text, $date, $userId);
+            $result = $contact->addContact($name, $firstname, $email, $object, $text, $userId);
 
             if ($result === false) {
                 $error = 'La demande de contact a échoué.';

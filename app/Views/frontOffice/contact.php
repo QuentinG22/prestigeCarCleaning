@@ -41,9 +41,6 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
             <p>* Champs obligatoire</p>
             <div class="formContact">
                 <div>
-                    <input type="text" id="date" name="date" value="<?= date('Y-m-d'); ?>" readonly>
-                </div>
-                <div>
                     <input type="text" id="name" name="name" placeholder="Nom *" value="<?= isset($userName) ? $userName : ''; ?>">
                     <p class="errorForm" data-error-for="name"></p>
                 </div>
