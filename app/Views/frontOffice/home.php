@@ -25,7 +25,7 @@ require "app/Views/common/header.php";
                 l'attention au détail et le respect de chaque véhicule que nous traitons.
             </p><br>
             <p>
-                L'idée de créer une entreprise de lavage automobile exclusivement manuel est née de notre
+                L'idée de créer une entreprise de lavage automobile exclusivement manuelle est née de notre
                 désir de proposer un service haut de gamme, respectueux de la carrosserie
                 et offrant des résultats impeccables. Nous croyons fermement que chaque voiture mérite
                 un traitement personnalisé, adapté à ses besoins spécifiques, et c'est pourquoi nous mettons

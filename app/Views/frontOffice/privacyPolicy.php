@@ -9,11 +9,11 @@ require "app/Views/common/header.php";
             <p>
                 La confidentialité de nos visiteurs est extrêmement importante pour nous.
                 Cette politique de confidentialité décrit les types d'informations personnelles collectées et
-                enregistrées par Prestige Car Cleaning et comment nous les utilisons.
+                enregistrées par Prestige Car Cleaning ainsi que leur utilisation.
             </p>
             <p>
                 Si vous avez des questions supplémentaires ou des demandes de renseignements concernant notre politique de confidentialité,
-                n'hésitez pas à nous contacter à l'adresse contact@prestigecarcleaning.fr.
+                n'hésitez pas à nous contacter à l'adresse: contact@prestigecarcleaning.fr
             </p>
             <h3>Collecte et Utilisation des Informations</h3>
             <p>
@@ -42,7 +42,7 @@ require "app/Views/common/header.php";
             <p>
                 Prestige Car Cleaning utilise des cookies et d'autres technologies similaires pour collecter des
                 informations et améliorer votre expérience utilisateur sur notre site web.
-                Les cookies sont de petits fichiers texte stockés sur votre appareil lorsque vous visitez notre
+                Les cookies sont de petits fichiers textes stockés sur votre appareil lorsque vous visitez notre
                 site web. Vous pouvez configurer votre navigateur pour refuser tous les cookies ou
                 pour vous alerter lorsque des cookies sont envoyés. Veuillez noter que certaines parties de
                 notre site web peuvent ne pas fonctionner correctement si les cookies sont désactivés.

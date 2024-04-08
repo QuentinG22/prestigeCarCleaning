@@ -82,12 +82,13 @@ function toggleServiceDetails(event) {
                 }
             })
             .then(data => {
+                console.log(data);
 
                 let descriptionParagraph = document.createElement('p');
-                descriptionParagraph.innerHTML = '<span>Description: </span>' + data.description;
+                descriptionParagraph.innerHTML = data.description.replace(/\r\n/g, '<br>');
 
                 let productParagraph = document.createElement('p');
-                productParagraph.innerHTML = '<span>Les produits utilisés: </span>';
+                productParagraph.innerHTML = '<br><span>Les produits utilisés: </span>';
 
                 let productList = document.createElement('ul');
 
@@ -100,7 +101,7 @@ function toggleServiceDetails(event) {
                 });
 
                 let priceParagraph = document.createElement('p');
-                priceParagraph.innerHTML = '<span>Prix: </span>' + data.price;
+                priceParagraph.innerHTML = '<br><span>Prix: </span>' + data.price;
 
                 detailService.appendChild(descriptionParagraph);
                 detailService.appendChild(productParagraph);

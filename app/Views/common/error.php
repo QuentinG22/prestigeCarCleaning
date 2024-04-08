@@ -17,7 +17,7 @@ require "app/Views/common/header.php";
                     Retournez à notre <a href="accueil">page d'accueil</a>.
                 </li>
                 <li>
-                    Explorez nos <a href="nos-prestations">prestations de lavage</a> pour trouver celui qui convient le mieux à votre véhicule.
+                    Explorez nos <a href="nos-prestations">prestations de lavage</a> pour trouver celle qui convient le mieux à votre véhicule.
                 </li>
                 <li>
                     Si vous avez des questions ou besoin d'assistance, notre équipe est là pour vous aider. <a href="contact">Contactez-nous</a> dès maintenant.

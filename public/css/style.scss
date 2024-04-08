@@ -78,7 +78,9 @@ h1 {
 
     &:not(.exclude) {
         @include box();
-        width: 50%;
+        @media screen and (min-width:768px) {
+            width: 50%;
+        }
     }
 }
 
@@ -416,7 +418,12 @@ footer {
     overflow: hidden;
     >article{
         @include box();
-        text-align: center;
+        &:hover{
+            background-color: $colorfooter;
+        }
+        >h2{
+            text-align: center;
+        }
         :hover{
             cursor: pointer;
         }

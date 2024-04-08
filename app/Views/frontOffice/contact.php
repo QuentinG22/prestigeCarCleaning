@@ -21,10 +21,10 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
     <?php endif; ?>
     <div class="contactInfo">
         <p>
-            Pour toute question ou demande d'information supplémentaire,
+            Pour toute question ou demande d'informations supplémentaires,
             notre équipe reste à votre disposition.
             Vous pouvez nous joindre facilement par téléphone au xx xx xx xx xx pour discuter
-            directement avec une personne qualifiés.
+            directement avec une personne qualifiée.
         </p><br>
         <p>
             Si vous préférez,
@@ -64,7 +64,7 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
             <div>
                 <p>
                     <input type="checkbox" id="rgpd">
-                    * J'accepte les termes et conditions et la politique de confidentialité
+                    * J'accepte les termes et conditions ainsi que la politique de confidentialité
                     <a href="politique-de-confidentialité"><span>Lisez les termes et conditions d'utilisation</span></a>.
                 </p>
                 <input type="submit" id="inputValid" name="contact" value="Envoyer" disabled>
