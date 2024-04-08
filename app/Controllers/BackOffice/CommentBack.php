@@ -2,7 +2,6 @@
 
 namespace PrestigeCarCleaning\Controllers\BackOffice;
 
-use PrestigeCarCleaning\Controllers\FrontOffice\Comment;
 use PrestigeCarCleaning\Controllers\ViewManager;
 use PrestigeCarCleaning\Models\Comments;
 
@@ -52,7 +51,7 @@ class CommentBack
 
         $title = "Modération des avis - Prestige Car Cleaning";
         $model = new Comments;
-        $commentsNotActif = $model->getCommentsNotActif();
+        $commentsNotActif = $model->getCommentsAll();
         return ViewManager::render('backOffice/comment', ['title' => $title, 'commentsNotActif' => $commentsNotActif, 'error' => $error, 'success' => $success]);
     }
 }

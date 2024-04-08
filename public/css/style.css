@@ -134,6 +134,7 @@ input[type=submit]:hover {
 #burger i {
   font-size: 2rem;
   color: rgb(43, 205, 219);
+  overflow: hidden;
 }
 
 .mainMenu ul {
@@ -369,6 +370,44 @@ footer > figure a {
   .about {
     grid-template-columns: 1fr 1fr;
     align-items: center;
+  }
+}
+.sliderService {
+  position: relative;
+  overflow: hidden;
+}
+.sliderService > article {
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.sliderService > article :hover {
+  cursor: pointer;
+}
+.sliderService > button {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: rgb(255, 255, 255);
+  border: none;
+  font-size: 20px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .sliderService {
+    display: flex;
+    justify-content: space-around;
   }
 }
 /* Styles de base pour le carrousel */

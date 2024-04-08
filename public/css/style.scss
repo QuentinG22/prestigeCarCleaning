@@ -153,6 +153,7 @@ input[type="submit"]:hover {
 #burger i {
     font-size: 2rem;
     color: $colorfooter;
+    overflow: hidden;
 }
 
 .mainMenu ul {
@@ -408,6 +409,44 @@ footer {
     }
 }
 
+// ======== Page prestations ========
+
+.sliderService {
+    position: relative;
+    overflow: hidden;
+    >article{
+        @include box();
+        text-align: center;
+        :hover{
+            cursor: pointer;
+        }
+    }
+    >button{
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+        background: transparent;
+        color: $colorText;
+        border: none;
+        font-size: 20px;
+    }
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .sliderService{
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
 // ======== Page avis ========
 
 /* Styles de base pour le carrousel */
@@ -420,20 +459,21 @@ footer {
     flex: 0 0 auto;
     width: 100%;
     @include box();
-    >p{
+
+    >p {
         @include box();
         max-height: 360px;
     }
 }
 
-.serviceComments{
+.serviceComments {
     margin-top: 10px;
 }
 
 .star {
     font-size: 30px;
-    color: #ccc; 
-    cursor: pointer; 
+    color: #ccc;
+    cursor: pointer;
 }
 
 .rating {
@@ -445,12 +485,13 @@ footer {
 }
 
 .addComments {
-    h2{
+    h2 {
         @include box();
         text-align: center;
         width: 50%;
         margin: 15px auto;
-        >span{
+
+        >span {
             color: $colorfooter;
         }
     }
@@ -461,14 +502,14 @@ footer {
     .item {
         margin: 0 10px;
         /* Afficher jusqu'à 2 avis par ligne pour les écrans moyens */
-        width: calc(50% - 20px); 
+        width: calc(50% - 20px);
     }
 }
 
 @media screen and (min-width: 992px) {
     .item {
         /* Afficher jusqu'à 3 avis par ligne pour les écrans larges */
-        width: calc(33.33% - 20px); 
+        width: calc(33.33% - 20px);
     }
 }
 
@@ -656,23 +697,26 @@ footer {
 .managerForm {
     display: grid;
     gap: 20px;
-    >article{
+
+    >article {
         @include box();
-        >h2{
+
+        >h2 {
             text-align: center;
-            margin-bottom: 10px;;
+            margin-bottom: 10px;
+            ;
         }
     }
 }
 
-#addproduct{
-    input[type='submit']{
+#addproduct {
+    input[type='submit'] {
         width: 50%;
     }
 }
 
-#selectProduct{
-    >form{
+#selectProduct {
+    >form {
         >select {
             @include box();
             width: 100%;
@@ -680,7 +724,8 @@ footer {
             color: $colorText;
             margin-bottom: 5px;
         }
-        >div{
+
+        >div {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10px;
@@ -697,6 +742,6 @@ footer {
 
 // ======== Page modération des avis ========
 
-.filled{
+.filled {
     color: gold;
 }

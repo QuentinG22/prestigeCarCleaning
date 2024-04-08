@@ -4,11 +4,12 @@ namespace PrestigeCarCleaning\Router;
 
 use PrestigeCarCleaning\Controllers\BackOffice\Admin;
 use PrestigeCarCleaning\Controllers\BackOffice\Dashboard;
-use PrestigeCarCleaning\Controllers\BackOffice\Service;
+use PrestigeCarCleaning\Controllers\BackOffice\ServiceBack;
 use PrestigeCarCleaning\Controllers\BackOffice\Product;
 use PrestigeCarCleaning\Controllers\BackOffice\CommentBack;
 
 use PrestigeCarCleaning\Controllers\FrontOffice\Home;
+use PrestigeCarCleaning\Controllers\FrontOffice\Service;
 use PrestigeCarCleaning\Controllers\FrontOffice\Comment;
 use PrestigeCarCleaning\Controllers\FrontOffice\Contact;
 use PrestigeCarCleaning\Controllers\FrontOffice\Login;
@@ -48,7 +49,7 @@ class Route
                                 $controller->index();
                             }
                         } else if ($urlParts[1] === 'gestion-des-prestations') {
-                            $controller = new Service();
+                            $controller = new ServiceBack();
                             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['addService'])) {
                                 $controller->addService();
                             } else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['updateService'])) {
@@ -59,8 +60,8 @@ class Route
                                 $controller->index();
                             }
                         } else if ($urlParts[1] === 'service') {
-                            $controller = new Service();
-                            if (is_numeric($urlParts[2])){
+                            $controller = new ServiceBack();
+                            if (is_numeric($urlParts[2])) {
                                 $controller->fetchServiceDetails($urlParts[2]);
                             }
                         } else if ($urlParts[1] === 'gestion-des-produits') {
@@ -100,18 +101,25 @@ class Route
                 $controller = new Home();
                 $controller->index();
                 break;
-                // case 'prestations':
-                //     $controller = new Services();
-                //     $controller->index();
-                //     break;
-            // case 'nos-avis':
-            //     $controller = new Comment();
-            //     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['addComment'])){
-            //         $controller->addComments();
-            //     } else {
-            //         $controller->index();
-            //     }
-            //     break;
+            case 'nos-prestations':
+                if (isset($urlParts[1]) && $urlParts[1] === 'service') {
+                    $controller = new ServiceBack();
+                    if (is_numeric($urlParts[2])) {
+                        $controller->fetchServiceDetails($urlParts[2]);
+                    }
+                } else {
+                    $controller = new Service();
+                    $controller->index();
+                    break;
+                }
+            case 'nos-avis':
+                $controller = new Comment();
+                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['addComment'])) {
+                    $controller->addComments();
+                } else {
+                    $controller->index();
+                }
+                break;
             case 'contact':
                 $controller = new Contact();
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {

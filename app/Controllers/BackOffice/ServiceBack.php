@@ -6,7 +6,7 @@ use PrestigeCarCleaning\Controllers\ViewManager;
 use PrestigeCarCleaning\Models\Services;
 use PrestigeCarCleaning\Models\Products;
 
-class Service
+class ServiceBack
 {
     public function index()
     {
@@ -24,7 +24,7 @@ class Service
     public function getServicesAll()
     {
         $model = new Services();
-        return $result = $model->getAll();
+        return $model->getServiceAll();
     }
 
     public function addService()

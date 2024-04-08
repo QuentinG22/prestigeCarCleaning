@@ -35,6 +35,9 @@
     <?php if (!isset($_GET['url']) || $_GET['url'] == "accueil") : ?>
         <script src="public/js/slider.js" defer></script>
     <?php endif; ?>
+    <?php if (!isset($_GET['url']) || $_GET['url'] == "nos-prestations") : ?>
+        <script src="public/js/service.js" defer></script>
+    <?php endif; ?>
     <?php if (isset($_GET['url']) && $_GET['url'] == "contact") : ?>
         <script type="module" src="public/js/contact.js" defer></script>
     <?php endif; ?>
