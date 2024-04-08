@@ -32,12 +32,12 @@ class Users extends Sql
         try {
             // Création du modèle de données
             $model = [
-                'name' => $name,
-                'firstname' => $firstname,
-                'email' => $email,
+                'name' => htmlspecialchars($name),
+                'firstname' => htmlspecialchars($firstname),
+                'email' => htmlspecialchars($email),
                 'phone' => $phone,
-                'password' => $password,
-                'isAdmin' => $isAdmin,
+                'password' => password_hash($password, PASSWORD_DEFAULT),
+                'isAdmin' => $isAdmin
             ];
 
             return $this->add($model);

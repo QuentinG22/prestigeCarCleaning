@@ -17,11 +17,11 @@ class Register
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
             
-            $name = htmlspecialchars($_POST["name"]);
-            $firstname = htmlspecialchars($_POST["firstname"]);
-            $phone = htmlspecialchars($_POST["phone"]);
-            $email = htmlspecialchars($_POST["email"]);
-            $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+            $name = $_POST["name"];
+            $firstname = $_POST["firstname"];
+            $phone = $_POST["phone"];
+            $email = $_POST["email"];
+            $password = $_POST["password"];
 
             // Créer une instance utilisateur avec les données
             $user = new Users();
@@ -36,9 +36,7 @@ class Register
                 ViewManager::render('frontOffice/register', ['title' => $title, 'error' => $error]);
             } else {
                 // Rediriger vers la page de connexion si l'enregistrement est réussi
-                $title = "Inscrivez-vous - Prestige Car Cleaning";
-                $success = "Inscription réussi, connectez-vous.";
-                ViewManager::render('frontOffice/login', ['title' => $title, 'success' => $success]);
+                header('Location: connexion');
             }
         }
     }

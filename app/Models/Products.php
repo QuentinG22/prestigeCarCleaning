@@ -6,7 +6,7 @@ class Products extends Sql
 {
     public function __construct()
     {
-        $this->table = 'products';
+        $this->table = 'PRODUCTS';
     }
 
     public function getproductsAll()

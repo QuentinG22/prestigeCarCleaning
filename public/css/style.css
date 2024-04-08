@@ -58,6 +58,12 @@ h1:not(.exclude) {
   }
 }
 
+p {
+  overflow-y: auto; /* Permettre le défilement vertical */
+  scrollbar-width: none; /* Masquer la scrollbar native (Firefox) */
+  -ms-overflow-style: none; /* Masquer la scrollbar native (IE/Edge) */
+}
+
 input,
 textarea {
   border: 2px solid rgb(43, 205, 219);

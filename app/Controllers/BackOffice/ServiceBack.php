@@ -11,7 +11,7 @@ class ServiceBack
     public function index()
     {
         $title = "Gestion des prestations - Prestige Car Cleaning";
-        $model = new Products(); 
+        $model = new Products();
         $productsAll = $model->getProductsAll();
 
         $servicesAll = $this->getServicesAll();
@@ -57,7 +57,7 @@ class ServiceBack
 
     public function updateService()
     {
-        $id =$_POST['selectedServiceId'];
+        $id = $_POST['selectedServiceId'];
         $name = $_POST["name"];
         $text = $_POST["description"];
         $price = $_POST["price"];
@@ -123,7 +123,7 @@ class ServiceBack
             "price" => $service->price,
             "products" => $products
         );
-    
+
         $json = json_encode($data);
         // Envoyer la réponse JSON
         header('Content-Type: application/json');

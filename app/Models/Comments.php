@@ -8,16 +8,16 @@ class Comments extends Sql
 {
     public function __construct()
     {
-        $this->table = 'comments';
+        $this->table = 'COMMENTS';
     }
 
     public function getCommentsAll()
     {
-        $sql = "SELECT comments.idComment, comments.text, comments.note, comments._date, 
-        comments.active, services.nameService, users.name, users.firstname
-        FROM comments
-        JOIN services ON comments.idService = services.idService
-        JOIN users ON comments.idUser = users.idUser";
+        $sql = "SELECT COMMENTS.idComment, COMMENTS.text, COMMENTS.note, COMMENTS._date, 
+        COMMENTS.active, SERVICES.nameService, USERS.name, USERS.firstname
+        FROM COMMENTS
+        JOIN SERVICES ON COMMENTS.idService = COMMENTS.idService
+        JOIN USERS ON COMMENTS.idUser = USERS.idUser";
 
         return $this->requete($sql)->fetchAll(PDO::FETCH_OBJ);
     }

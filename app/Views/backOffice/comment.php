@@ -55,6 +55,8 @@ require "app/Views/common/header.php";
                 <?php if ($countNotActif == 0) : ?>
                     <p>Aucun commentaire en attente de validation !</p>
                 <?php endif ?>
+            <?php else : ?>
+            <p>Aucun commentaire en attente de validation !</p>
             <?php endif ?>
     </article>
     <script>

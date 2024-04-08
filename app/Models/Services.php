@@ -8,7 +8,7 @@ class Services extends Sql
 {
     public function __construct()
     {
-        $this->table = 'services';
+        $this->table = 'SERVICES';
     }
 
     public function getServiceById($id)
@@ -18,9 +18,9 @@ class Services extends Sql
 
     public function getProductComposant($id)
     {
-        $sql = "SELECT p.idProduct, p.nameProduct FROM products p
-        INNER JOIN toUse tu ON p.idProduct = tu.idProduct
-        WHERE tu.idService = ?";
+        $sql = "SELECT PRODUCTS.idProduct, PRODUCTS.nameProduct FROM PRODUCTS
+        INNER JOIN toUse ON PRODUCTS.idProduct = toUse.idProduct
+        WHERE toUse.idService = ?";
         $params = [$id];
         
         return $this->requete($sql, $params)->fetchAll(\PDO::FETCH_OBJ);
@@ -72,7 +72,7 @@ class Services extends Sql
 
     public function deleteComment($serviceId)
     {
-        return $this->requete("DELETE FROM comments WHERE idService = ?", [$serviceId]);
+        return $this->requete("DELETE FROM COMMENTS WHERE idService = ?", [$serviceId]);
     }
 
     public function transactionService($id, $model, $product, $update = false, $delete = false)

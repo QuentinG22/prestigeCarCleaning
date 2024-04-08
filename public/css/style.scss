@@ -84,6 +84,12 @@ h1 {
     }
 }
 
+p {
+    overflow-y: auto; /* Permettre le défilement vertical */
+    scrollbar-width: none; /* Masquer la scrollbar native (Firefox) */
+    -ms-overflow-style: none; /* Masquer la scrollbar native (IE/Edge) */
+}
+
 input,
 textarea {
     @include input();
