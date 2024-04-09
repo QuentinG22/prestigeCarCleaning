@@ -21,27 +21,12 @@ body {
   color: rgb(255, 255, 255);
 }
 
-li {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-}
-a > span {
-  color: rgb(43, 205, 219);
-}
-a > span:hover {
-  opacity: 0.8;
-}
-
 h1 {
   text-transform: uppercase;
   text-align: center;
   font-size: 1.3rem;
   margin: 0 auto;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 h1 > span {
   color: rgb(43, 205, 219);
@@ -58,31 +43,40 @@ h1:not(.exclude) {
   }
 }
 
-p {
-  overflow-y: auto; /* Permettre le défilement vertical */
-  scrollbar-width: none; /* Masquer la scrollbar native (Firefox) */
-  -ms-overflow-style: none; /* Masquer la scrollbar native (IE/Edge) */
+li {
+  list-style-type: none;
 }
 
-input,
-textarea {
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+a > span {
+  color: rgb(43, 205, 219);
+}
+a > span:hover {
+  opacity: 0.8;
+}
+
+p {
+  overflow-y: auto;
+  /* Permettre le défilement vertical */
+  scrollbar-width: none;
+  /* Masquer la scrollbar native (Firefox) */
+  -ms-overflow-style: none;
+  /* Masquer la scrollbar native (IE/Edge) */
+}
+
+button {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
   box-sizing: border-box;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 5px 0;
+  margin-top: 10px;
   background-color: rgb(1, 17, 24);
   color: rgb(255, 255, 255);
-  font-family: "Mina";
 }
-input::placeholder,
-textarea::placeholder {
-  color: rgb(255, 255, 255);
-}
-
-input[type=submit]:hover {
+button:hover {
   background-color: rgb(43, 205, 219);
 }
 
@@ -115,12 +109,11 @@ input[type=submit]:hover {
   color: red;
 }
 
-.classForm input[type=checkbox] {
-  width: 2%;
-}
-
-.classForm input[type=submit] {
-  max-width: 100px;
+.intro {
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
 }
 
 .header {
@@ -279,59 +272,50 @@ footer > figure a {
     margin-left: 50px;
   }
 }
-#connection form {
+article.error404 {
+  display: grid;
+  gap: 15px;
+  margin-top: 15px;
+}
+article.error404 > div {
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+article.error404 > figure {
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  padding: 0;
+  overflow-y: hidden;
+  position: relative;
+}
+article.error404 > figure > img {
   width: 100%;
+  height: auto;
+  display: block;
 }
-
-#connection input[type=submit] {
-  max-width: 100px;
-  margin-right: 10px;
-}
-
-#connection input[type=button]:hover {
-  background-color: rgb(43, 205, 219);
-}
-
-#connection div {
-  display: flex;
-  justify-content: center;
-}
-
-#connection figure {
-  display: none;
-}
-
 @media screen and (min-width: 768px) {
-  #connection {
-    display: flex;
-    justify-content: space-between;
+  article.error404 {
+    grid-template-columns: auto auto;
     align-items: center;
-    margin-top: 15px;
-  }
-  #connection input[type=email],
-  #connection input[type=password] {
-    border-right: none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  #connection figure {
-    display: block;
-    border: 2px solid rgb(43, 205, 219);
-    border-radius: 15px;
-    padding: 15px;
-    box-sizing: border-box;
-    padding: 0;
-    width: 50%;
-  }
-  #connection figure img {
-    width: 100%;
   }
 }
-@media screen and (min-width: 768px) {
-  #register form .formRegister {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+article.error404 > div > h3 {
+  margin: 10px 0;
+}
+article.error404 > div > ul li a {
+  color: rgb(43, 205, 219);
+}
+article.error404 > div > p:last-child {
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 1200px) {
+  article.error404 div {
+    width: 900px;
   }
 }
 #slider {
@@ -351,6 +335,7 @@ footer > figure a {
 }
 .slide > img {
   width: 100%;
+  height: 100%;
 }
 
 .about {
@@ -365,26 +350,30 @@ footer > figure a {
   box-sizing: border-box;
 }
 .about > figure {
-  max-width: 100%;
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
   box-sizing: border-box;
   padding: 0;
+  overflow-y: hidden;
+  position: relative;
 }
 .about > figure > img {
   width: 100%;
+  height: auto;
+  display: block;
 }
-
 @media screen and (min-width: 992px) {
   .about {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
     align-items: center;
   }
 }
+
 .sliderService {
   position: relative;
   overflow: hidden;
+  margin-top: 15px;
 }
 .sliderService > article {
   border: 2px solid rgb(43, 205, 219);
@@ -394,12 +383,10 @@ footer > figure a {
 }
 .sliderService > article:hover {
   background-color: rgb(43, 205, 219);
+  cursor: pointer;
 }
 .sliderService > article > h2 {
   text-align: center;
-}
-.sliderService > article :hover {
-  cursor: pointer;
 }
 .sliderService > button {
   position: absolute;
@@ -408,7 +395,7 @@ footer > figure a {
   background: transparent;
   color: rgb(255, 255, 255);
   border: none;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .prev {
@@ -423,12 +410,14 @@ footer > figure a {
   .sliderService {
     display: flex;
     justify-content: space-around;
+    margin-top: 20px;
   }
 }
 /* Styles de base pour le carrousel */
 .center {
   display: flex;
   overflow-x: hidden;
+  margin: 15px 0;
 }
 
 .item {
@@ -444,7 +433,9 @@ footer > figure a {
   border-radius: 15px;
   padding: 15px;
   box-sizing: border-box;
-  max-height: 360px;
+}
+.item > p.textComment {
+  height: 300px;
 }
 
 .serviceComments {
@@ -455,6 +446,10 @@ footer > figure a {
   font-size: 30px;
   color: #ccc;
   cursor: pointer;
+}
+
+.filled {
+  color: gold;
 }
 
 .rating {
@@ -468,7 +463,7 @@ footer > figure a {
   text-align: center;
 }
 
-.addComments h2 {
+.titleSendComment {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
@@ -477,8 +472,42 @@ footer > figure a {
   width: 50%;
   margin: 15px auto;
 }
-.addComments h2 > span {
+.titleSendComment > span {
   color: rgb(43, 205, 219);
+}
+
+.addComments form input,
+.addComments form textarea,
+.addComments form select {
+  font-family: "Mina";
+  background-color: rgb(1, 17, 24);
+  color: rgb(255, 255, 255);
+  width: 100%;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.addComments form input::placeholder,
+.addComments form textarea::placeholder,
+.addComments form select::placeholder {
+  color: rgb(255, 255, 255);
+  font-family: "Mina";
+}
+.addComments form input[type=submit]:hover {
+  background-color: rgb(43, 205, 219);
+}
+.addComments form input[type=checkbox] {
+  width: 2%;
+}
+.addComments form input[type=submit] {
+  max-width: 100px;
+}
+
+.sendComment figure {
+  display: none;
 }
 
 /* Media queries pour ajuster le nombre d'avis affichés en fonction de la largeur de l'écran */
@@ -488,6 +517,27 @@ footer > figure a {
     /* Afficher jusqu'à 2 avis par ligne pour les écrans moyens */
     width: calc(50% - 20px);
   }
+  .sendComment {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 15px;
+  }
+  .sendComment > figure {
+    display: block;
+    border: 2px solid rgb(43, 205, 219);
+    border-radius: 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    padding: 0;
+    overflow-y: hidden;
+    position: relative;
+  }
+  .sendComment > figure > img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 }
 @media screen and (min-width: 992px) {
   .item {
@@ -495,14 +545,66 @@ footer > figure a {
     width: calc(33.33% - 20px);
   }
 }
-.contactInfo {
+#contact {
+  display: grid;
+  gap: 15px;
+  margin-top: 15px;
+}
+#contact > div {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
   box-sizing: border-box;
-  margin-bottom: 15px;
 }
-
+#contact > figure {
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  padding: 0;
+  overflow-y: hidden;
+  position: relative;
+}
+#contact > figure > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  #contact {
+    grid-template-columns: auto auto;
+    align-items: center;
+  }
+}
+#contact > form input,
+#contact > form textarea,
+#contact > form select {
+  font-family: "Mina";
+  background-color: rgb(1, 17, 24);
+  color: rgb(255, 255, 255);
+  width: 100%;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+#contact > form input::placeholder,
+#contact > form textarea::placeholder,
+#contact > form select::placeholder {
+  color: rgb(255, 255, 255);
+  font-family: "Mina";
+}
+#contact > form input[type=submit]:hover {
+  background-color: rgb(43, 205, 219);
+}
+#contact > form input[type=checkbox] {
+  width: 2%;
+}
+#contact > form input[type=submit] {
+  max-width: 100px;
+}
 #contact > iframe {
   width: 100%;
   height: 300px;
@@ -514,55 +616,144 @@ footer > figure a {
 }
 
 @media screen and (min-width: 768px) {
-  #contact {
-    display: flex;
-    justify-content: space-between;
-  }
-  #contact > form,
   #contact > iframe {
-    width: 48%;
-    height: auto;
+    height: 100%;
+    width: 350px;
   }
 }
-.error404 > div {
+@media screen and (min-width: 992px) {
+  #contact > iframe {
+    width: 500px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #contact > iframe {
+    width: 600px;
+  }
+}
+#connection {
+  display: grid;
+  gap: 15px;
+  margin-top: 15px;
+}
+#connection > div {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
   box-sizing: border-box;
 }
-.error404 > div > h3 {
-  margin: 10px 0;
-}
-.error404 > div > ul li a {
-  color: rgb(43, 205, 219);
-}
-.error404 > div > p:last-child {
-  margin-top: 10px;
-}
-.error404 > figure {
+#connection > figure {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
   box-sizing: border-box;
   padding: 0;
-  margin-top: 10px;
+  overflow-y: hidden;
+  position: relative;
 }
-.error404 > figure > img {
+#connection > figure > img {
   width: 100%;
+  height: auto;
+  display: block;
 }
-
-@media screen and (min-width: 992px) {
-  .error404 {
-    display: flex;
-    justify-content: space-between;
+@media screen and (min-width: 768px) {
+  #connection {
+    grid-template-columns: auto auto;
     align-items: center;
   }
-  .error404 > div {
-    width: 60%;
+}
+#connection > form input,
+#connection > form textarea,
+#connection > form select {
+  font-family: "Mina";
+  background-color: rgb(1, 17, 24);
+  color: rgb(255, 255, 255);
+  width: 100%;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+#connection > form input::placeholder,
+#connection > form textarea::placeholder,
+#connection > form select::placeholder {
+  color: rgb(255, 255, 255);
+  font-family: "Mina";
+}
+#connection > form input[type=submit]:hover {
+  background-color: rgb(43, 205, 219);
+}
+#connection > form input[type=checkbox] {
+  width: 2%;
+}
+#connection > form input[type=submit] {
+  max-width: 100px;
+}
+#connection > form > div {
+  display: flex;
+}
+#connection > form > div > input[type=submit] {
+  margin-right: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  #connection > form {
+    width: 500px;
   }
-  .error404 > figure {
-    width: 34%;
-    margin-top: 0;
+}
+@media screen and (min-width: 992px) {
+  #connection > form {
+    width: 650px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #connection > form {
+    width: 800px;
+  }
+}
+#register form input,
+#register form textarea,
+#register form select {
+  font-family: "Mina";
+  background-color: rgb(1, 17, 24);
+  color: rgb(255, 255, 255);
+  width: 100%;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+#register form input::placeholder,
+#register form textarea::placeholder,
+#register form select::placeholder {
+  color: rgb(255, 255, 255);
+  font-family: "Mina";
+}
+#register form input[type=submit]:hover {
+  background-color: rgb(43, 205, 219);
+}
+#register form input[type=checkbox] {
+  width: 2%;
+}
+#register form input[type=submit] {
+  max-width: 100px;
+}
+
+@media screen and (min-width: 768px) {
+  #register form div.formRegister {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 15px;
+  }
+  #register form div.formRegister > div input {
+    margin: 0;
+  }
+  #register form div.formRegister > div p {
+    margin: 5px;
   }
 }
 .legalNotice > div,
@@ -583,8 +774,9 @@ footer > figure a {
 }
 
 .homeAdmin {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  gap: 15px;
+  margin-top: 15px;
 }
 .homeAdmin > div {
   border: 2px solid rgb(43, 205, 219);
@@ -592,52 +784,73 @@ footer > figure a {
   padding: 15px;
   box-sizing: border-box;
 }
-.homeAdmin > div > h2 {
-  font-size: 1.3rem;
-  margin-bottom: 5px;
-}
 .homeAdmin > figure {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
   box-sizing: border-box;
   padding: 0;
-  margin-top: 10px;
+  overflow-y: hidden;
+  position: relative;
 }
 .homeAdmin > figure > img {
   width: 100%;
+  height: auto;
+  display: block;
 }
-
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 798px) {
   .homeAdmin {
-    flex-direction: row;
-    justify-content: space-between;
+    grid-template-columns: auto auto;
     align-items: center;
   }
-  .homeAdmin > div,
-  .homeAdmin > figure {
-    width: 47%;
-    margin-top: 0;
+}
+
+@media screen and (min-width: 992px) {
+  .homeAdmin div {
+    width: 700px;
   }
 }
-@media screen and (min-width: 992px) {
-  .homeAdmin > div {
-    width: 60%;
-  }
-  .homeAdmin > figure {
-    width: 34%;
+@media screen and (min-width: 1200px) {
+  .homeAdmin div {
+    width: 900px;
   }
 }
 .dashboard {
   display: grid;
-  gap: 10px;
+  gap: 15px;
+  margin-top: 15px;
+}
+.dashboard > div {
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.dashboard > figure {
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  padding: 0;
+  overflow-y: hidden;
+  position: relative;
+}
+.dashboard > figure > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .dashboard {
+    grid-template-columns: auto auto;
+    align-items: center;
+  }
 }
 .dashboard > article {
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
   box-sizing: border-box;
-  height: auto;
 }
 .dashboard > article > #contactTable {
   text-align: center;
@@ -649,15 +862,36 @@ footer > figure a {
   color: rgb(43, 205, 219);
 }
 
-@media screen and (min-width: 768px) {
-  .dashboard {
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
-  }
-}
 .managerForm {
   display: grid;
-  gap: 20px;
+  gap: 15px;
+  margin-top: 15px;
+}
+.managerForm > div {
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.managerForm > figure {
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  padding: 0;
+  overflow-y: hidden;
+  position: relative;
+}
+.managerForm > figure > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .managerForm {
+    grid-template-columns: auto auto;
+    align-items: center;
+  }
 }
 .managerForm > article {
   border: 2px solid rgb(43, 205, 219);
@@ -669,33 +903,45 @@ footer > figure a {
   text-align: center;
   margin-bottom: 10px;
 }
-
-#addproduct input[type=submit] {
-  width: 50%;
-}
-
-#selectProduct > form > select {
+.managerForm > article > form input,
+.managerForm > article > form textarea,
+.managerForm > article > form select {
+  font-family: "Mina";
+  background-color: rgb(1, 17, 24);
+  color: rgb(255, 255, 255);
+  width: 100%;
+  margin: 5px 0;
+  box-sizing: border-box;
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
   box-sizing: border-box;
-  width: 100%;
-  background-color: rgb(1, 17, 24);
-  color: rgb(255, 255, 255);
-  margin-bottom: 5px;
 }
-#selectProduct > form > div {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+.managerForm > article > form input::placeholder,
+.managerForm > article > form textarea::placeholder,
+.managerForm > article > form select::placeholder {
+  color: rgb(255, 255, 255);
+  font-family: "Mina";
+}
+.managerForm > article > form input[type=submit]:hover {
+  background-color: rgb(43, 205, 219);
+}
+.managerForm > article > form input[type=checkbox] {
+  width: 2%;
+}
+.managerForm > article > form input[type=submit] {
+  max-width: 100px;
 }
 
-@media screen and (min-width: 768px) {
-  .managerForm {
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
-  }
+.adminComment > input {
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  background-color: rgb(1, 17, 24);
+  color: rgb(255, 255, 255);
 }
-.filled {
-  color: gold;
+.adminComment > input:hover {
+  background-color: rgb(43, 205, 219);
 }/*# sourceMappingURL=style.css.map */

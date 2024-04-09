@@ -9,7 +9,7 @@ require "app/Views/common/header.php";
             <?= $error ?>
         </div>
     <?php endif; ?>
-    <article id="register" class="classForm">
+    <article id="register">
         <p>* Champs obligatoire</p>
         <form action="inscription" method="post">
             <div class="formRegister">

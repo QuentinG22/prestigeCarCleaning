@@ -10,7 +10,7 @@ require "app/Views/common/header.php";
         </div>
     <?php endif; ?>
     <article id="connection">
-        <form action="" method="post">
+        <form action="connexion" method="post">
             <div>
                 <input type="email" name="email" placeholder="Email utilisateur">
             </div>

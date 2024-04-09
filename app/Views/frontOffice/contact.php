@@ -19,7 +19,7 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
             <?= $success ?>
         </div>
     <?php endif; ?>
-    <div class="contactInfo">
+    <div class="intro">
         <p>
             Pour toute question ou demande d'informations supplémentaires,
             notre équipe reste à votre disposition.

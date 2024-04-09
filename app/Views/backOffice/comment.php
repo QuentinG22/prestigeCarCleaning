@@ -41,10 +41,10 @@ require "app/Views/common/header.php";
                                 }
                                 ?>
                             </div>
-                            <p>
+                            <p class="textComment">
                                 <?= $key->text ?>
                             </p>
-                            <form action="admin/modération-avis" method="post">
+                            <form class="adminComment" action="admin/modération-avis" method="post">
                                 <input type="hidden" name="idComment" value="<?= $key->idComment ?>">
                                 <input type="submit" name="actifComment" value="Activer">
                                 <input type="submit" name="deleteComment" value="Supprimer">
@@ -59,20 +59,6 @@ require "app/Views/common/header.php";
             <p>Aucun commentaire en attente de validation !</p>
             <?php endif ?>
     </article>
-    <script>
-        // Sélectionner l'élément avec la classe "center"
-        const centerElement = document.querySelector('.center');
-
-        // Fonction pour déplacer les éléments du carrousel
-        function moveCarousel() {
-            const firstItem = centerElement.querySelector('.item');
-            // Déplacer le premier élément à la fin
-            centerElement.appendChild(firstItem);
-        }
-
-        // Déplacer le carrousel toutes les 3 secondes
-        setInterval(moveCarousel, 3000);
-    </script>
 </main>
 <?php
 require "app/Views/common/footer.php";

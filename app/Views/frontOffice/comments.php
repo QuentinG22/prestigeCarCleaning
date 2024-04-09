@@ -19,6 +19,10 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
             <?= $success ?>
         </div>
     <?php endif; ?>
+    <p class="intro">
+        La satisfaction de nos clients est notre priorité absolue.
+        Découvrez ce que nos clients disent de notre service de nettoyage de voiture :
+    </p>
     <div class="center">
         <?php if (!empty($commentsAll)) : ?>
             <?php foreach ($commentsAll as $key) : ?>
@@ -43,7 +47,7 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
                             }
                             ?>
                         </div>
-                        <p>
+                        <p class="textComment">
                             <?= $key->text ?>
                         </p>
                     </div>
@@ -52,27 +56,38 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
         <?php endif ?>
     </div>
 
+    <p class="intro">
+        Votre satisfaction est notre motivation. <a href="contact">Contactez-nous</a> dès aujourd'hui
+        pour bénéficier d'un nettoyage exceptionnel et rejoignez nos clients satisfaits !
+    </p>
+
     <?php if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') : ?>
-        <article class="addComments">
-            <h2>Laissez votre <span>avis</span></h2>
-            <form action="" method="post">
-                <select name="service">
-                    <?php foreach ($servicesAll as $service) : ?>
-                        <option value="<?= $service->idService; ?>"><?= $service->nameService; ?></option>
-                    <?php endforeach; ?>
-                </select>
-                <div class="rating" id="rating2">
-                    <span class="star" data-value="1">&#9733;</span>
-                    <span class="star" data-value="2">&#9733;</span>
-                    <span class="star" data-value="3">&#9733;</span>
-                    <span class="star" data-value="4">&#9733;</span>
-                    <span class="star" data-value="5">&#9733;</span>
-                    <input type="hidden" name="note" id="note">
-                </div>
-                <textarea name="text" id="" cols="30" rows="10"></textarea>
-                <input type="submit" id="inputValid" name="addComment" value="Envoyer">
-            </form>
-        </article>
+        <h2 class="titleSendComment">Laissez votre <span>avis</span></h2>
+        <section class="sendComment">
+            <article class="addComments">
+                <form action="nos-avis" method="post">
+                    <select name="service">
+                        <option>Sélectionnez une prestation</option>
+                        <?php foreach ($servicesAll as $service) : ?>
+                            <option value="<?= $service->idService; ?>"><?= $service->nameService; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <div class="rating" id="rating2">
+                        <span class="star filled" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                        <input type="hidden" name="note" id="note">
+                    </div>
+                    <textarea placeholder="Votre avis" name="text" cols="30" rows="10"></textarea>
+                    <input type="submit" id="sendComment" name="addComment" value="Envoyer">
+                </form>
+            </article>
+            <figure>
+                <img src="public/img/avis.jpg" alt="Illustration d'avis">
+            </figure>
+        </section>
     <?php endif; ?>
 </main>
 <?php
