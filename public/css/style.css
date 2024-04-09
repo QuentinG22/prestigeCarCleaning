@@ -932,6 +932,10 @@ article.error404 > div > p:last-child {
 .managerForm > article > form input[type=submit] {
   max-width: 100px;
 }
+.managerForm > article > form > input[type=checkbox] {
+  margin-right: 5px;
+  margin-left: 10px;
+}
 
 .adminComment > input {
   border: 2px solid rgb(43, 205, 219);

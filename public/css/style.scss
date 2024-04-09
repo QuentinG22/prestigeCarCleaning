@@ -746,6 +746,10 @@ article.error404 {
         }
         >form{
             @include form();
+            >input[type="checkbox"]{
+                margin-right: 5px;
+                margin-left: 10px;
+            }
         }
     }
 }

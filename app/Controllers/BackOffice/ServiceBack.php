@@ -71,7 +71,6 @@ class ServiceBack
             $success = '';
         } else {
             $selectedProducts = $_POST['products'];
-            var_dump($selectedProducts);
 
             // Créer une instance utilisateur avec les données
             $model = new Services();

@@ -5,14 +5,21 @@ function fillServiceDetails(data) {
     document.getElementById('selectServiceDescription').value = data.description;
     document.getElementById('selectServicePrice').value = data.price;
 
+    // Décocher toutes les cases
+    let allCheckboxes = document.querySelectorAll('input[type="checkbox"][data-product-id]');
+    allCheckboxes.forEach(checkbox => {
+        checkbox.checked = false;
+    });
+
     // Cocher les cases des produits associés
     data.products.forEach(product => {
         let productId = product.idProduct;
-        let productName = product.nameProduct;
-
         let checkbox = document.querySelector('input[type="checkbox"][data-product-id="' + productId + '"]');
+
         if (checkbox) {
             checkbox.checked = true;
+        } else {
+            checkbox.checked = false;
         }
     });
 }
@@ -25,8 +32,6 @@ function fetchServiceDetails() {
     if (selectedServiceId !== '') {
         // URL du script serveur pour récupérer les détails de la prestation
         let url = 'admin/service/' + selectedServiceId;
-
-        // Effectuer une requête fetch
         fetch(url)
             .then(response => {
                 if (response.status === 200) {

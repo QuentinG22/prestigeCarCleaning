@@ -20,7 +20,7 @@ require "app/Views/common/header.php";
             <form action="admin/gestion-des-prestations" method="post">
                 <input type="text" name="name" id="addServiceName" placeholder="Nom de la prestation" required>
                 <textarea name="description" id="addServiceDescription" placeholder="Description de la prestation" cols="30" rows="10" required></textarea>
-                <input type="text" name="price" id="addServicePrice" placeholder="Prix de la prestation" required>
+                <input type="number" step="0.01" name="price" id="addServicePrice" placeholder="Prix de la prestation" required>
                 <h3>Produits associés :</h3>
                 <?php foreach ($productsAll as $product) : ?>
                     <input type="checkbox" name="products[]" value="<?= $product->idProduct; ?>"><?= $product->nameProduct; ?>
@@ -42,7 +42,7 @@ require "app/Views/common/header.php";
                 </select>
                 <input type="text" id="selectServiceName" name="name" placeholder="Nom de la prestation">
                 <textarea name="description" id="selectServiceDescription" placeholder="Description de la prestation" cols="30" rows="10"></textarea>
-                <input type="text" id="selectServicePrice" name="price" placeholder="Prix de la prestation">
+                <input type="number" step="0.01" id="selectServicePrice" name="price" placeholder="Prix de la prestation">
                 <h3>Produits associés :</h3>
                 <?php foreach ($productsAll as $product) : ?>
                     <input id="selectServiceProduct<?= $product->idProduct; ?>" type="checkbox" name="products[]" data-product-id="<?= $product->idProduct; ?>" value="<?= $product->idProduct; ?>"><?= $product->nameProduct; ?>
