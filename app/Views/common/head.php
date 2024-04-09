@@ -38,6 +38,9 @@
     <?php if (!isset($_GET['url']) || $_GET['url'] == "nos-prestations") : ?>
         <script src="public/js/service.js" defer></script>
     <?php endif; ?>
+    <?php if (!isset($_GET['url']) || $_GET['url'] == "nos-avis") : ?>
+        <script src="public/js/comment.js" defer></script>
+    <?php endif; ?>
     <?php if (isset($_GET['url']) && $_GET['url'] == "contact") : ?>
         <script type="module" src="public/js/contact.js" defer></script>
     <?php endif; ?>

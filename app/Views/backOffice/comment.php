@@ -19,7 +19,7 @@ require "app/Views/common/header.php";
             <?php if (!empty($commentsAll)) : ?>
                 <?php $countNotActif = 0; ?>
                 <?php foreach ($commentsAll as $key) : ?>
-                    <?php if ($key->active === 0) : ?>
+                    <?php if ($key->active == 0) : ?>
                         <?php $countNotActif++; ?>
                         <div class="item">
                             <p>
