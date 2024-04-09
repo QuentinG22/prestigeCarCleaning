@@ -45,10 +45,13 @@
         <script type="module" src="public/js/contact.js" defer></script>
     <?php endif; ?>
     <?php if (isset($_GET['url']) && $_GET['url'] == "admin/tableau-de-bord") : ?>
-        <script type="module" src="public/js/backOffice/dashboard.js" defer></script>
+        <script src="public/js/backOffice/dashboard.js" defer></script>
     <?php endif; ?>
     <?php if (isset($_GET['url']) && $_GET['url'] == "admin/gestion-des-prestations") : ?>
-        <script type="module" src="public/js/backOffice/service.js" defer></script>
+        <script src="public/js/backOffice/service.js" defer></script>
+    <?php endif; ?>
+    <?php if (isset($_GET['url']) && $_GET['url'] == "admin/modération-avis") : ?>
+        <script src="public/js/backOffice/comment.js" defer></script>
     <?php endif; ?>
 
 </head>

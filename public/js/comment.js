@@ -19,8 +19,9 @@ function colorStars(stars, value) {
     });
 }
 
-// Sélectionner l'élément avec la classe "center"
 const centerElement = document.querySelector('.center');
+// Variable pour stocker l'identifiant de l'intervalle
+let intervalId; 
 
 // Fonction pour déplacer les éléments du carrousel
 function moveCarousel() {
@@ -29,5 +30,25 @@ function moveCarousel() {
     centerElement.appendChild(firstItem);
 }
 
-// Déplacer le carrousel toutes les 3 secondes
-setInterval(moveCarousel, 3000);
+// Démarrer le défilement automatique du carrousel
+function startCarousel() {
+    intervalId = setInterval(moveCarousel, 3000);
+}
+
+// Arrêter le défilement automatique du carrousel
+function stopCarousel() {
+    clearInterval(intervalId);
+}
+
+// Détecter le survol d'un élément du carrousel
+centerElement.addEventListener('mouseenter', () => {
+    stopCarousel(); // Arrêter le défilement automatique
+});
+
+// Détecter lorsque le curseur quitte un élément du carrousel
+centerElement.addEventListener('mouseleave', () => {
+    startCarousel(); // Redémarrer le défilement automatique
+});
+
+// Démarrer le défilement automatique au chargement de la page
+startCarousel();

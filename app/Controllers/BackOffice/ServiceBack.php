@@ -32,18 +32,23 @@ class ServiceBack
         $name = $_POST["name"];
         $text = $_POST["description"];
         $price = $_POST["price"];
-        $selectedProducts = $_POST['products'];
-
-        // Créer une instance utilisateur avec les données
-        $model = new Services();
-        $result = $model->addService($name, $text, $price, $selectedProducts);
-
-        if ($result === false) {
-            $error = 'La création de la prestation a échoué.';
+        if (empty($_POST["products"])) {
+            $error = 'Un produit doit être sélectionner minimum pour ajouter une prestation';
             $success = '';
         } else {
-            $success = 'la prestation a bien été ajouter.';
-            $error = '';
+            $selectedProducts = $_POST['products'];
+
+            // Créer une instance utilisateur avec les données
+            $model = new Services();
+            $result = $model->addService($name, $text, $price, $selectedProducts);
+
+            if ($result === false) {
+                $error = 'La création de la prestation a échoué.';
+                $success = '';
+            } else {
+                $success = 'la prestation a bien été ajouter.';
+                $error = '';
+            }
         }
 
         $productModel = new Products();
@@ -61,18 +66,24 @@ class ServiceBack
         $name = $_POST["name"];
         $text = $_POST["description"];
         $price = $_POST["price"];
-        $selectedProducts = $_POST['products'];
-
-        // Créer une instance utilisateur avec les données
-        $model = new Services();
-        $result = $model->updateService($id, $name, $text, $price, $selectedProducts);
-
-        if ($result === false) {
-            $error = 'La modification de la prestation a échoué.';
+        if (empty($_POST["products"])) {
+            $error = 'Un produit doit être sélectionner minimum';
             $success = '';
         } else {
-            $success = 'la prestation a bien été modifer.';
-            $error = '';
+            $selectedProducts = $_POST['products'];
+            var_dump($selectedProducts);
+
+            // Créer une instance utilisateur avec les données
+            $model = new Services();
+            $result = $model->updateService($id, $name, $text, $price, $selectedProducts);
+
+            if ($result === false) {
+                $error = 'La modification de la prestation a échoué.';
+                $success = '';
+            } else {
+                $success = 'la prestation a bien été modifer.';
+                $error = '';
+            }
         }
 
         $productModel = new Products();

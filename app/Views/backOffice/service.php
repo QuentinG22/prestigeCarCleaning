@@ -17,10 +17,10 @@ require "app/Views/common/header.php";
     <section class="managerForm">
         <article id="addService">
             <h2>Ajouter une prestation</h2>
-            <form action="" method="post">
-                <input type="text" name="name" id="addServiceName" placeholder="Nom de la prestation">
-                <textarea name="description" id="addServiceDescription" placeholder="Description de la prestation" cols="30" rows="10"></textarea>
-                <input type="text" name="price" id="addServicePrice" placeholder="Prix de la prestation">
+            <form action="admin/gestion-des-prestations" method="post">
+                <input type="text" name="name" id="addServiceName" placeholder="Nom de la prestation" required>
+                <textarea name="description" id="addServiceDescription" placeholder="Description de la prestation" cols="30" rows="10" required></textarea>
+                <input type="text" name="price" id="addServicePrice" placeholder="Prix de la prestation" required>
                 <h3>Produits associés :</h3>
                 <?php foreach ($productsAll as $product) : ?>
                     <input type="checkbox" name="products[]" value="<?= $product->idProduct; ?>"><?= $product->nameProduct; ?>
@@ -33,8 +33,8 @@ require "app/Views/common/header.php";
 
         <article id="selectService">
             <h2>Sélectionnez une prestation</h2>
-            <form action="" method="post">
-                <select id="service" name="selectedServiceId">
+            <form action="admin/gestion-des-prestations" method="post">
+                <select id="service" name="selectedServiceId" required>
                     <option value="">Sélectionnez une prestation</option>
                     <?php foreach ($servicesAll as $service) : ?>
                         <option value="<?= $service->idService; ?>"><?= $service->nameService; ?></option>

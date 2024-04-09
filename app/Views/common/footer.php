@@ -37,7 +37,7 @@
         </section>
     </div>
     <div class="copyright">
-        <p>Copyright &copy; 2024 - Presitge Car Cleaning</p>
+        <p>Copyright &copy; 2024 - Prestige Car Cleaning</p>
     </div>
 </footer>
 

@@ -17,16 +17,16 @@ require "app/Views/common/header.php";
     <section class="managerForm">
         <article id="addproduct">
             <h2>Ajouter un produit</h2>
-            <form action="" method="post">
-                <input type="text" name="name" placeholder="Nom du produit">
-                <textarea name="description" placeholder="Description du produit" id="" cols="30" rows="10"></textarea>
+            <form action="admin/gestion-des-produits" method="post">
+                <input type="text" name="name" placeholder="Nom du produit" required>
+                <textarea name="description" placeholder="Description du produit" id="" cols="30" rows="10" required></textarea>
                 <input type="submit" name="addProduct" value="Ajouter">
             </form>
         </article>
         <article id="selectProduct">
             <h2>Sélectionnez un produit</h2>
-            <form action="" method="post">
-                <select id="product" name="selectedProductId">
+            <form action="admin/gestion-des-produits" method="post">
+                <select id="product" name="selectedProductId" required>
                     <option value="">Sélectionnez un produit</option>
                     <?php foreach ($productsAll as $product) : ?>
                         <option value="<?= $product->idProduct; ?>"><?= $product->nameProduct; ?></option>
