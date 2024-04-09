@@ -9,6 +9,9 @@ require "app/Views/common/header.php";
             <?= $error ?>
         </div>
     <?php endif; ?>
+    <p class="intro">
+        Rejoignez notre communauté pour partager vos avis sur nos services de nettoyage professionnel. Inscrivez-vous gratuitement dès aujourd'hui !
+    </p>
     <article id="register">
         <p>* Champs obligatoire</p>
         <form action="inscription" method="post">

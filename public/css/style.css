@@ -115,6 +115,13 @@ button:hover {
   padding: 15px;
   box-sizing: border-box;
 }
+.intro > a {
+  color: rgb(43, 205, 219);
+}
+.intro > a:hover {
+  color: rgb(43, 205, 219);
+  cursor: pointer;
+}
 
 .header {
   display: flex;
@@ -220,7 +227,7 @@ footer > figure a {
 #logoFooter {
   width: 100px;
   position: absolute;
-  bottom: 65%;
+  bottom: 60%;
   /* Positionnez le logo au-dessus de la div footer */
   left: 50%;
   /* Centrez horizontalement le logo */
@@ -262,6 +269,9 @@ footer > figure a {
 }
 
 @media screen and (min-width: 768px) {
+  #logoFooter {
+    bottom: 65%;
+  }
   .articleFooter {
     margin-top: 30px;
   }
@@ -390,7 +400,7 @@ article.error404 > div > p:last-child {
 }
 .sliderService > button {
   position: absolute;
-  top: 45%;
+  top: 30%;
   transform: translateY(-50%);
   background: transparent;
   color: rgb(255, 255, 255);
@@ -436,6 +446,7 @@ article.error404 > div > p:last-child {
 }
 .item > p.textComment {
   height: 300px;
+  margin-bottom: 10px;
 }
 
 .serviceComments {
@@ -500,7 +511,7 @@ article.error404 > div > p:last-child {
   background-color: rgb(43, 205, 219);
 }
 .addComments form input[type=checkbox] {
-  width: 2%;
+  width: 20px;
 }
 .addComments form input[type=submit] {
   max-width: 100px;
@@ -600,7 +611,7 @@ article.error404 > div > p:last-child {
   background-color: rgb(43, 205, 219);
 }
 #contact > form input[type=checkbox] {
-  width: 2%;
+  width: 20px;
 }
 #contact > form input[type=submit] {
   max-width: 100px;
@@ -686,7 +697,7 @@ article.error404 > div > p:last-child {
   background-color: rgb(43, 205, 219);
 }
 #connection > form input[type=checkbox] {
-  width: 2%;
+  width: 20px;
 }
 #connection > form input[type=submit] {
   max-width: 100px;
@@ -697,10 +708,16 @@ article.error404 > div > p:last-child {
 #connection > form > div > input[type=submit] {
   margin-right: 10px;
 }
+#connection > figure {
+  display: none;
+}
 
 @media screen and (min-width: 768px) {
   #connection > form {
     width: 500px;
+  }
+  #connection > figure {
+    display: block;
   }
 }
 @media screen and (min-width: 992px) {
@@ -713,6 +730,10 @@ article.error404 > div > p:last-child {
     width: 800px;
   }
 }
+#register {
+  margin-top: 15px;
+}
+
 #register form input,
 #register form textarea,
 #register form select {
@@ -737,7 +758,7 @@ article.error404 > div > p:last-child {
   background-color: rgb(43, 205, 219);
 }
 #register form input[type=checkbox] {
-  width: 2%;
+  width: 20px;
 }
 #register form input[type=submit] {
   max-width: 100px;
@@ -927,7 +948,7 @@ article.error404 > div > p:last-child {
   background-color: rgb(43, 205, 219);
 }
 .managerForm > article > form input[type=checkbox] {
-  width: 2%;
+  width: 20px;
 }
 .managerForm > article > form input[type=submit] {
   max-width: 100px;

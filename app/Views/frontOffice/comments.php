@@ -50,6 +50,7 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
                         <p class="textComment">
                             <?= $key->text ?>
                         </p>
+                        <p>Poster le : <?= date('d/m/Y', strtotime($key->_date)) ?></p>
                     </div>
                 <?php endif ?>
             <?php endforeach  ?>
@@ -73,7 +74,7 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
                         <?php endforeach; ?>
                     </select>
                     <div class="rating" id="rating2">
-                        <span class="star filled" data-value="1">&#9733;</span>
+                        <span class="star" data-value="1">&#9733;</span>
                         <span class="star" data-value="2">&#9733;</span>
                         <span class="star" data-value="3">&#9733;</span>
                         <span class="star" data-value="4">&#9733;</span>

@@ -23,7 +23,7 @@ class Users extends Sql
                 return "Mot de passe incorrect.";
             }
         } else {
-            return "Addrese mail incorrect.";
+            return "Adresse e-mail incorrect.";
         }
     }
 

@@ -44,6 +44,7 @@ require "app/Views/common/header.php";
                             <p class="textComment">
                                 <?= $key->text ?>
                             </p>
+                            <p>Poster le : <?= date('d/m/Y', strtotime($key->_date)) ?></p>
                             <form class="adminComment" action="admin/modération-avis" method="post">
                                 <input type="hidden" name="idComment" value="<?= $key->idComment ?>">
                                 <input type="submit" name="actifComment" value="Activer">

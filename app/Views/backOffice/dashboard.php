@@ -20,7 +20,6 @@ require "app/Views/common/header.php";
             <table id="contactTable">
                 <thead>
                     <tr>
-                        <th>Nom, prénom</th>
                         <th>Email</th>
                         <th>Objet</th>
                         <th>Date</th>
@@ -29,10 +28,9 @@ require "app/Views/common/header.php";
                 <tbody>
                     <?php foreach ($this->contactAll as $key) : ?>
                         <tr data-id="<?= $key->idContact ?>">
-                            <td><?= $key->name ?> <?= $key->firstname ?></td>
                             <td><?= $key->email ?></td>
                             <td><?= $key->object ?></td>
-                            <td><?= $key->_date ?></td>
+                            <td><?= date('d/m/Y', strtotime($key->_date)) ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

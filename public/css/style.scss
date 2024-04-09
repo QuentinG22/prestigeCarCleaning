@@ -74,7 +74,7 @@ $colorfooter: rgb(43, 205, 219);
     }
 
     input[type="checkbox"] {
-        width: 2%;
+        width: 20px;
     }
 
     input[type="submit"] {
@@ -188,6 +188,13 @@ button{
 
 .intro {
     @include box();
+    >a{
+        color: $colorfooter;
+        &:hover{
+            color: $colorfooter;
+            cursor: pointer;
+        }
+    }
 }
 
 // **************************************** Style views Commmon ****************************************
@@ -303,7 +310,7 @@ footer {
 #logoFooter {
     width: 100px;
     position: absolute;
-    bottom: 65%;
+    bottom: 60%;
     /* Positionnez le logo au-dessus de la div footer */
     left: 50%;
     /* Centrez horizontalement le logo */
@@ -347,6 +354,9 @@ footer {
 
 // Responsive footer
 @media screen and (min-width:768px) {
+    #logoFooter {
+        bottom: 65%;
+    }
     .articleFooter {
         margin-top: 30px;
     }
@@ -436,7 +446,7 @@ article.error404 {
 
     >button {
         position: absolute;
-        top: 45%;
+        top: 30%;
         transform: translateY(-50%);
         background: transparent;
         color: $colorText;
@@ -480,6 +490,7 @@ article.error404 {
 
         &.textComment {
             height: 300px;
+            margin-bottom: 10px;
         }
     }
 }
@@ -625,12 +636,18 @@ article.error404 {
             }
         }
     }
+    >figure{
+        display: none;
+    }
 }
 
 @media screen and (min-width: 768px) {
     #connection {
         >form {
             width: 500px;
+        }
+        >figure {
+            display: block;
         }
     }
 }
@@ -652,6 +669,10 @@ article.error404 {
 }
 
 // ======== Page inscription ========
+
+#register {
+    margin-top: 15px;
+}
 
 #register form {
     @include form();

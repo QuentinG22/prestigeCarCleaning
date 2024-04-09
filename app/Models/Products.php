@@ -36,6 +36,7 @@ class Products extends Sql
 
     public function deleteProduct($id)
     {
+        $this->requete("DELETE FROM toUse WHERE idProduct = ?", [$id]);
         return $this->delete('idProduct', $id);
     }
 }

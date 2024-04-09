@@ -42,6 +42,9 @@ class Comment
         // Récupérer les services depuis le modèle
         $servicesModel = new Services();
         $servicesAll = $servicesModel->getAll();
-        return ViewManager::render('frontOffice/comments', ['title' => $title, 'servicesAll' => $servicesAll, 'error' => $error, 'success' => $success]);
+
+        $model = new Comments;
+        $commentsAll = $model->getCommentsAll();
+        return ViewManager::render('frontOffice/comments', ['title' => $title, 'servicesAll' => $servicesAll, 'commentsAll' => $commentsAll, 'error' => $error, 'success' => $success]);
     }
 }

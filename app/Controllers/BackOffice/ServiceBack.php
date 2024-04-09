@@ -98,7 +98,6 @@ class ServiceBack
     {
         $id = $_POST['selectedServiceId'];
 
-        // Créer une instance utilisateur avec les données
         $service = new Services();
         $service->deleteAsso($id);
         $isService = $service->deleteService($id);
