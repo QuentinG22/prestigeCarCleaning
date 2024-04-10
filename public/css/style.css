@@ -58,7 +58,8 @@ a > span:hover {
   opacity: 0.8;
 }
 
-p {
+p,
+textarea {
   overflow-y: auto;
   /* Permettre le défilement vertical */
   scrollbar-width: none;

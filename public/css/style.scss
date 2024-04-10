@@ -138,7 +138,8 @@ a {
 }
 
 // Paragraphe
-p {
+p,
+textarea {
     overflow-y: auto;
     /* Permettre le défilement vertical */
     scrollbar-width: none;
