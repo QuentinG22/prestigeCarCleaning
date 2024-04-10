@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 09 avr. 2024 à 19:07
+-- Généré le : mer. 10 avr. 2024 à 17:02
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -64,7 +64,7 @@ CREATE TABLE `contacts` (
   `email` varchar(250) DEFAULT NULL,
   `object` varchar(250) DEFAULT NULL,
   `text` text DEFAULT NULL,
-  `_date` date DEFAULT NULL,
+  `_date` date DEFAULT current_timestamp(),
   `idUser` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -75,8 +75,8 @@ CREATE TABLE `contacts` (
 INSERT INTO `contacts` (`idContact`, `name`, `firstname`, `email`, `object`, `text`, `_date`, `idUser`) VALUES
 (1, 'Dupond', 'Pierre', 'dupond-pierre@exemple.com', 'Test', 'Lorem ipsum dolor sit amet consectetur adipiscing elit fermentum et aenean quis molestie lobortis, suspendisse tincidunt mauris conubia magnis a integer erat lectus imperdiet ridiculus. Pellentesque taciti nec netus est feugiat quis eros tellus egestas convallis, elementum mus tempor luctus sociosqu dictum ridiculus per tincidunt inceptos, ultricies lacus odio sodales nisl velit cubilia ultrices curae. Diam pharetra praesent massa pulvinar porttitor fringilla vivamus, aptent euismod mattis bibendum ridiculus blandit justo tincidunt, dictum nullam nunc ac nisl iaculis. Per natoque hendrerit pulvinar lacinia volutpat et enim nulla faucibus, dis fames suspendisse nisi pellentesque ad interdum sociosqu feugiat facilisis, potenti ultrices rhoncus montes nostra turpis ac quis.', '2024-03-27', NULL),
 (5, 'Guillemin', 'Quentin', 'quentin-guillemin@orange.fr', 'Test2', 'test2', '2024-03-28', NULL),
-(7, 'Guillemin', 'Quentin', 'quentin-guillemin@orange.fr', 'test3', 'test3', '2024-03-28', 1),
-(9, 'Guillemin', 'Quentin', 'quentin-guillemin@orange.fr', '&lt;script&gt;alert(&#039;TEST INJECTION&#039;);&lt;/script&gt;', 'TEST INJECTION CODE', '2024-03-28', 1);
+(9, 'Guillemin', 'Quentin', 'quentin-guillemin@orange.fr', '&lt;script&gt;alert(&#039;TEST INJECTION&#039;);&lt;/script&gt;', 'TEST INJECTION CODE', '2024-03-28', 1),
+(19, 'Guillemin', 'Quentin', 'quentin-guillemin@orange.fr', 'tester', 'tretqes', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -242,7 +242,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT pour la table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `idContact` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `idContact` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT pour la table `products`
