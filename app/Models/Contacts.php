@@ -11,19 +11,6 @@ class Contacts extends Sql
         $this->table = 'CONTACTS';
     }
 
-    public function getContactById($id)
-    {
-        $contact = $this->getById('idContact', $id);
-
-        // Vérifier si le contact a été trouvé
-        if ($contact) {
-            // Formater la date au format français
-            $contact->_date = date('d/m/Y', strtotime($contact->_date));
-        }
-    
-        return $contact;
-    }
-
     public function getContactAll()
     {
         $contacts = $this->getAll();
@@ -32,27 +19,27 @@ class Contacts extends Sql
             // Formater la date au format français
             $contact->_date = date('d/m/Y', strtotime($contact->_date));
         }
-    
+
         return $contacts;
     }
 
     public function addContact($name, $firstname,  $email, $object, $text, $userId)
     {
-            // Création du modèle de données
-            $model = [
-                'name' => htmlspecialchars($name),
-                'firstname' => htmlspecialchars($firstname),
-                'email' => htmlspecialchars($email),
-                'object' => htmlspecialchars($object),
-                'text' => htmlspecialchars($text),
-                'idUser' => $userId
-            ];
-    
-            return $this->add($model);
+        // Création du modèle de données
+        $model = [
+            'name' => htmlspecialchars($name),
+            'firstname' => htmlspecialchars($firstname),
+            'email' => htmlspecialchars($email),
+            'object' => htmlspecialchars($object),
+            'text' => htmlspecialchars($text),
+            'idUser' => $userId
+        ];
+
+        return $this->add($model);
     }
 
     public function deleteContact($id)
     {
-            return $this->delete('idContact', $id);
+        return $this->delete('idContact', $id);
     }
 }

@@ -879,16 +879,70 @@ article.error404 > div > p:last-child {
   padding: 15px;
   box-sizing: border-box;
 }
+.dashboard > article input,
+.dashboard > article textarea,
+.dashboard > article select {
+  font-family: "Mina";
+  background-color: rgb(1, 17, 24);
+  color: rgb(255, 255, 255);
+  width: 100%;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.dashboard > article input::placeholder,
+.dashboard > article textarea::placeholder,
+.dashboard > article select::placeholder {
+  color: rgb(255, 255, 255);
+  font-family: "Mina";
+}
+.dashboard > article input[type=submit]:hover {
+  background-color: rgb(43, 205, 219);
+}
+.dashboard > article input[type=checkbox] {
+  width: 20px;
+}
+.dashboard > article input[type=submit] {
+  max-width: 100px;
+}
 .dashboard > article > #contactTable {
   text-align: center;
 }
 .dashboard > article > h2 {
   text-align: center;
 }
-.dashboard > article > p span {
+.dashboard > article > form span {
   color: rgb(43, 205, 219);
 }
+.dashboard > article > form div {
+  display: flex;
+}
+.dashboard > article > form div > span {
+  color: rgb(43, 205, 219);
+  margin-right: 5px;
+}
+.dashboard > figure {
+  display: none;
+}
 
+@media screen and (min-width: 768px) {
+  .dashboard > figure {
+    display: block;
+  }
+}
+@media screen and (min-width: 992px) {
+  .dashboard > article {
+    width: 600px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .dashboard > article {
+    width: 850px;
+  }
+}
 .managerForm {
   display: grid;
   gap: 15px;

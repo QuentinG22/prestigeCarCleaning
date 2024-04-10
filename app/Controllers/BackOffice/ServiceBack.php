@@ -133,10 +133,6 @@ class ServiceBack
             "products" => $products
         );
 
-        $json = json_encode($data);
-        // Envoyer la réponse JSON
-        header('Content-Type: application/json');
-        echo $json;
-        exit();
+        return ViewManager::renderJson($data);
     }
 }

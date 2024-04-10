@@ -36,16 +36,9 @@ class Route
                     if (isset($urlParts[1])) {
                         if ($urlParts[1] === 'tableau-de-bord') {
                             $controller = new Dashboard();
-                            if (isset($urlParts[2]) && strpos($urlParts[2], "contact-") === 0) {
-                                // Extraire l'ID de la demande de contact de l'URL
-                                $id = substr($urlParts[2], strlen("contact-"));
-                                if (isset($urlParts[3]) && $urlParts[3] === 'delete') {
-                                    $controller->deleteContact($id);
-                                } else {
-                                    $controller->getContact($id);
-                                }
+                            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteContact'])) {
+                                $controller->deleteContact();
                             } else {
-                                $controller->getContactsAll();
                                 $controller->index();
                             }
                         } else if ($urlParts[1] === 'gestion-des-prestations') {

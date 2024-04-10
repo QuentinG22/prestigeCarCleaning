@@ -743,6 +743,7 @@ article.error404 {
 
     >article {
         @include box();
+        @include form();
 
         >#contactTable {
             text-align: center;
@@ -752,8 +753,44 @@ article.error404 {
             text-align: center;
         }
 
-        >p span {
+        >form span {
             color: $colorfooter;
+        }
+
+        >form div {
+            display: flex;
+            >span {
+                color: $colorfooter;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    >figure{
+        display: none
+    }
+}
+
+@media screen and (min-width: 768px){
+    .dashboard {
+        >figure{
+            display: block;
+        }
+    }
+}
+
+@media screen and (min-width: 992px){
+    .dashboard {
+        >article{
+            width: 600px;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .dashboard {
+        >article{
+            width: 850px;
         }
     }
 }

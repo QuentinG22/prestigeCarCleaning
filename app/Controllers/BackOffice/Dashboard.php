@@ -3,46 +3,42 @@
 namespace PrestigeCarCleaning\Controllers\BackOffice;
 
 use PrestigeCarCleaning\Models\Contacts;
+use PrestigeCarCleaning\Controllers\ViewManager;
 
 class Dashboard
 {
-    private $jsonContact;
-    private $contactAll;
-
     public function index()
     {
-        $error = '';
-        $sucess = '';
         $title = "Tableau de bord - Prestige Car Cleaning";
-        require "app/Views/backOffice/dashboard.php";
-    }
-
-    public function getContact($id)
-    {
-        $error = '';
-        $sucess = '';
-        $contactModel = new Contacts();
-        $contact = $contactModel->getContactById($id);
-        $jsonContact = json_encode($contact);
-        // Envoyer la réponse JSON
-        header('Content-Type: application/json');
-        echo $jsonContact;
-        exit();
+        $contactsAll = $this->getContactsAll();
+        return ViewManager::render('backOffice/dashboard', ['title' => $title, 'contactsAll' => $contactsAll]);
     }
 
     public function getContactsAll()
     {
-        $error = '';
-        $sucess = '';
-        $contactModel = new Contacts();
-        $this->contactAll = $contactModel->getAll();
+        $model = new Contacts();
+        return $model->getAll();
     }
 
-    public function deleteContact($id)
+    public function deleteContact()
     {
-        $error = '';
-        $success = '';
-        $contactModel = new Contacts();
-        return $contactModel->deleteContact($id);
+        $id = $_POST["selectedContactId"];
+
+        $model = new Contacts();
+        $result = $model->deleteContact($id);
+
+        if ($result === false) {
+            $error = 'La suppression du contact a échoué.';
+            $success = '';
+        } else {
+            $success = 'le contact a bien été supprimer.';
+            $error = '';
+        }
+
+        $contactsAll = $this->getContactsAll();
+
+        // Passer les messages d'erreur et de succès à la vue en utilisant la méthode statique de ViewManager
+        $title = "Tableau de bord - Prestige Car Cleaning";
+        return ViewManager::render('backOffice/dashboard', ['title' => $title, 'contactsAll' => $contactsAll, 'error' => $error, 'success' => $success]);
     }
 }
