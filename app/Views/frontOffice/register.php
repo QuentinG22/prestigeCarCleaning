@@ -13,7 +13,7 @@ require "app/Views/common/header.php";
         Rejoignez notre communauté pour partager vos avis sur nos services de nettoyage professionnel. Inscrivez-vous gratuitement dès aujourd'hui !
     </p>
     <article id="register">
-        <p>* Champs obligatoire</p>
+        <p>* Champs obligatoires</p>
         <form action="inscription" method="post">
             <div class="formRegister">
                 <div>
@@ -44,7 +44,7 @@ require "app/Views/common/header.php";
             <div>
                 <p>
                     <input type="checkbox" id="rgpd">
-                    * J'accepte les termes et conditions et la politique de confidentialité
+                    * J'accepte les termes et conditions ainsi que la politique de confidentialité
                     <a href="politique-de-confidentialité"><span>Lisez les termes et conditions d'utilisation</span></a>.
                 </p>
                 <input type="submit" id="inputValid" name="register" value="Valider" disabled>

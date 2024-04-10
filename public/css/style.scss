@@ -69,6 +69,10 @@ $colorfooter: rgb(43, 205, 219);
         }
     }
 
+    select{
+        padding: 15px;
+    }
+
     input[type="submit"]:hover {
         background-color: $colorfooter;
     }

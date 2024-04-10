@@ -514,6 +514,9 @@ article.error404 > div > p:last-child {
   color: rgb(255, 255, 255);
   font-family: "Mina";
 }
+.addComments form select {
+  padding: 15px;
+}
 .addComments form input[type=submit]:hover {
   background-color: rgb(43, 205, 219);
 }
@@ -613,6 +616,9 @@ article.error404 > div > p:last-child {
   color: rgb(255, 255, 255);
   font-family: "Mina";
 }
+#contact > form select {
+  padding: 15px;
+}
 #contact > form input[type=submit]:hover {
   background-color: rgb(43, 205, 219);
 }
@@ -699,6 +705,9 @@ article.error404 > div > p:last-child {
   color: rgb(255, 255, 255);
   font-family: "Mina";
 }
+#connection > form select {
+  padding: 15px;
+}
 #connection > form input[type=submit]:hover {
   background-color: rgb(43, 205, 219);
 }
@@ -759,6 +768,9 @@ article.error404 > div > p:last-child {
 #register form select::placeholder {
   color: rgb(255, 255, 255);
   font-family: "Mina";
+}
+#register form select {
+  padding: 15px;
 }
 #register form input[type=submit]:hover {
   background-color: rgb(43, 205, 219);
@@ -899,6 +911,9 @@ article.error404 > div > p:last-child {
   color: rgb(255, 255, 255);
   font-family: "Mina";
 }
+.dashboard > article select {
+  padding: 15px;
+}
 .dashboard > article input[type=submit]:hover {
   background-color: rgb(43, 205, 219);
 }
@@ -1003,6 +1018,9 @@ article.error404 > div > p:last-child {
 .managerForm > article > form select::placeholder {
   color: rgb(255, 255, 255);
   font-family: "Mina";
+}
+.managerForm > article > form select {
+  padding: 15px;
 }
 .managerForm > article > form input[type=submit]:hover {
   background-color: rgb(43, 205, 219);

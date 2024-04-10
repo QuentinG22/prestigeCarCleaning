@@ -22,7 +22,7 @@ require "app/Views/common/header.php";
                 notre entreprise s'est rapidement imposée comme une référence dans le domaine.
                 Forts de notre engagement envers la qualité et le service client,
                 nous avons bâti notre réputation sur des valeurs telles que le professionnalisme,
-                l'attention au détail et le respect de chaque véhicule que nous traitons.
+                l'attention du détail et le respect de chaque véhicule que nous traitons.
             </p><br>
             <p>
                 L'idée de créer une entreprise de lavage automobile exclusivement manuelle est née de notre

@@ -38,7 +38,7 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
     </div>
     <article id="contact" class="classForm">
         <form action="contact" method="post">
-            <p>* Champs obligatoire</p>
+            <p>* Champs obligatoires</p>
             <div class="formContact">
                 <div>
                     <input type="text" id="name" name="name" placeholder="Nom *" value="<?= isset($userName) ? $userName : ''; ?>">

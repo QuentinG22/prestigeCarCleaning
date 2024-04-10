@@ -101,7 +101,7 @@ function toggleServiceDetails(event) {
                 });
 
                 let priceParagraph = document.createElement('p');
-                priceParagraph.innerHTML = '<br><span>Prix: </span>' + data.price;
+                priceParagraph.innerHTML = '<br><span>Prix: </span>' + data.price + ' €';
 
                 detailService.appendChild(descriptionParagraph);
                 detailService.appendChild(productParagraph);
