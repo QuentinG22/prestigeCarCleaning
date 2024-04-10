@@ -26,12 +26,6 @@
     <link rel="stylesheet" href="public/css/style.min.css">
     <script src="public/js/burger.js" defer></script>
     <script src="public/js/activeLink.js" defer></script>
-    <?php if (isset($_GET['url']) && $_GET['url'] == "contact") : ?>
-        <script type="module" src="public/js/tools.js" defer></script>
-    <?php endif; ?>
-    <?php if (isset($_GET['url']) && $_GET['url'] == "inscription") : ?>
-        <script type="module" src="public/js/register.js" defer></script>
-    <?php endif; ?>
     <?php if (!isset($_GET['url']) || $_GET['url'] == "accueil") : ?>
         <script src="public/js/slider.js" defer></script>
     <?php endif; ?>
@@ -44,14 +38,17 @@
     <?php if (isset($_GET['url']) && $_GET['url'] == "contact") : ?>
         <script type="module" src="public/js/contact.js" defer></script>
     <?php endif; ?>
+    <?php if (isset($_GET['url']) && $_GET['url'] == "inscription") : ?>
+        <script type="module" src="public/js/register.js" defer></script>
+    <?php endif; ?>
     <?php if (isset($_GET['url']) && $_GET['url'] == "admin/tableau-de-bord") : ?>
         <script src="public/js/backOffice/dashboard.js" defer></script>
     <?php endif; ?>
     <?php if (isset($_GET['url']) && $_GET['url'] == "admin/gestion-des-prestations") : ?>
         <script src="public/js/backOffice/service.js" defer></script>
     <?php endif; ?>
-    <?php if (isset($_GET['url']) && $_GET['url'] == "admin/modération-avis") : ?>
-        <script src="public/js/backOffice/comment.js" defer></script>
+    <?php if (isset($_GET['url']) && ($_GET['url'] == "admin/modération-avis" || $_GET['url'] == "nos-avis")) : ?>
+        <script src="public/js/carrousel.js" defer></script>
     <?php endif; ?>
 
 </head>

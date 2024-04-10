@@ -433,10 +433,17 @@ article.error404 > div > p:last-child {
 .item {
   flex: 0 0 auto;
   width: 100%;
+  margin: 0 10px;
   border: 2px solid rgb(43, 205, 219);
   border-radius: 15px;
   padding: 15px;
   box-sizing: border-box;
+}
+.item:first-child {
+  margin-left: 0;
+}
+.item:last-child {
+  margin-right: 0;
 }
 .item > p {
   border: 2px solid rgb(43, 205, 219);
@@ -524,7 +531,6 @@ article.error404 > div > p:last-child {
 /* Media queries pour ajuster le nombre d'avis affichés en fonction de la largeur de l'écran */
 @media screen and (min-width: 768px) {
   .item {
-    margin: 0 10px;
     /* Afficher jusqu'à 2 avis par ligne pour les écrans moyens */
     width: calc(50% - 20px);
   }

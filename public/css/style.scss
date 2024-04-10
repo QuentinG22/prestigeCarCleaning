@@ -483,6 +483,13 @@ article.error404 {
 .item {
     flex: 0 0 auto;
     width: 100%;
+    margin: 0 10px;
+    &:first-child{
+        margin-left: 0;
+    }
+    &:last-child{
+        margin-right: 0;
+    }
     @include box();
 
     >p {
@@ -544,7 +551,6 @@ article.error404 {
 /* Media queries pour ajuster le nombre d'avis affichés en fonction de la largeur de l'écran */
 @media screen and (min-width: 768px) {
     .item {
-        margin: 0 10px;
         /* Afficher jusqu'à 2 avis par ligne pour les écrans moyens */
         width: calc(50% - 20px);
     }
