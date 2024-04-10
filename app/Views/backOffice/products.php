@@ -44,10 +44,10 @@ require "app/Views/common/header.php";
             let productsAll = <?= json_encode($productsAll); ?>;
 
             document.getElementById('product').addEventListener('change', function() {
-                console.log(this.value); // Vérifier la valeur sélectionnée
-                var selectedProductId = parseInt(this.value);
-                var selectedProduct = productsAll.find(function(product) {
-                    return product.idProduct === selectedProductId;
+                
+                let selectedProductId = parseInt(this.value);
+                let selectedProduct = productsAll.find(function(product) {
+                    return product.idProduct == selectedProductId;
                 });
                 if (selectedProduct) {
                     document.getElementById('productName').value = selectedProduct.nameProduct;
