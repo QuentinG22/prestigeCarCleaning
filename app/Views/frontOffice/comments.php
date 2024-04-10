@@ -20,8 +20,16 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
         </div>
     <?php endif; ?>
     <p class="intro">
+        <?php
+        $countCommments = 0;
+        foreach($commentsAll as $key){
+            if($key->active == 1){
+                $countCommments++;
+            }
+        }
+        ?>
         La satisfaction de nos clients est notre priorité absolue.
-        Découvrez ce que nos clients disent de notre service de nettoyage de voiture :
+        Découvrez ce que nos clients disent de notre service de nettoyage de voiture : <?= $countCommments ?> avis !
     </p>
     <div class="center">
         <?php if (!empty($commentsAll)) : ?>
