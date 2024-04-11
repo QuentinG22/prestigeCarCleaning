@@ -56,6 +56,22 @@ function endDrag() {
     isDragging = false;
 }
 
+// Gestion des événements tactiles
+centerElement.addEventListener('touchstart', (e) => {
+    const touch = e.touches[0];
+    startDrag(touch.clientX);
+});
+
+centerElement.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0];
+    dragMove(touch.clientX);
+});
+
+centerElement.addEventListener('touchend', () => {
+    endDrag();
+});
+
+// Gestion des événements de la souris
 centerElement.addEventListener('mousedown', (e) => {
     startDrag(e.clientX);
     e.preventDefault();
