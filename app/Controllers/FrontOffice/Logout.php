@@ -8,5 +8,6 @@ class Logout
     {
         session_destroy();
         header("Location: accueil");
+        exit;
     }
 }

@@ -120,8 +120,11 @@ button:hover {
   color: rgb(43, 205, 219);
 }
 .intro > a:hover {
-  color: rgb(43, 205, 219);
+  color: rgb(255, 255, 255);
   cursor: pointer;
+}
+.intro > span {
+  color: rgb(43, 205, 219);
 }
 
 .header {
@@ -796,6 +799,82 @@ article.error404 > div > p:last-child {
     margin: 5px;
   }
 }
+#profile {
+  display: grid;
+  gap: 15px;
+  margin-top: 15px;
+}
+#profile > div {
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+#profile > figure {
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  padding: 0;
+  overflow-y: hidden;
+  position: relative;
+}
+#profile > figure > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  #profile {
+    grid-template-columns: auto auto;
+    align-items: center;
+  }
+}
+#profile > article {
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+#profile > article > h2 {
+  text-align: center;
+}
+#profile > article > form input,
+#profile > article > form textarea,
+#profile > article > form select {
+  font-family: "Mina";
+  background-color: rgb(1, 17, 24);
+  color: rgb(255, 255, 255);
+  width: 100%;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+#profile > article > form input::placeholder,
+#profile > article > form textarea::placeholder,
+#profile > article > form select::placeholder {
+  color: rgb(255, 255, 255);
+  font-family: "Mina";
+}
+#profile > article > form select {
+  padding: 15px;
+}
+#profile > article > form input[type=submit]:hover {
+  background-color: rgb(43, 205, 219);
+}
+#profile > article > form input[type=checkbox] {
+  width: 20px;
+}
+#profile > article > form input[type=submit] {
+  max-width: 100px;
+}
+#profile > article > p span {
+  color: rgb(43, 205, 219);
+}
+
 .legalNotice > div,
 .privacyPolice > div {
   border: 2px solid rgb(43, 205, 219);

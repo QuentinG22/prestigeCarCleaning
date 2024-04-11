@@ -1,1 +1,6 @@
 
+Date : 11-04-2024 14:24:54 - Erreur requete : SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`projetprestige`.`comments`, CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`idUser`) REFERENCES `users` (`idUser`))
+Date : 11-04-2024 14:32:49 - Erreur requete : SQLSTATE[42S02]: Base table or view not found: 1109 Unknown table 'comments' in MULTI DELETE
+Date : 11-04-2024 14:33:44 - Erreur requete : SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`projetprestige`.`comments`, CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`idUser`) REFERENCES `users` (`idUser`))
+Date : 11-04-2024 14:35:34 - Erreur requete : SQLSTATE[42S02]: Base table or view not found: 1146 Table 'projetprestige.user' doesn't exist
+Date : 11-04-2024 14:35:49 - Erreur requete : SQLSTATE[42S02]: Base table or view not found: 1109 Unknown table 'user' in MULTI DELETE

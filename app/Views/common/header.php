@@ -21,7 +21,7 @@
                     <li><a href="nos-avis">Avis</a></li>
                     <li><a href="contact">Contact</a></li>
                     <?php if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') : ?>
-                        <li><a href="déconnexion">Déconnexion</a></li>
+                        <li><a href="profil">Profil</a></li>
                     <?php else : ?>
                         <li><a href="connexion">Connexion</a></li>
                     <?php endif; ?>

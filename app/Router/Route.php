@@ -14,6 +14,7 @@ use PrestigeCarCleaning\Controllers\FrontOffice\Comment;
 use PrestigeCarCleaning\Controllers\FrontOffice\Contact;
 use PrestigeCarCleaning\Controllers\FrontOffice\Login;
 use PrestigeCarCleaning\Controllers\FrontOffice\Register;
+use PrestigeCarCleaning\Controllers\FrontOffice\Profile;
 use PrestigeCarCleaning\Controllers\FrontOffice\Logout;
 
 use PrestigeCarCleaning\Controllers\Error;
@@ -133,6 +134,16 @@ class Route
                 $controller = new Register();
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $controller->register();
+                } else {
+                    $controller->index();
+                }
+                break;
+            case 'profil':
+                $controller = new Profile();
+                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['updateUser'])) {
+                    $controller->updateUser();
+                } else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteUser'])){
+                    $controller->deleteUser();
                 } else {
                     $controller->index();
                 }

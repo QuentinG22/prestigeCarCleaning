@@ -196,9 +196,12 @@ button{
     >a{
         color: $colorfooter;
         &:hover{
-            color: $colorfooter;
+            color: $colorText;
             cursor: pointer;
         }
+    }
+    >span{
+        color: $colorfooter;
     }
 }
 
@@ -699,6 +702,23 @@ article.error404 {
         }
         >div p{
             margin: 5px;
+        }
+    }
+}
+
+// ======== Page profil ========
+#profile{
+    @include grid(768px);
+    >article{
+        @include box();
+        >h2{
+            text-align: center;
+        }
+        >form{
+            @include form();
+        }
+        >p span{
+            color: $colorfooter;
         }
     }
 }
