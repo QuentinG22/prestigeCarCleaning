@@ -35,29 +35,29 @@ class Users extends Sql
 
     public function updateUser($id, $data = [])
     {
-        if(!empty($data['ancientPassword']) && !empty($data['password'])){
+        if (!empty($data['ancientPassword']) && !empty($data['password'])) {
             $userBd = $this->getUser($_SESSION['userEmail']);
-            if(!password_verify($data['ancientPassword'], $userBd->password)){
+            if (!password_verify($data['ancientPassword'], $userBd->password)) {
                 return "Ancien mot de passe incorrect.";
             } else {
                 $result = $this->update('idUser', $id, ['password' => password_hash($data['password'], PASSWORD_DEFAULT)]);
-                if($result !== false){
+                if ($result !== false) {
                     return true;
                 }
             }
         } else if (!empty($data['email'])) {
-            $control = $this->requete("SELECT COUNT(email) FROM users WHERE email = ?", [$data['email']])->fetchColumn();
-            if ($control > 0){
+            $control = $this->requete("SELECT COUNT(email) FROM USERS WHERE email = ?", [$data['email']])->fetchColumn();
+            if ($control > 0) {
                 return "L'adresse e-mail est déjà utilisée par un autre utilisateur.";
             } else {
                 $result = $this->update('idUser', $id, $data);
-                if($result !== false){
+                if ($result !== false) {
                     return true;
                 }
             }
         } else {
             $result = $this->update('idUser', $id, $data);
-            if($result !== false){
+            if ($result !== false) {
                 return true;
             }
         }
@@ -65,10 +65,15 @@ class Users extends Sql
 
     public function deleteUser($id)
     {
-        $sql = "DELETE COMMENTS, USERS FROM COMMENTS
+        $control = $this->requete("SELECT COUNT(idUser) FROM COMMENTS WHERE idUser = ?", [$id])->fetchColumn();
+        if ($control > 0) {
+            $sql = "DELETE COMMENTS, USERS FROM COMMENTS
         INNER JOIN USERS ON COMMENTS.idUser = USERS.idUser
         WHERE COMMENTS.idUser = ?";
-        return $this->requete($sql, [$id]);
+            return $this->requete($sql, [$id]);
+        } else {
+            return $this->delete('idUser', $id);
+        }
     }
 
     public function login($email, $password)

@@ -69,7 +69,6 @@ require "app/Views/common/header.php";
             </article>
         </section>
     <?php endif; ?>
-    <?php var_dump($_SESSION) ?>
 </main>
 <?php
 require "app/Views/common/footer.php";
