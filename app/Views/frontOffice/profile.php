@@ -58,12 +58,16 @@ require "app/Views/common/header.php";
                             <input type="checkbox" id="updateUser">
                             J'accepte d'apporter les modifications sur mon profil.
                         </p>
-                        <p>
-                            <input type="checkbox" id="deleteUser">
-                            Je souhaite supprimer mon compte.
-                        </p>
+                        <?php if ($_SESSION['userIsAdmin'] == 0) : ?>
+                            <p>
+                                <input type="checkbox" id="deleteUser">
+                                Je souhaite supprimer mon compte.
+                            </p>
+                        <?php endif; ?>
                         <input type="submit" id="inputUpdate" name="updateUser" value="Modifier" disabled>
-                        <input type="submit" id="inputDelete" name="deleteUser" value="Supprimer" disabled>
+                        <?php if ($_SESSION['userIsAdmin'] == 0) : ?>
+                            <input type="submit" id="inputDelete" name="deleteUser" value="Supprimer" disabled>
+                        <?php endif; ?>
                     </div>
                 </form>
             </article>

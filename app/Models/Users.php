@@ -20,17 +20,27 @@ class Users extends Sql
 
     public function addUser($name, $firstname,  $email, $phone, $password, $isAdmin)
     {
-        // Création du modèle de données
-        $model = [
-            'name' => htmlspecialchars($name),
-            'firstname' => htmlspecialchars($firstname),
-            'email' => htmlspecialchars($email),
-            'phone' => $phone,
-            'password' => password_hash($password, PASSWORD_DEFAULT),
-            'isAdmin' => $isAdmin
-        ];
+        $control = $this->requete("SELECT COUNT(email) FROM USERS WHERE email = ?", [$email])->fetchColumn();
+        if ($control > 0) {
+            return "L'adresse e-mail est déjà utilisée par un autre utilisateur.";
+        } else {
+            // Création du modèle de données
+            $model = [
+                'name' => htmlspecialchars($name),
+                'firstname' => htmlspecialchars($firstname),
+                'email' => htmlspecialchars($email),
+                'phone' => $phone,
+                'password' => password_hash($password, PASSWORD_DEFAULT),
+                'isAdmin' => $isAdmin
+            ];
 
-        return $this->add($model);
+            $result = $this->add($model);
+            if ($result !== false) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 
     public function updateUser($id, $data = [])
