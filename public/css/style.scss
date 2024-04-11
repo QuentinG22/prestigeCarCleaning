@@ -69,7 +69,7 @@ $colorfooter: rgb(43, 205, 219);
         }
     }
 
-    select{
+    select {
         padding: 15px;
     }
 
@@ -149,12 +149,13 @@ textarea {
 }
 
 // Boutton
-button{
+button {
     @include box();
     margin-top: 10px;
     background-color: $colorBody;
     color: $colorText;
-    &:hover{
+
+    &:hover {
         background-color: $colorfooter;
     }
 }
@@ -193,14 +194,17 @@ button{
 
 .intro {
     @include box();
-    >a{
+
+    >a {
         color: $colorfooter;
-        &:hover{
+
+        &:hover {
             color: $colorText;
             cursor: pointer;
         }
     }
-    >span{
+
+    >span {
         color: $colorfooter;
     }
 }
@@ -365,6 +369,7 @@ footer {
     #logoFooter {
         bottom: 65%;
     }
+
     .articleFooter {
         margin-top: 30px;
     }
@@ -383,6 +388,7 @@ footer {
 
 article.error404 {
     @include grid(768px);
+
     >div {
         >h3 {
             margin: 10px 0;
@@ -400,7 +406,7 @@ article.error404 {
 
 @media screen and (min-width: 1200px) {
     article.error404 {
-        div{
+        div {
             width: 900px;
         }
     }
@@ -441,14 +447,14 @@ article.error404 {
 
     >article {
         @include box();
-
-        &:hover {
-            background-color: $colorfooter;
-            cursor: pointer;
-        }
+        position: relative;
 
         >h2 {
             text-align: center;
+            cursor: pointer;
+            &:hover {
+                color: $colorfooter;
+            }
         }
     }
 
@@ -460,6 +466,7 @@ article.error404 {
         color: $colorText;
         border: none;
         font-size: 25px;
+        cursor: pointer;
     }
 }
 
@@ -469,6 +476,23 @@ article.error404 {
 
 .next {
     right: 10px;
+}
+
+div.detailService{
+    position: relative;
+}
+
+button.closeButton {
+    position: absolute;
+    bottom: 10px;
+    /* Ajustez la valeur pour l'espacement par rapport au bas */
+    right: 15px;
+    padding: 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 40px;
+    color: $colorText;
 }
 
 @media screen and (min-width: 768px) {
@@ -492,12 +516,15 @@ article.error404 {
     flex: 0 0 auto;
     width: 100%;
     margin: 0 10px;
-    &:first-child{
+
+    &:first-child {
         margin-left: 0;
     }
-    &:last-child{
+
+    &:last-child {
         margin-right: 0;
     }
+
     @include box();
 
     >p {
@@ -650,7 +677,8 @@ article.error404 {
             }
         }
     }
-    >figure{
+
+    >figure {
         display: none;
     }
 }
@@ -660,6 +688,7 @@ article.error404 {
         >form {
             width: 500px;
         }
+
         >figure {
             display: block;
         }
@@ -693,31 +722,37 @@ article.error404 {
 }
 
 @media screen and (min-width: 768px) {
-    #register form div.formRegister{
+    #register form div.formRegister {
         display: grid;
         grid-template-columns: auto auto;
         gap: 15px;
-        >div input{
+
+        >div input {
             margin: 0;
         }
-        >div p{
+
+        >div p {
             margin: 5px;
         }
     }
 }
 
 // ======== Page profil ========
-#profile{
+#profile {
     @include grid(768px);
-    >article{
+
+    >article {
         @include box();
-        >h2{
+
+        >h2 {
             text-align: center;
         }
-        >form{
+
+        >form {
             @include form();
         }
-        >p span{
+
+        >p span {
             color: $colorfooter;
         }
     }
@@ -750,13 +785,13 @@ article.error404 {
 }
 
 @media screen and (min-width: 992px) {
-    .homeAdmin div{
+    .homeAdmin div {
         width: 700px;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .homeAdmin div{
+    .homeAdmin div {
         width: 900px;
     }
 }
@@ -784,6 +819,7 @@ article.error404 {
 
         >form div {
             display: flex;
+
             >span {
                 color: $colorfooter;
                 margin-right: 5px;
@@ -791,30 +827,30 @@ article.error404 {
         }
     }
 
-    >figure{
+    >figure {
         display: none
     }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
     .dashboard {
-        >figure{
+        >figure {
             display: block;
         }
     }
 }
 
-@media screen and (min-width: 992px){
+@media screen and (min-width: 992px) {
     .dashboard {
-        >article{
+        >article {
             width: 600px;
         }
     }
 }
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1200px) {
     .dashboard {
-        >article{
+        >article {
             width: 850px;
         }
     }
@@ -833,9 +869,11 @@ article.error404 {
             margin-bottom: 10px;
             ;
         }
-        >form{
+
+        >form {
             @include form();
-            >input[type="checkbox"]{
+
+            >input[type="checkbox"] {
                 margin-right: 5px;
                 margin-left: 10px;
             }
@@ -845,13 +883,14 @@ article.error404 {
 
 // ======== Page gestion des produits et prestation ========
 
-.adminComment{
-    >input{
+.adminComment {
+    >input {
         @include box();
         margin-top: 10px;
         background-color: $colorBody;
         color: $colorText;
-        &:hover{
+
+        &:hover {
             background-color: $colorfooter;
         }
     }

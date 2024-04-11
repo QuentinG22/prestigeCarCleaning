@@ -394,13 +394,14 @@ article.error404 > div > p:last-child {
   border-radius: 15px;
   padding: 15px;
   box-sizing: border-box;
-}
-.sliderService > article:hover {
-  background-color: rgb(43, 205, 219);
-  cursor: pointer;
+  position: relative;
 }
 .sliderService > article > h2 {
   text-align: center;
+  cursor: pointer;
+}
+.sliderService > article > h2:hover {
+  color: rgb(43, 205, 219);
 }
 .sliderService > button {
   position: absolute;
@@ -410,6 +411,7 @@ article.error404 > div > p:last-child {
   color: rgb(255, 255, 255);
   border: none;
   font-size: 25px;
+  cursor: pointer;
 }
 
 .prev {
@@ -418,6 +420,23 @@ article.error404 > div > p:last-child {
 
 .next {
   right: 10px;
+}
+
+div.detailService {
+  position: relative;
+}
+
+button.closeButton {
+  position: absolute;
+  bottom: 10px;
+  /* Ajustez la valeur pour l'espacement par rapport au bas */
+  right: 15px;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 40px;
+  color: rgb(255, 255, 255);
 }
 
 @media screen and (min-width: 768px) {

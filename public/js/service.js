@@ -1,7 +1,9 @@
 const slider = document.querySelector('.sliderService');
 const slides = document.querySelectorAll('.sliderService article');
+const titleSlides = document.querySelectorAll('.sliderService article h2');
 const prevButton = document.querySelector('.prev');
 const nextButton = document.querySelector('.next');
+const closeButton = document.querySelectorAll('.closeButton');
 
 let slideIndex = 0;
 const totalSlides = slides.length;
@@ -60,7 +62,8 @@ window.addEventListener('resize', function () {
 
 // Fonction pour afficher ou masquer les détails de la prestation
 function toggleServiceDetails(event) {
-    const article = event.currentTarget;
+    const title = event.currentTarget;
+    const article = title.parentNode;
     const detailService = article.querySelector('.detailsService');
 
     // Vérifier si les détails sont déjà affichés
@@ -70,7 +73,7 @@ function toggleServiceDetails(event) {
         showNavigationAndSlides();
     } else {
         // Les détails ne sont pas déjà affichés, donc les récupérer et afficher
-        const serviceId = article.id;
+        const serviceId = title.id;
         const url = 'nos-prestations/service/' + serviceId;
 
         fetch(url)
@@ -82,8 +85,6 @@ function toggleServiceDetails(event) {
                 }
             })
             .then(data => {
-                console.log(data);
-
                 let descriptionParagraph = document.createElement('p');
                 descriptionParagraph.innerHTML = data.description.replace(/\r\n/g, '<br>');
 
@@ -102,6 +103,16 @@ function toggleServiceDetails(event) {
 
                 let priceParagraph = document.createElement('p');
                 priceParagraph.innerHTML = '<br><span>Prix: </span>' + data.price + ' €';
+
+                // Convertir closeButton (NodeList) en un tableau (Array)
+                const closeButtonArray = Array.from(closeButton);
+
+                closeButtonArray.forEach(key => {
+                    // Vérifier si l'ID du bouton correspond à l'ID du titre actuel
+                    if (key.id === title.id) {
+                        key.classList.remove('disabled');
+                    }
+                });
 
                 detailService.appendChild(descriptionParagraph);
                 detailService.appendChild(productParagraph);
@@ -136,7 +147,16 @@ function showNavigationAndSlides() {
     slider.style.width = 'auto';
 }
 
-// Ajouter un écouteur d'événement à chaque article de prestation
-slides.forEach(article => {
-    article.addEventListener('click', toggleServiceDetails);
+// Ajouter un écouteur d'événement à chaque titre des article de prestation
+titleSlides.forEach(key => {
+    key.addEventListener('click', toggleServiceDetails);
 });
+
+closeButton.forEach(key => {
+    key.addEventListener('click', function() {
+        key.classList.add('disabled');
+
+        // Appeler la fonction toggleServiceDetails avec l'événement actuel
+        toggleServiceDetails(event);
+    });
+})

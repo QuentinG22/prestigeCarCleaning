@@ -20,9 +20,10 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
     <section class="sliderService">
         <button class="prev">❮</button>
         <?php foreach ($servicesAll as $key) : ?>
-            <article class="service" id="<?= $key->idService ?>">
-                <h2><?= $key->nameService ?></h2>
+            <article class="service">
+                <h2 id="<?= $key->idService ?>"><?= $key->nameService ?></h2>
                 <div class="detailsService"></div>
+                <button id="<?= $key->idService ?>" class="closeButton disabled">×</button>
             </article>
         <?php endforeach; ?>
         <button class="next">❯</button>
