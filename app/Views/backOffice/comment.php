@@ -15,6 +15,9 @@ require "app/Views/common/header.php";
         </div>
     <?php endif; ?>
     <article>
+        <div class="progressBar">
+            <hr>
+        </div>
         <div class="center">
             <?php if (!empty($commentsAll)) : ?>
                 <?php $countNotActif = 0; ?>
@@ -57,7 +60,7 @@ require "app/Views/common/header.php";
                     <p>Aucun commentaire en attente de validation !</p>
                 <?php endif ?>
             <?php else : ?>
-            <p>Aucun commentaire en attente de validation !</p>
+                <p>Aucun commentaire en attente de validation !</p>
             <?php endif ?>
     </article>
 </main>

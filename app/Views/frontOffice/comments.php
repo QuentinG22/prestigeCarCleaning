@@ -31,6 +31,7 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
         La satisfaction de nos clients est notre priorité absolue.
         Découvrez ce que nos clients disent de notre service de nettoyage de voiture : <?= $countCommments ?> avis !
     </p>
+    <div class="progressBar"><hr></div>
     <div class="center">
         <?php if (!empty($commentsAll)) : ?>
             <?php foreach ($commentsAll as $key) : ?>

@@ -452,6 +452,7 @@ article.error404 {
         >h2 {
             text-align: center;
             cursor: pointer;
+
             &:hover {
                 color: $colorfooter;
             }
@@ -478,7 +479,7 @@ article.error404 {
     right: 10px;
 }
 
-div.detailService{
+div.detailService {
     position: relative;
 }
 
@@ -510,6 +511,19 @@ button.closeButton {
     display: flex;
     overflow-x: hidden;
     margin: 15px 0;
+}
+
+.progressBar {
+    @include box();
+    padding: 0;
+    margin-top: 15px;
+
+    >hr {
+        height: 10px;
+        width: 10px;
+        background-color: $colorfooter;
+        transition: width 0.5s ease;
+    }
 }
 
 .item {
