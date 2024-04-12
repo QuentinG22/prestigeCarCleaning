@@ -108,8 +108,8 @@ function toggleServiceDetails(event) {
                 const closeButtonArray = Array.from(closeButton);
 
                 closeButtonArray.forEach(key => {
-                    // Vérifier si l'ID du bouton correspond à l'ID du titre actuel
-                    if (key.id === title.id) {
+                    // Vérifier si data-target-id du bouton correspond à l'ID du titre actuel
+                    if (key.getAttribute('data-target-id') === title.id) {
                         key.classList.remove('disabled');
                     }
                 });

@@ -36,13 +36,13 @@
         <script src="public/js/comment.js" defer></script>
     <?php endif; ?>
     <?php if (isset($_GET['url']) && $_GET['url'] == "contact") : ?>
-        <script type="module" src="public/js/contact.js" defer></script>
+        <script type="module" src="public/js/contact.js"></script>
     <?php endif; ?>
     <?php if (isset($_GET['url']) && $_GET['url'] == "inscription") : ?>
-        <script type="module" src="public/js/register.js" defer></script>
+        <script type="module" src="public/js/register.js"></script>
     <?php endif; ?>
     <?php if (isset($_GET['url']) && $_GET['url'] == "profil") : ?>
-        <script type="module" src="public/js/profile.js" defer></script>
+        <script type="module" src="public/js/profile.js"></script>
     <?php endif; ?>
     <?php if (isset($_GET['url']) && $_GET['url'] == "admin/gestion-des-prestations") : ?>
         <script src="public/js/backOffice/service.js" defer></script>

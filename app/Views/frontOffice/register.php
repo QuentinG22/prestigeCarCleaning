@@ -29,7 +29,7 @@ require "app/Views/common/header.php";
                     <p class="errorForm" data-error-for="email"></p>
                 </div>
                 <div>
-                    <input type="phone" id="phone" name="phone" placeholder="Téléphone *">
+                    <input type="tel" id="phone" name="phone" placeholder="Téléphone *">
                     <p class="errorForm" data-error-for="phone"></p>
                 </div>
                 <div>

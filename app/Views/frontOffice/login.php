@@ -19,7 +19,7 @@ require "app/Views/common/header.php";
             </div>
             <div>
                 <input type="submit" name="login" value="Connexion">
-                <a href="inscription"><input type="button" name="register" value="Inscription"></a>
+                <input type="submit" name="register" value="Inscription">
             </div>
         </form>
         <figure>

@@ -124,8 +124,10 @@ class Route
                 break;
             case 'connexion':
                 $controller = new Login();
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['login']) {
                     $controller->login();
+                } else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['register']) {
+                    header('location: inscription');
                 } else {
                     $controller->index();
                 }

@@ -31,12 +31,13 @@ require "app/Views/common/header.php";
                 <h2>Modifier mes données personnelles</h2>
                 <form action="profil" method="post">
                     <div class="formRegister">
+                        <p class="errorForm" data-error-for="error"></p>
                         <div>
                             <input type="email" id="email" name="email" placeholder="Email">
                             <p class="errorForm" data-error-for="email"></p>
                         </div>
                         <div>
-                            <input type="phone" id="phone" name="phone" placeholder="Téléphone">
+                            <input type="tel" id="phone" name="phone" placeholder="Téléphone">
                             <p class="errorForm" data-error-for="phone"></p>
                         </div>
                         <p class="infoPassword">Pour un changement de mot de passe veuillez renseigner votre ancien mot de passe.</p>

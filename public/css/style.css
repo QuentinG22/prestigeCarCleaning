@@ -532,9 +532,15 @@ button.closeButton {
   color: rgb(43, 205, 219);
 }
 
+.addComments form {
+  /* Style de base pour le select */
+  /* Restauration de la flèche par défaut du select */
+  /* Style de base pour la checkbox */
+  /* Style de la checkbox cochée */
+  /* Pseudo-élément pour afficher la coche */
+}
 .addComments form input,
-.addComments form textarea,
-.addComments form select {
+.addComments form textarea {
   font-family: "Mina";
   background-color: rgb(1, 17, 24);
   color: rgb(255, 255, 255);
@@ -547,19 +553,67 @@ button.closeButton {
   box-sizing: border-box;
 }
 .addComments form input::placeholder,
-.addComments form textarea::placeholder,
-.addComments form select::placeholder {
+.addComments form textarea::placeholder {
   color: rgb(255, 255, 255);
   font-family: "Mina";
 }
 .addComments form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: "Mina";
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
+  background-color: rgb(1, 17, 24);
+  color: rgb(255, 255, 255);
+  width: 100%;
+  position: relative;
+  content: "▼";
+}
+.addComments form select::after {
+  content: "▼";
+  /* Code Unicode pour la flèche vers le bas (▼) */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  /* Ajuste la position de la flèche par rapport au bord droit */
+  transform: translateY(-50%);
+  pointer-events: none;
+  /* Permet aux événements de pointer de passer à travers */
+}
+.addComments form input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 3px;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.addComments form input[type=checkbox]:checked {
+  background-color: rgb(43, 205, 219);
+  border-color: rgb(255, 255, 255);
+}
+.addComments form input[type=checkbox]:checked::before {
+  /* Code Unicode pour la coche (✓) */
+  content: "✓";
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .addComments form input[type=submit]:hover {
   background-color: rgb(43, 205, 219);
-}
-.addComments form input[type=checkbox] {
-  width: 20px;
 }
 .addComments form input[type=submit] {
   max-width: 100px;
@@ -634,9 +688,15 @@ button.closeButton {
     align-items: center;
   }
 }
+#contact > form {
+  /* Style de base pour le select */
+  /* Restauration de la flèche par défaut du select */
+  /* Style de base pour la checkbox */
+  /* Style de la checkbox cochée */
+  /* Pseudo-élément pour afficher la coche */
+}
 #contact > form input,
-#contact > form textarea,
-#contact > form select {
+#contact > form textarea {
   font-family: "Mina";
   background-color: rgb(1, 17, 24);
   color: rgb(255, 255, 255);
@@ -649,19 +709,67 @@ button.closeButton {
   box-sizing: border-box;
 }
 #contact > form input::placeholder,
-#contact > form textarea::placeholder,
-#contact > form select::placeholder {
+#contact > form textarea::placeholder {
   color: rgb(255, 255, 255);
   font-family: "Mina";
 }
 #contact > form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: "Mina";
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
+  background-color: rgb(1, 17, 24);
+  color: rgb(255, 255, 255);
+  width: 100%;
+  position: relative;
+  content: "▼";
+}
+#contact > form select::after {
+  content: "▼";
+  /* Code Unicode pour la flèche vers le bas (▼) */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  /* Ajuste la position de la flèche par rapport au bord droit */
+  transform: translateY(-50%);
+  pointer-events: none;
+  /* Permet aux événements de pointer de passer à travers */
+}
+#contact > form input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 3px;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+#contact > form input[type=checkbox]:checked {
+  background-color: rgb(43, 205, 219);
+  border-color: rgb(255, 255, 255);
+}
+#contact > form input[type=checkbox]:checked::before {
+  /* Code Unicode pour la coche (✓) */
+  content: "✓";
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 #contact > form input[type=submit]:hover {
   background-color: rgb(43, 205, 219);
-}
-#contact > form input[type=checkbox] {
-  width: 20px;
 }
 #contact > form input[type=submit] {
   max-width: 100px;
@@ -723,9 +831,15 @@ button.closeButton {
     align-items: center;
   }
 }
+#connection > form {
+  /* Style de base pour le select */
+  /* Restauration de la flèche par défaut du select */
+  /* Style de base pour la checkbox */
+  /* Style de la checkbox cochée */
+  /* Pseudo-élément pour afficher la coche */
+}
 #connection > form input,
-#connection > form textarea,
-#connection > form select {
+#connection > form textarea {
   font-family: "Mina";
   background-color: rgb(1, 17, 24);
   color: rgb(255, 255, 255);
@@ -738,19 +852,67 @@ button.closeButton {
   box-sizing: border-box;
 }
 #connection > form input::placeholder,
-#connection > form textarea::placeholder,
-#connection > form select::placeholder {
+#connection > form textarea::placeholder {
   color: rgb(255, 255, 255);
   font-family: "Mina";
 }
 #connection > form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: "Mina";
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
+  background-color: rgb(1, 17, 24);
+  color: rgb(255, 255, 255);
+  width: 100%;
+  position: relative;
+  content: "▼";
+}
+#connection > form select::after {
+  content: "▼";
+  /* Code Unicode pour la flèche vers le bas (▼) */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  /* Ajuste la position de la flèche par rapport au bord droit */
+  transform: translateY(-50%);
+  pointer-events: none;
+  /* Permet aux événements de pointer de passer à travers */
+}
+#connection > form input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 3px;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+#connection > form input[type=checkbox]:checked {
+  background-color: rgb(43, 205, 219);
+  border-color: rgb(255, 255, 255);
+}
+#connection > form input[type=checkbox]:checked::before {
+  /* Code Unicode pour la coche (✓) */
+  content: "✓";
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 #connection > form input[type=submit]:hover {
   background-color: rgb(43, 205, 219);
-}
-#connection > form input[type=checkbox] {
-  width: 20px;
 }
 #connection > form input[type=submit] {
   max-width: 100px;
@@ -787,9 +949,15 @@ button.closeButton {
   margin-top: 15px;
 }
 
+#register form {
+  /* Style de base pour le select */
+  /* Restauration de la flèche par défaut du select */
+  /* Style de base pour la checkbox */
+  /* Style de la checkbox cochée */
+  /* Pseudo-élément pour afficher la coche */
+}
 #register form input,
-#register form textarea,
-#register form select {
+#register form textarea {
   font-family: "Mina";
   background-color: rgb(1, 17, 24);
   color: rgb(255, 255, 255);
@@ -802,19 +970,67 @@ button.closeButton {
   box-sizing: border-box;
 }
 #register form input::placeholder,
-#register form textarea::placeholder,
-#register form select::placeholder {
+#register form textarea::placeholder {
   color: rgb(255, 255, 255);
   font-family: "Mina";
 }
 #register form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: "Mina";
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
+  background-color: rgb(1, 17, 24);
+  color: rgb(255, 255, 255);
+  width: 100%;
+  position: relative;
+  content: "▼";
+}
+#register form select::after {
+  content: "▼";
+  /* Code Unicode pour la flèche vers le bas (▼) */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  /* Ajuste la position de la flèche par rapport au bord droit */
+  transform: translateY(-50%);
+  pointer-events: none;
+  /* Permet aux événements de pointer de passer à travers */
+}
+#register form input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 3px;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+#register form input[type=checkbox]:checked {
+  background-color: rgb(43, 205, 219);
+  border-color: rgb(255, 255, 255);
+}
+#register form input[type=checkbox]:checked::before {
+  /* Code Unicode pour la coche (✓) */
+  content: "✓";
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 #register form input[type=submit]:hover {
   background-color: rgb(43, 205, 219);
-}
-#register form input[type=checkbox] {
-  width: 20px;
 }
 #register form input[type=submit] {
   max-width: 100px;
@@ -873,9 +1089,15 @@ button.closeButton {
 #profile > article > h2 {
   text-align: center;
 }
+#profile > article > form {
+  /* Style de base pour le select */
+  /* Restauration de la flèche par défaut du select */
+  /* Style de base pour la checkbox */
+  /* Style de la checkbox cochée */
+  /* Pseudo-élément pour afficher la coche */
+}
 #profile > article > form input,
-#profile > article > form textarea,
-#profile > article > form select {
+#profile > article > form textarea {
   font-family: "Mina";
   background-color: rgb(1, 17, 24);
   color: rgb(255, 255, 255);
@@ -888,19 +1110,67 @@ button.closeButton {
   box-sizing: border-box;
 }
 #profile > article > form input::placeholder,
-#profile > article > form textarea::placeholder,
-#profile > article > form select::placeholder {
+#profile > article > form textarea::placeholder {
   color: rgb(255, 255, 255);
   font-family: "Mina";
 }
 #profile > article > form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: "Mina";
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
+  background-color: rgb(1, 17, 24);
+  color: rgb(255, 255, 255);
+  width: 100%;
+  position: relative;
+  content: "▼";
+}
+#profile > article > form select::after {
+  content: "▼";
+  /* Code Unicode pour la flèche vers le bas (▼) */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  /* Ajuste la position de la flèche par rapport au bord droit */
+  transform: translateY(-50%);
+  pointer-events: none;
+  /* Permet aux événements de pointer de passer à travers */
+}
+#profile > article > form input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 3px;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+#profile > article > form input[type=checkbox]:checked {
+  background-color: rgb(43, 205, 219);
+  border-color: rgb(255, 255, 255);
+}
+#profile > article > form input[type=checkbox]:checked::before {
+  /* Code Unicode pour la coche (✓) */
+  content: "✓";
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 #profile > article > form input[type=submit]:hover {
   background-color: rgb(43, 205, 219);
-}
-#profile > article > form input[type=checkbox] {
-  width: 20px;
 }
 #profile > article > form input[type=submit] {
   max-width: 100px;
@@ -1004,10 +1274,14 @@ button.closeButton {
   border-radius: 15px;
   padding: 15px;
   box-sizing: border-box;
+  /* Style de base pour le select */
+  /* Restauration de la flèche par défaut du select */
+  /* Style de base pour la checkbox */
+  /* Style de la checkbox cochée */
+  /* Pseudo-élément pour afficher la coche */
 }
 .dashboard > article input,
-.dashboard > article textarea,
-.dashboard > article select {
+.dashboard > article textarea {
   font-family: "Mina";
   background-color: rgb(1, 17, 24);
   color: rgb(255, 255, 255);
@@ -1020,19 +1294,67 @@ button.closeButton {
   box-sizing: border-box;
 }
 .dashboard > article input::placeholder,
-.dashboard > article textarea::placeholder,
-.dashboard > article select::placeholder {
+.dashboard > article textarea::placeholder {
   color: rgb(255, 255, 255);
   font-family: "Mina";
 }
 .dashboard > article select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: "Mina";
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
+  background-color: rgb(1, 17, 24);
+  color: rgb(255, 255, 255);
+  width: 100%;
+  position: relative;
+  content: "▼";
+}
+.dashboard > article select::after {
+  content: "▼";
+  /* Code Unicode pour la flèche vers le bas (▼) */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  /* Ajuste la position de la flèche par rapport au bord droit */
+  transform: translateY(-50%);
+  pointer-events: none;
+  /* Permet aux événements de pointer de passer à travers */
+}
+.dashboard > article input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 3px;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.dashboard > article input[type=checkbox]:checked {
+  background-color: rgb(43, 205, 219);
+  border-color: rgb(255, 255, 255);
+}
+.dashboard > article input[type=checkbox]:checked::before {
+  /* Code Unicode pour la coche (✓) */
+  content: "✓";
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .dashboard > article input[type=submit]:hover {
   background-color: rgb(43, 205, 219);
-}
-.dashboard > article input[type=checkbox] {
-  width: 20px;
 }
 .dashboard > article input[type=submit] {
   max-width: 100px;
@@ -1113,9 +1435,15 @@ button.closeButton {
   text-align: center;
   margin-bottom: 10px;
 }
+.managerForm > article > form {
+  /* Style de base pour le select */
+  /* Restauration de la flèche par défaut du select */
+  /* Style de base pour la checkbox */
+  /* Style de la checkbox cochée */
+  /* Pseudo-élément pour afficher la coche */
+}
 .managerForm > article > form input,
-.managerForm > article > form textarea,
-.managerForm > article > form select {
+.managerForm > article > form textarea {
   font-family: "Mina";
   background-color: rgb(1, 17, 24);
   color: rgb(255, 255, 255);
@@ -1128,19 +1456,67 @@ button.closeButton {
   box-sizing: border-box;
 }
 .managerForm > article > form input::placeholder,
-.managerForm > article > form textarea::placeholder,
-.managerForm > article > form select::placeholder {
+.managerForm > article > form textarea::placeholder {
   color: rgb(255, 255, 255);
   font-family: "Mina";
 }
 .managerForm > article > form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: "Mina";
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 15px;
   padding: 15px;
+  box-sizing: border-box;
+  background-color: rgb(1, 17, 24);
+  color: rgb(255, 255, 255);
+  width: 100%;
+  position: relative;
+  content: "▼";
+}
+.managerForm > article > form select::after {
+  content: "▼";
+  /* Code Unicode pour la flèche vers le bas (▼) */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  /* Ajuste la position de la flèche par rapport au bord droit */
+  transform: translateY(-50%);
+  pointer-events: none;
+  /* Permet aux événements de pointer de passer à travers */
+}
+.managerForm > article > form input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid rgb(43, 205, 219);
+  border-radius: 3px;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.managerForm > article > form input[type=checkbox]:checked {
+  background-color: rgb(43, 205, 219);
+  border-color: rgb(255, 255, 255);
+}
+.managerForm > article > form input[type=checkbox]:checked::before {
+  /* Code Unicode pour la coche (✓) */
+  content: "✓";
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .managerForm > article > form input[type=submit]:hover {
   background-color: rgb(43, 205, 219);
-}
-.managerForm > article > form input[type=checkbox] {
-  width: 20px;
 }
 .managerForm > article > form input[type=submit] {
   max-width: 100px;

@@ -23,7 +23,7 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
             <article class="service">
                 <h2 id="<?= $key->idService ?>"><?= $key->nameService ?></h2>
                 <div class="detailsService"></div>
-                <button id="<?= $key->idService ?>" class="closeButton disabled">×</button>
+                <button data-target-id="<?= $key->idService ?>" class="closeButton disabled">×</button>
             </article>
         <?php endforeach; ?>
         <button class="next">❯</button>

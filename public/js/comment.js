@@ -1,10 +1,10 @@
-const stars2 = document.querySelectorAll('#rating2 .star');
+const stars = document.querySelectorAll('#rating .star');
 const note = document.querySelector('#note');
 
-stars2.forEach(star => {
+stars.forEach(star => {
     star.addEventListener('click', function () {
         const value = parseInt(this.getAttribute('data-value'));
-        colorStars(stars2, value);
+        colorStars(stars, value);
         note.value = value;
     });
 });

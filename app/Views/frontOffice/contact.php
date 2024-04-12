@@ -63,7 +63,7 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
             </div>
             <div>
                 <p>
-                    <input type="checkbox" id="rgpd">
+                    <input type="checkbox" id="rgpd" placeholder=" ">
                     * J'accepte les termes et conditions ainsi que la politique de confidentialité
                     <a href="politique-de-confidentialité"><span>Lisez les termes et conditions d'utilisation</span></a>.
                 </p>

@@ -43,7 +43,7 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
                         <p class="serviceComments">
                             <?= $key->nameService ?>
                         </p>
-                        <div class="rating" id="rating1">
+                        <div class="rating">
                             <?php
                             $note = $key->note; // Récupère la note du commentaire
                             // Parcours chaque étoile et vérifie si elle doit être coloriée en fonction de la note
@@ -82,7 +82,7 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
                             <option value="<?= $service->idService; ?>"><?= $service->nameService; ?></option>
                         <?php endforeach; ?>
                     </select>
-                    <div class="rating" id="rating2">
+                    <div class="rating" id="rating">
                         <span class="star" data-value="1">&#9733;</span>
                         <span class="star" data-value="2">&#9733;</span>
                         <span class="star" data-value="3">&#9733;</span>
