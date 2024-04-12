@@ -2,7 +2,6 @@
 
 namespace PrestigeCarCleaning\Models;
 
-use Dotenv\Dotenv;
 use PDO;
 use PDOException;
 
@@ -26,7 +25,9 @@ class DbConnect
                 $logMessage = "Date : " . date('Y-m-d H:i:s') . " - Erreur PDO : " . $e->getMessage() . "\n";
                 error_log($logMessage, 3, "logs/error.log");
                 // Retourne une erreur en cas d'échec de connexion
-                return "Erreur lors de la connexion à la base de données.";
+                $title = 'Erreur - Prestige Car Cleaning';
+                require "app/Views/common/errorDb.php";
+                exit;
             }
         }
         // Retourne la connexion PDO stockée
