@@ -75,24 +75,10 @@ $colorfooter: rgb(43, 205, 219);
         -moz-appearance: none;
         font-family: 'Mina';
         @include box();
+        margin-bottom: 5px;
         background-color: $colorBody;
         color: $colorText;
         width: 100%;
-        position: relative;
-        content: '\25BC';
-    }
-
-    /* Restauration de la flèche par défaut du select */
-    select::after {
-        content: '\25BC';
-        /* Code Unicode pour la flèche vers le bas (▼) */
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        /* Ajuste la position de la flèche par rapport au bord droit */
-        transform: translateY(-50%);
-        pointer-events: none;
-        /* Permet aux événements de pointer de passer à travers */
     }
 
     /* Style de base pour la checkbox */
