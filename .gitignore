@@ -1,0 +1,7 @@
+node_modules
+composer.lock
+documentProjet.pdf
+package-lock.json
+package.json
+.env
+vendor
