@@ -20,7 +20,7 @@ Bienvenue sur l'application "Prestige Car Cleaning" !
 
 1. Cloner le dépôt sur votre machine local :
 ```bash
-   git clone https://github.com/votreutilisateur/prestigeCarCleaning.git
+   git clone https://github.com/QuentinG22/prestigeCarCleaning.git
 ```
 2. Renommez le fichier `.env.example` en `.env`
 ```bash
@@ -37,7 +37,7 @@ Bienvenue sur l'application "Prestige Car Cleaning" !
 Un utilisateur administrateur a été créé pour accéder à la partie back office du site Prestige Car Cleaning. Les utilisateurs avec des privilèges d'administrateur ont accès à des fonctionnalités supplémentaires pour gérer les demandes de contact, gestion des prestations, gestion des produits et modération des avis.
 
 Pour accéder à la partie back office :
-- Utilisateur : `admin@prestigecarcleaning.fr`
+- Email utilisateur : `admin@prestigecarcleaning.fr`
 - Mot de passe : *admin@prestige2*
 
 **Note :** Assurez-vous de protéger ces informations d'identification et de ne les partager qu'avec des utilisateurs autorisés.

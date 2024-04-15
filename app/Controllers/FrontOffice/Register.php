@@ -38,7 +38,7 @@ class Register
                 $title = "Inscrivez-vous - Prestige Car Cleaning";
                 $error = "L'inscription à échoué.";
                 ViewManager::render('frontOffice/register', ['title' => $title, 'error' => $error]);
-            } else {
+            } else if ($result === true) {
                 // Rediriger vers la page de connexion si l'enregistrement est réussi
                 header('Location: connexion');
             }
