@@ -4,9 +4,9 @@ Bienvenue sur l'application "Prestige Car Cleaning" !
 
 ## Fonctionnalités
 
-- Interface conviviale pour naviguer parmi les prestations.
+- Interface conviviale.
 - Système d'authentification sécurisé pour les clients et les membres du personnel.
-- Intégration avec une base de données MySQL pour stocker les informations clients et les détails des services.
+- Intégration avec une base de données MySQL pour stocker les informations clients, les avis clients et les détails des prestations.
 - Implémentation de l'architecture MVC (Modèle-Vue-Contrôleur) pour l'organisation du code.
 
 ## Technologies Utilisées
@@ -18,5 +18,9 @@ Bienvenue sur l'application "Prestige Car Cleaning" !
 
 ## Instructions de Configuration
 
+1. Cloner le dépôt sur votre machine local :
 ```bash
    git clone https://github.com/votreutilisateur/prestigeCarCleaning.git
+2. Renommez le fichier .env.example.env en .env
+```bash
+   mv .env.example .env
