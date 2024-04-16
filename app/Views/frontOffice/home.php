@@ -6,10 +6,10 @@ require "app/Views/common/header.php";
     <!-- Slider -->
     <article id="sliderContainer">
         <div id="slider">
-            <div class="slide"><img src="public/img/slide1.png" alt="Image représentant un lavage de voiture"></div>
-            <div class="slide disabled"><img src="public/img/slide2.png" alt="Image de lavage automobile"></div>
-            <div class="slide disabled"><img src="public/img/slide3.png" alt="Image de lavage automobile"></div>
-            <div class="slide disabled"><img src="public/img/slide4.png" alt="Illustration de service de lavage de voiture"></div>
+            <div class="slide"><img src="public/img/slide1.webp" alt="Image représentant un lavage de voiture"></div>
+            <div class="slide disabled"><img src="public/img/slide2.webp" alt="Image de lavage automobile"></div>
+            <div class="slide disabled"><img src="public/img/slide3.webp" alt="Image de lavage automobile"></div>
+            <div class="slide disabled"><img src="public/img/slide4.webp" alt="Illustration de service de lavage de voiture"></div>
         </div>
     </article>
     <article class="about">
