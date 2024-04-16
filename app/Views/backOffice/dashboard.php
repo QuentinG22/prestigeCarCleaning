@@ -53,8 +53,6 @@ require "app/Views/common/header.php";
         <script>
             let contactsAll = <?= json_encode($contactsAll); ?>;
 
-            console.log(contactsAll);
-
             document.querySelector('#contact').addEventListener('change', function() {
 
                 let selectedContactId = parseInt(this.value);
