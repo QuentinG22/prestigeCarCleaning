@@ -1,3 +1,5 @@
+# Interdire le listing des repertoires
+Options -Indexes
 # Active le moteur de réécriture d'URL
 RewriteEngine On
 # Condition : La demande ne doit pas correspondre à un fichier existant
@@ -11,3 +13,9 @@ RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
     Order allow,deny
     Deny from all
 </Files>
+
+# Interdire l'acces au fichier .env
+<FilesMatch "^.env$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
