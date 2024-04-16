@@ -1,7 +1,7 @@
 <footer>
     <hr>
     <figure>
-        <a href="accueil">
+        <a href="<?= $_SERVER['REDIRECT_URL']; ?>">
             <img src="public/img/logo.png" id="logoFooter" alt="Logo de Prestige Car Cleaning">
         </a>
     </figure>
