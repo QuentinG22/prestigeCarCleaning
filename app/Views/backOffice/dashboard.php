@@ -53,6 +53,8 @@ require "app/Views/common/header.php";
         <script>
             let contactsAll = <?= json_encode($contactsAll); ?>;
 
+            console.log(contactsAll);
+
             document.querySelector('#contact').addEventListener('change', function() {
 
                 let selectedContactId = parseInt(this.value);
@@ -65,7 +67,7 @@ require "app/Views/common/header.php";
                     document.querySelector('#nameContact').textContent = selectedContact.name + ' ' + selectedContact.firstname;
                     document.querySelector('#emailContact').textContent = selectedContact.email;
                     document.querySelector('#objectContact').textContent = selectedContact.object;
-                    document.querySelector('#textContact').textContent = selectedContact.text;
+                    document.querySelector('#textContact').innerHTML = selectedContact.text.replace(/\n/g, '<br>');
                 } else {
                     document.querySelector('#dateContact').textContent = '';
                     document.querySelector('#nameContact').textContent = '';

@@ -57,7 +57,7 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
                             ?>
                         </div>
                         <p class="textComment">
-                            <?= $key->text ?>
+                            <?= nl2br($key->text) ?>
                         </p>
                         <p>Poster le : <?= date('d/m/Y', strtotime($key->_date)) ?></p>
                     </div>

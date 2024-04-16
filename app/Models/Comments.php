@@ -17,7 +17,7 @@ class Comments extends Sql
         COMMENTS.active, SERVICES.nameService, USERS.name, USERS.firstname
         FROM COMMENTS
         JOIN SERVICES ON COMMENTS.idService = SERVICES.idService
-        JOIN USERS ON COMMENTS.idUser = USERS.idUser";
+        JOIN USERS ON COMMENTS.idUser = USERS.idUser ORDER BY COMMENTS._date DESC";
     
         return $this->requete($sql)->fetchAll(PDO::FETCH_OBJ);
     }

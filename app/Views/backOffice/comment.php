@@ -45,7 +45,7 @@ require "app/Views/common/header.php";
                                 ?>
                             </div>
                             <p class="textComment">
-                                <?= $key->text ?>
+                                <?= nl2br($key->text) ?>
                             </p>
                             <p>Poster le : <?= date('d/m/Y', strtotime($key->_date)) ?></p>
                             <form class="adminComment" action="admin/modération-avis" method="post">
