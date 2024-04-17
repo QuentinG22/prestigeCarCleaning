@@ -29,7 +29,7 @@ class Register
             // Appeler la méthode pour enregistrer l'utilisateur
             $result = $user->addUser($name, $firstname, $email, $phone, $password, 0);
 
-            if ($result !== false){
+            if ($result !== false && $result !== true){
                 $title = "Inscrivez-vous - Prestige Car Cleaning";
                 $error = $result;
                 ViewManager::render('frontOffice/register', ['title' => $title, 'error' => $error]);

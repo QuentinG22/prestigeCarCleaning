@@ -137,6 +137,10 @@ body {
     color: $colorText;
 }
 
+main {
+    min-height: 40vh;
+}
+
 // Les titres
 h1 {
     text-transform: uppercase;
@@ -213,6 +217,7 @@ button {
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 15px;
+    position: relative;
 
     &.error {
         background-color: red;
@@ -220,6 +225,17 @@ button {
 
     &.success {
         background-color: green;
+    }
+    >button{
+        position: absolute;
+        bottom: 10%;
+        right: 1%;
+        border: none;
+        background: transparent;
+        font-size: 40px;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
     }
 }
 

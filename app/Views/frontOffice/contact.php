@@ -12,11 +12,13 @@ if (isset($_SESSION['actif']) && $_SESSION['actif'] === 'yes') {
     <?php if (isset($error) && $error !== '') : ?>
         <div class="alert error">
             <?= $error ?>
+            <button>×</button>
         </div>
     <?php endif; ?>
     <?php if (isset($success) && $success !== '') : ?>
         <div class="alert success">
             <?= $success ?>
+            <button>×</button>
         </div>
     <?php endif; ?>
     <div class="intro">

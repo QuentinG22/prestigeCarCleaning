@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Vérification du nombre de champs saisis
         let validFieldsCount = 0;
+        let checkbox = document.querySelector("#updateUser");
 
         if (email !== '' || phone !== '' || password !== '') {
             validFieldsCount++;
@@ -52,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Si des erreurs sont présentes, arrête la soumission du formulaire
         if (Object.keys(errors).length > 0) {
             event.preventDefault();
-        } else if (validFieldsCount === 0) {
+        } else if (validFieldsCount === 0 && checkbox.checked) {
             displayError("Veuillez saisir au moins un champ valide avant d'envoyer le formulaire.");
             errors['error'] = true;
             event.preventDefault();

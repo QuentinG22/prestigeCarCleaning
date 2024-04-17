@@ -7,6 +7,7 @@ require "app/Views/common/header.php";
     <?php if (isset($error) && $error !== '') : ?>
         <div class="alert error">
             <?= $error ?>
+            <button>×</button>
         </div>
     <?php endif; ?>
     <p class="intro">
