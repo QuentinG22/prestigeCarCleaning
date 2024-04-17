@@ -33,7 +33,9 @@ require "app/Views/common/header.php";
                 <h2>Modifier mes données personnelles</h2>
                 <form action="profil" method="post">
                     <div class="formRegister">
-                        <p class="errorForm" data-error-for="error"></p>
+                        <div>
+                            <p class="errorForm" data-error-for="error"></p>
+                        </div>
                         <div>
                             <input type="email" id="email" name="email" placeholder="Email">
                             <p class="errorForm" data-error-for="email"></p>
