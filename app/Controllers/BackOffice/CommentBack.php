@@ -25,7 +25,7 @@ class CommentBack
             $error = "L'activation de l'avis à échoué.";
             $success = '';
         } else {
-            $success = "Avis activer avec succès.";
+            $success = "Avis activé avec succès.";
             $error = '';
         }
 

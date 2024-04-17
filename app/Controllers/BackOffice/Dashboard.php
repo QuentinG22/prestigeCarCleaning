@@ -31,7 +31,7 @@ class Dashboard
             $error = 'La suppression du contact a échoué.';
             $success = '';
         } else {
-            $success = 'le contact a bien été supprimer.';
+            $success = 'le contact a bien été supprimé.';
             $error = '';
         }
 

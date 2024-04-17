@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (validFieldsCount === 0 && checkbox.checked) {
             displayError('error', "Veuillez saisir au moins un champ valide avant d'envoyer la demande de modification.");
             errors['error'] = true;
-            console.log(error);
             event.preventDefault();
         }
     });

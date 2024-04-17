@@ -33,7 +33,7 @@ class Product
             $error = 'La création du produit a échoué.';
             $success = '';
         } else {
-            $success = 'le produit a bien été ajouter.';
+            $success = 'le produit a bien été ajouté.';
             $error = '';
         }
 

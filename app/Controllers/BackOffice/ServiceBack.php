@@ -33,7 +33,7 @@ class ServiceBack
         $text = $_POST["description"];
         $price = $_POST["price"];
         if (empty($_POST["products"])) {
-            $error = 'Un produit doit être sélectionner minimum pour ajouter une prestation';
+            $error = 'Un produit doit être sélectionné minimum pour ajouté une prestation';
             $success = '';
         } else {
             $selectedProducts = $_POST['products'];
@@ -46,7 +46,7 @@ class ServiceBack
                 $error = 'La création de la prestation a échoué.';
                 $success = '';
             } else {
-                $success = 'la prestation a bien été ajouter.';
+                $success = 'la prestation a bien été ajouté.';
                 $error = '';
             }
         }

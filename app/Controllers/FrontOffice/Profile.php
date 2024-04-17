@@ -74,7 +74,7 @@ class Profile
             $_SESSION['actif'] = 'no';
             session_destroy();
             $title = "Mon profil - Prestige Car Cleaning";
-            $success = 'Votre compte à bien été supprimer.';
+            $success = 'Votre compte à bien été supprimé.';
             return ViewManager::render('frontOffice/profile', ['title' => $title, 'success' => $success]);
         }
     }
