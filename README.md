@@ -32,12 +32,3 @@ Bienvenue sur l'application "Prestige Car Cleaning" !
    
 ## Lien du site
 [Prestige Car Cleaning](https://www.greta-bretagne-sud.fr/stagiaires-kercode/quentin-guillemin/prestigecarcleaning/)
-
-## Accès à la partie Back Office
-Un utilisateur administrateur a été créé pour accéder à la partie back office du site Prestige Car Cleaning. Les utilisateurs avec des privilèges d'administrateur ont accès à des fonctionnalités supplémentaires pour gérer les demandes de contact, gestion des prestations, gestion des produits et modération des avis.
-
-Pour accéder à la partie back office :
-- Email utilisateur : `admin@prestigecarcleaning.fr`
-- Mot de passe : *admin@prestige2*
-
-**Note :** Assurez-vous de protéger ces informations d'identification et de ne les partager qu'avec des utilisateurs autorisés.
